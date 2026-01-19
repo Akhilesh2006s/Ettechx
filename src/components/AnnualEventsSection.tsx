@@ -1,0 +1,127 @@
+import { motion } from "framer-motion";
+import { Button } from "@/components/ui/button";
+import { Calendar, MapPin, ArrowRight } from "lucide-react";
+
+const AnnualEventsSection = () => {
+  const events = [
+    {
+      id: 1,
+      season: "Spring Edition",
+      title: "Et Tech X Summit",
+      date: "March 2025",
+      location: "New Delhi, India",
+      description: "Kickstart the year with groundbreaking innovations and networking opportunities with EdTech leaders.",
+      gradient: "from-primary via-electric to-accent",
+      accentColor: "primary",
+    },
+    {
+      id: 2,
+      season: "Autumn Edition",
+      title: "Et Tech X Conference",
+      date: "September 2025",
+      location: "Mumbai, India",
+      description: "Culminate the year with awards, exhibitions, and future-forward discussions on education technology.",
+      gradient: "from-secondary via-coral to-gold",
+      accentColor: "secondary",
+    },
+  ];
+
+  return (
+    <section id="schedule" className="py-24 relative overflow-hidden bg-gradient-to-b from-accent/5 via-background to-primary/5">
+      {/* Decorative elements */}
+      <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-primary/30 to-transparent" />
+      <div className="absolute bottom-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-secondary/30 to-transparent" />
+      <div className="absolute top-1/3 right-0 w-80 h-80 rounded-full bg-primary/5 blur-3xl pointer-events-none" />
+      <div className="absolute bottom-1/3 left-0 w-80 h-80 rounded-full bg-secondary/5 blur-3xl pointer-events-none" />
+
+      <div className="container mx-auto px-4 relative z-10">
+        {/* Section Header */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="text-center mb-16"
+        >
+          <span className="inline-block px-4 py-1.5 rounded-full bg-secondary/10 text-secondary text-sm font-medium mb-4">
+            Annual Calendar
+          </span>
+          <h2 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-4">
+            <span className="text-primary">Two</span> Events,{" "}
+            <span className="text-secondary">Endless</span>{" "}
+            <span className="text-accent">Possibilities</span>
+          </h2>
+          <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
+            Mark your calendars for India's most anticipated EdTech gatherings
+          </p>
+        </motion.div>
+
+        {/* Events Cards */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-6xl mx-auto">
+          {events.map((event, index) => (
+            <motion.div
+              key={event.id}
+              initial={{ opacity: 0, x: index === 0 ? -50 : 50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.7, delay: index * 0.2 }}
+              whileHover={{ scale: 1.02 }}
+              className="group relative"
+            >
+              {/* Card */}
+              <div className="relative h-full p-8 md:p-10 rounded-3xl bg-gradient-card border border-border overflow-hidden shadow-card">
+                {/* Gradient accent bar */}
+                <div className={`absolute top-0 left-0 w-full h-1.5 bg-gradient-to-r ${event.gradient}`} />
+
+                {/* Season badge */}
+                <div className={`inline-flex items-center gap-2 px-4 py-2 rounded-full bg-${event.accentColor}/10 mb-6`}>
+                  <div className={`w-2 h-2 rounded-full bg-${event.accentColor} animate-pulse`} />
+                  <span className={`text-sm font-semibold text-${event.accentColor}`}>
+                    {event.season}
+                  </span>
+                </div>
+
+                {/* Event title */}
+                <h3 className="font-display text-3xl md:text-4xl font-bold text-foreground mb-4 group-hover:text-gradient-primary transition-all duration-300">
+                  {event.title}
+                </h3>
+
+                {/* Meta info */}
+                <div className="flex flex-wrap items-center gap-6 mb-6 text-muted-foreground">
+                  <div className="flex items-center gap-2">
+                    <Calendar className={`w-5 h-5 text-${event.accentColor}`} />
+                    <span className="font-medium">{event.date}</span>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <MapPin className={`w-5 h-5 text-${event.accentColor}`} />
+                    <span className="font-medium">{event.location}</span>
+                  </div>
+                </div>
+
+                {/* Description */}
+                <p className="text-muted-foreground text-lg leading-relaxed mb-8">
+                  {event.description}
+                </p>
+
+                {/* CTA */}
+                <Button
+                  variant={index === 0 ? "hero" : "glow"}
+                  size="lg"
+                  className="group/btn"
+                >
+                  Register for {event.season.split(" ")[0]}
+                  <ArrowRight className="w-5 h-5 group-hover/btn:translate-x-1 transition-transform" />
+                </Button>
+
+                {/* Background decoration */}
+                <div className={`absolute -bottom-20 -right-20 w-60 h-60 rounded-full bg-gradient-to-br ${event.gradient} opacity-5 blur-3xl group-hover:opacity-10 transition-opacity duration-500`} />
+              </div>
+            </motion.div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export default AnnualEventsSection;
