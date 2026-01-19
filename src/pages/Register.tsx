@@ -40,6 +40,8 @@ const Register = () => {
 
   useEffect(() => {
     document.title = "Register Now - Et Tech X";
+    // Scroll to top when component mounts
+    window.scrollTo({ top: 0, behavior: 'smooth' });
   }, []);
 
   const handleChange = (field: keyof RegisterFormData, value: string) => {

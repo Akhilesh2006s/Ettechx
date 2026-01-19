@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Button } from "@/components/ui/button";
+import { Link } from "react-router-dom";
 import { Calendar, MapPin, ArrowRight } from "lucide-react";
 
 const AnnualEventsSection = () => {
@@ -13,6 +13,7 @@ const AnnualEventsSection = () => {
       description: "Kickstart the year with groundbreaking innovations and networking opportunities with EdTech leaders.",
       gradient: "from-primary via-electric to-accent",
       accentColor: "primary",
+      link: "/spring-summit",
     },
     {
       id: 2,
@@ -23,6 +24,7 @@ const AnnualEventsSection = () => {
       description: "Culminate the year with awards, exhibitions, and future-forward discussions on education technology.",
       gradient: "from-secondary via-coral to-gold",
       accentColor: "secondary",
+      link: "/autumn-conference",
     },
   ];
 
@@ -68,15 +70,22 @@ const AnnualEventsSection = () => {
               whileHover={{ scale: 1.02 }}
               className="group relative"
             >
-              {/* Card */}
-              <div className="relative h-full p-8 md:p-10 rounded-3xl bg-gradient-card border border-border overflow-hidden shadow-card">
+              <Link to={event.link} className="block h-full">
+                {/* Card */}
+                <div className="relative h-full p-8 md:p-10 rounded-3xl bg-gradient-card border border-border overflow-hidden shadow-card cursor-pointer">
                 {/* Gradient accent bar */}
                 <div className={`absolute top-0 left-0 w-full h-1.5 bg-gradient-to-r ${event.gradient}`} />
 
                 {/* Season badge */}
-                <div className={`inline-flex items-center gap-2 px-4 py-2 rounded-full bg-${event.accentColor}/10 mb-6`}>
-                  <div className={`w-2 h-2 rounded-full bg-${event.accentColor} animate-pulse`} />
-                  <span className={`text-sm font-semibold text-${event.accentColor}`}>
+                <div className={`inline-flex items-center gap-2 px-4 py-2 rounded-full mb-6 ${
+                  event.accentColor === "primary" ? "bg-primary/10" : "bg-secondary/10"
+                }`}>
+                  <div className={`w-2 h-2 rounded-full animate-pulse ${
+                    event.accentColor === "primary" ? "bg-primary" : "bg-secondary"
+                  }`} />
+                  <span className={`text-sm font-semibold ${
+                    event.accentColor === "primary" ? "text-primary" : "text-secondary"
+                  }`}>
                     {event.season}
                   </span>
                 </div>
@@ -89,33 +98,36 @@ const AnnualEventsSection = () => {
                 {/* Meta info */}
                 <div className="flex flex-wrap items-center gap-6 mb-6 text-muted-foreground">
                   <div className="flex items-center gap-2">
-                    <Calendar className={`w-5 h-5 text-${event.accentColor}`} />
+                    <Calendar className={`w-5 h-5 ${
+                      event.accentColor === "primary" ? "text-primary" : "text-secondary"
+                    }`} />
                     <span className="font-medium">{event.date}</span>
                   </div>
                   <div className="flex items-center gap-2">
-                    <MapPin className={`w-5 h-5 text-${event.accentColor}`} />
+                    <MapPin className={`w-5 h-5 ${
+                      event.accentColor === "primary" ? "text-primary" : "text-secondary"
+                    }`} />
                     <span className="font-medium">{event.location}</span>
                   </div>
                 </div>
 
                 {/* Description */}
-                <p className="text-muted-foreground text-lg leading-relaxed mb-8">
+                <p className="text-muted-foreground text-lg leading-relaxed mb-6">
                   {event.description}
                 </p>
 
-                {/* CTA */}
-                <Button
-                  variant={index === 0 ? "hero" : "glow"}
-                  size="lg"
-                  className="group/btn"
-                >
-                  Register for {event.season.split(" ")[0]}
-                  <ArrowRight className="w-5 h-5 group-hover/btn:translate-x-1 transition-transform" />
-                </Button>
+                {/* CTA Text */}
+                <div className={`flex items-center gap-2 font-semibold group-hover:gap-3 transition-all duration-300 ${
+                  event.accentColor === "primary" ? "text-primary" : "text-secondary"
+                }`}>
+                  <span>Learn More</span>
+                  <ArrowRight className="w-5 h-5" />
+                </div>
 
                 {/* Background decoration */}
                 <div className={`absolute -bottom-20 -right-20 w-60 h-60 rounded-full bg-gradient-to-br ${event.gradient} opacity-5 blur-3xl group-hover:opacity-10 transition-opacity duration-500`} />
               </div>
+              </Link>
             </motion.div>
           ))}
         </div>

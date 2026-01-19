@@ -1,4 +1,6 @@
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
+import { Button } from "@/components/ui/button";
 import { Linkedin, Twitter } from "lucide-react";
 import speaker1 from "@/assets/speakers/speaker-1.jpg";
 import speaker2 from "@/assets/speakers/speaker-2.jpg";
@@ -178,9 +180,11 @@ const SpeakersSection = () => {
           transition={{ duration: 0.5, delay: 0.3 }}
           className="text-center mt-12"
         >
-          <button className="px-8 py-3 rounded-full border-2 border-primary text-primary font-semibold hover:bg-primary hover:text-primary-foreground transition-all duration-300">
-            View All Speakers
-          </button>
+          <Link to="/speakers">
+            <Button variant="outline" size="lg" className="px-8">
+              View All Speakers
+            </Button>
+          </Link>
         </motion.div>
       </div>
     </section>

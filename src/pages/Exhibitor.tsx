@@ -50,6 +50,8 @@ const Exhibitor = () => {
 
   useEffect(() => {
     document.title = "Become an Exhibitor - Et Tech X";
+    // Scroll to top when component mounts
+    window.scrollTo({ top: 0, behavior: 'smooth' });
   }, []);
 
   const handleChange = (field: keyof ExhibitorFormData, value: string) => {

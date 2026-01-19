@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 import { Award, Mic2, Wrench, Store } from "lucide-react";
 import awardsImage from "@/assets/events/awards-image.jpg";
 import conferenceImage from "@/assets/events/conference-image.jpg";
@@ -16,6 +17,7 @@ const EventsSection = () => {
       textColor: "text-secondary",
       hoverBorder: "hover:border-secondary/40",
       image: awardsImage,
+      link: "/awards",
     },
     {
       icon: Mic2,
@@ -26,6 +28,7 @@ const EventsSection = () => {
       textColor: "text-primary",
       hoverBorder: "hover:border-primary/40",
       image: conferenceImage,
+      link: "/conference",
     },
     {
       icon: Wrench,
@@ -36,6 +39,7 @@ const EventsSection = () => {
       textColor: "text-accent",
       hoverBorder: "hover:border-accent/40",
       image: workshopsImage,
+      link: "/workshops",
     },
     {
       icon: Store,
@@ -46,6 +50,7 @@ const EventsSection = () => {
       textColor: "text-gold",
       hoverBorder: "hover:border-gold/40",
       image: expoImage,
+      link: "/expo",
     },
   ];
 
@@ -111,7 +116,8 @@ const EventsSection = () => {
               whileHover={{ y: -8, scale: 1.01 }}
               className="group relative"
             >
-              <div className={`h-full rounded-2xl bg-card border border-border ${event.hoverBorder} transition-all duration-500 shadow-card overflow-hidden`}>
+              <Link to={event.link} className="block h-full">
+                <div className={`h-full rounded-2xl bg-card border border-border ${event.hoverBorder} transition-all duration-500 shadow-card overflow-hidden cursor-pointer`}>
                 {/* Colored background accent */}
                 <div className={`absolute top-0 right-0 w-40 h-40 ${event.bgColor} rounded-bl-[120px] rounded-tr-2xl opacity-60`} />
                 
@@ -147,6 +153,7 @@ const EventsSection = () => {
                   </div>
                 </div>
               </div>
+              </Link>
             </motion.div>
           ))}
         </motion.div>

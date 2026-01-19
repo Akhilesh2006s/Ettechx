@@ -30,7 +30,7 @@ const Footer = () => {
   ];
 
   return (
-    <footer id="contact" className="relative pt-20 pb-8 border-t border-border">
+    <footer className="relative pt-20 pb-8 border-t border-border">
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12 mb-16">
           {/* Brand Column */}
