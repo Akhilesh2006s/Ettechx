@@ -27,11 +27,13 @@ const HeroSection = () => {
             transition={{ duration: 0.6 }}
             className="mb-6"
           >
-            <img 
-              src="/logo.png" 
-              alt="Et Tech X Logo" 
-              className="h-16 md:h-24 lg:h-32 w-auto mx-auto"
-            />
+            <h1 className="font-display text-5xl md:text-7xl lg:text-8xl font-bold leading-tight mb-3">
+              <span className="text-foreground">ET TECH</span>{" "}
+              <span className="text-gradient-primary">X</span>
+            </h1>
+            <p className="text-base md:text-lg lg:text-xl text-muted-foreground font-medium">
+              Educational and Training Resources & Tech Expo
+            </p>
           </motion.div>
 
           {/* Badge */}

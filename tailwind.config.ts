@@ -55,6 +55,7 @@ export default {
         coral: "hsl(var(--coral-orange))",
         teal: "hsl(var(--teal-accent))",
         gold: "hsl(var(--gold))",
+        "deep-purple": "hsl(var(--deep-purple))",
         sidebar: {
           DEFAULT: "hsl(var(--sidebar-background))",
           foreground: "hsl(var(--sidebar-foreground))",

@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import React from "react";
 import {
   Carousel,
   CarouselContent,
@@ -6,16 +7,17 @@ import {
 } from "@/components/ui/carousel";
 import Autoplay from "embla-carousel-autoplay";
 import { useRef } from "react";
+import { Rocket } from "lucide-react";
 
 const sponsors = [
-  { name: "TechCorp", color: "from-blue-500 to-cyan-500" },
-  { name: "EduLearn", color: "from-purple-500 to-pink-500" },
-  { name: "InnovateTech", color: "from-orange-500 to-amber-500" },
-  { name: "FuturEd", color: "from-teal-500 to-emerald-500" },
-  { name: "SmartClass", color: "from-rose-500 to-red-500" },
-  { name: "LearnHub", color: "from-indigo-500 to-violet-500" },
-  { name: "EduTech Pro", color: "from-green-500 to-lime-500" },
-  { name: "CloudLearn", color: "from-sky-500 to-blue-500" },
+  { name: "TechCorp", color: "from-blue-500 to-cyan-500", icon: null },
+  { name: "EduLearn", color: "from-purple-500 to-pink-500", icon: null },
+  { name: "InnovateTech", color: "from-orange-500 to-amber-500", icon: null },
+  { name: "FuturEd", color: "from-teal-500 to-emerald-500", icon: Rocket },
+  { name: "SmartClass", color: "from-rose-500 to-red-500", icon: null },
+  { name: "LearnHub", color: "from-indigo-500 to-violet-500", icon: null },
+  { name: "EduTech Pro", color: "from-green-500 to-lime-500", icon: null },
+  { name: "CloudLearn", color: "from-sky-500 to-blue-500", icon: null },
 ];
 
 const SponsorsSection = () => {
@@ -72,9 +74,13 @@ const SponsorsSection = () => {
                       <div
                         className={`w-16 h-16 rounded-xl bg-gradient-to-br ${sponsor.color} flex items-center justify-center mb-3`}
                       >
-                        <span className="text-white font-bold text-xl">
-                          {sponsor.name.charAt(0)}
-                        </span>
+                        {sponsor.name === "FuturEd" ? (
+                          <Rocket className="w-8 h-8 text-white" />
+                        ) : (
+                          <span className="text-white font-bold text-xl">
+                            {sponsor.name.charAt(0)}
+                          </span>
+                        )}
                       </div>
                       <span className="text-foreground font-semibold text-sm text-center">
                         {sponsor.name}
