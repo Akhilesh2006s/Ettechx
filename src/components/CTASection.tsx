@@ -32,14 +32,14 @@ const CTASection = () => {
     try {
       // Send email notification
       await sendNewsletterEmail({ email });
-      
-      setIsSubscribed(true);
-      setEmail("");
-      
-      toast({
-        title: "Successfully subscribed!",
-        description: "You'll receive updates about Et Tech X events.",
-      });
+    
+    setIsSubscribed(true);
+    setEmail("");
+    
+    toast({
+      title: "Successfully subscribed!",
+      description: "You'll receive updates about Et Tech X events.",
+    });
     } catch (error) {
       console.error("Subscription error:", error);
       toast({
@@ -106,15 +106,15 @@ const CTASection = () => {
               className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-10"
             >
               <Link to="/register" className="w-full sm:w-auto">
-                <Button variant="hero" size="xl" className="group w-full sm:w-auto">
-                  Register Now
-                  <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-                </Button>
+              <Button variant="hero" size="xl" className="group w-full sm:w-auto">
+                Register Now
+                <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+              </Button>
               </Link>
               <Link to="/exhibitor" className="w-full sm:w-auto">
-                <Button variant="accent" size="xl" className="w-full sm:w-auto">
-                  Become an Exhibitor
-                </Button>
+              <Button variant="accent" size="xl" className="w-full sm:w-auto">
+                Become an Exhibitor
+              </Button>
               </Link>
             </motion.div>
 

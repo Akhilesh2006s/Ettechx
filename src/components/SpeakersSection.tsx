@@ -182,7 +182,7 @@ const SpeakersSection = () => {
         >
           <Link to="/speakers">
             <Button variant="outline" size="lg" className="px-8">
-              View All Speakers
+            View All Speakers
             </Button>
           </Link>
         </motion.div>

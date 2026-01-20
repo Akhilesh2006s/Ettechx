@@ -163,15 +163,15 @@ const HeroSection = () => {
             className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-12"
           >
             <Link to="/register">
-              <Button variant="hero" size="xl" className="group">
-                Register Now
-                <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-              </Button>
+            <Button variant="hero" size="xl" className="group">
+              Register Now
+              <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+            </Button>
             </Link>
             <Link to="/exhibitor">
-              <Button variant="heroOutline" size="xl">
+            <Button variant="heroOutline" size="xl">
                 Become an Exhibitor
-              </Button>
+            </Button>
             </Link>
           </motion.div>
 

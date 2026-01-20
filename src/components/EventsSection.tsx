@@ -1,10 +1,6 @@
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { Award, Mic2, Wrench, Store } from "lucide-react";
-import awardsImage from "@/assets/events/awards-image.jpg";
-import conferenceImage from "@/assets/events/conference-image.jpg";
-import workshopsImage from "@/assets/events/workshops-image.jpg";
-import expoImage from "@/assets/events/expo-image.jpg";
 
 const EventsSection = () => {
   const events = [
@@ -16,7 +12,6 @@ const EventsSection = () => {
       iconBg: "bg-gradient-to-br from-secondary to-gold",
       textColor: "text-secondary",
       hoverBorder: "hover:border-secondary/40",
-      image: awardsImage,
       link: "/awards",
     },
     {
@@ -27,7 +22,6 @@ const EventsSection = () => {
       iconBg: "bg-gradient-to-br from-primary to-electric",
       textColor: "text-primary",
       hoverBorder: "hover:border-primary/40",
-      image: conferenceImage,
       link: "/conference",
     },
     {
@@ -38,7 +32,6 @@ const EventsSection = () => {
       iconBg: "bg-gradient-to-br from-accent to-teal",
       textColor: "text-accent",
       hoverBorder: "hover:border-accent/40",
-      image: workshopsImage,
       link: "/workshops",
     },
     {
@@ -49,7 +42,6 @@ const EventsSection = () => {
       iconBg: "bg-gradient-to-br from-gold to-secondary",
       textColor: "text-gold",
       hoverBorder: "hover:border-gold/40",
-      image: expoImage,
       link: "/expo",
     },
   ];
@@ -118,12 +110,11 @@ const EventsSection = () => {
             >
               <Link to={event.link} className="block h-full">
                 <div className={`h-full rounded-2xl bg-card border border-border ${event.hoverBorder} transition-all duration-500 shadow-card overflow-hidden cursor-pointer`}>
-                {/* Colored background accent */}
-                <div className={`absolute top-0 right-0 w-40 h-40 ${event.bgColor} rounded-bl-[120px] rounded-tr-2xl opacity-60`} />
-                
-                <div className="flex flex-col sm:flex-row h-full">
-                  {/* Content Side */}
-                  <div className="p-6 sm:p-8 flex-1 relative z-10">
+                  {/* Colored background accent */}
+                  <div className={`absolute top-0 right-0 w-40 h-40 ${event.bgColor} rounded-bl-[120px] rounded-tr-2xl opacity-60`} />
+
+                  {/* Content */}
+                  <div className="p-6 sm:p-8 relative z-10">
                     {/* Icon */}
                     <div
                       className={`w-14 h-14 rounded-xl ${event.iconBg} flex items-center justify-center mb-5 group-hover:scale-110 transition-transform duration-300 shadow-lg`}
@@ -131,7 +122,6 @@ const EventsSection = () => {
                       <event.icon className="w-7 h-7 text-white" />
                     </div>
 
-                    {/* Content */}
                     <h3 className={`font-display text-2xl md:text-3xl font-bold mb-3 ${event.textColor} transition-colors duration-300`}>
                       {event.title}
                     </h3>
@@ -139,20 +129,7 @@ const EventsSection = () => {
                       {event.description}
                     </p>
                   </div>
-
-                  {/* Image Side */}
-                  <div className="relative w-full sm:w-48 md:w-56 h-40 sm:h-auto flex-shrink-0 overflow-hidden">
-                    <img
-                      src={event.image}
-                      alt={`${event.title} - EdTech X event`}
-                      className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-                      loading="lazy"
-                    />
-                    {/* Gradient overlay matching theme color */}
-                    <div className={`absolute inset-0 bg-gradient-to-r from-card via-transparent to-transparent sm:from-card sm:via-card/50 sm:to-transparent opacity-60`} />
-                  </div>
                 </div>
-              </div>
               </Link>
             </motion.div>
           ))}

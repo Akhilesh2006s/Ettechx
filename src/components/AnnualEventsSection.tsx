@@ -71,7 +71,7 @@ const AnnualEventsSection = () => {
               className="group relative"
             >
               <Link to={event.link} className="block h-full">
-                {/* Card */}
+              {/* Card */}
                 <div className="relative h-full p-8 md:p-10 rounded-3xl bg-gradient-card border border-border overflow-hidden shadow-card cursor-pointer">
                 {/* Gradient accent bar */}
                 <div className={`absolute top-0 left-0 w-full h-1.5 bg-gradient-to-r ${event.gradient}`} />

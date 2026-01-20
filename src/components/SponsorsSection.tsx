@@ -1,30 +1,17 @@
 import { motion } from "framer-motion";
-import React from "react";
-import {
-  Carousel,
-  CarouselContent,
-  CarouselItem,
-} from "@/components/ui/carousel";
-import Autoplay from "embla-carousel-autoplay";
-import { useRef } from "react";
-import { Rocket } from "lucide-react";
 
 const sponsors = [
-  { name: "TechCorp", color: "from-blue-500 to-cyan-500", icon: null },
-  { name: "EduLearn", color: "from-purple-500 to-pink-500", icon: null },
-  { name: "InnovateTech", color: "from-orange-500 to-amber-500", icon: null },
-  { name: "FuturEd", color: "from-teal-500 to-emerald-500", icon: Rocket },
-  { name: "SmartClass", color: "from-rose-500 to-red-500", icon: null },
-  { name: "LearnHub", color: "from-indigo-500 to-violet-500", icon: null },
-  { name: "EduTech Pro", color: "from-green-500 to-lime-500", icon: null },
-  { name: "CloudLearn", color: "from-sky-500 to-blue-500", icon: null },
+  { name: "TechCorp", color: "from-blue-500 to-cyan-500" },
+  { name: "EduLearn", color: "from-purple-500 to-pink-500" },
+  { name: "InnovateTech", color: "from-orange-500 to-amber-500" },
+  { name: "FuturEd", color: "from-teal-500 to-emerald-500" },
+  { name: "SmartClass", color: "from-rose-500 to-red-500" },
+  { name: "LearnHub", color: "from-indigo-500 to-violet-500" },
+  { name: "EduTech Pro", color: "from-green-500 to-lime-500" },
+  { name: "CloudLearn", color: "from-sky-500 to-blue-500" },
 ];
 
 const SponsorsSection = () => {
-  const plugin = useRef(
-    Autoplay({ delay: 2000, stopOnInteraction: false })
-  );
-
   return (
     <section className="py-20 bg-background">
       <div className="container mx-auto px-4">
@@ -52,45 +39,28 @@ const SponsorsSection = () => {
           transition={{ duration: 0.8, delay: 0.2 }}
           viewport={{ once: true }}
         >
-          <Carousel
-            plugins={[plugin.current]}
-            opts={{
-              align: "start",
-              loop: true,
-            }}
-            className="w-full"
-          >
-            <CarouselContent className="-ml-4">
-              {sponsors.map((sponsor, index) => (
-                <CarouselItem
-                  key={index}
-                  className="pl-4 basis-1/2 md:basis-1/3 lg:basis-1/4"
-                >
-                  <motion.div
-                    whileHover={{ scale: 1.05 }}
-                    className="p-6 rounded-2xl bg-card border border-border hover:shadow-lg transition-all duration-300"
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            {sponsors.map((sponsor) => (
+              <motion.div
+                key={sponsor.name}
+                whileHover={{ scale: 1.05, y: -4 }}
+                className="p-6 rounded-2xl bg-card border border-border hover:shadow-lg transition-all duration-300"
+              >
+                <div className="flex flex-col items-center justify-center h-24">
+                  <div
+                    className={`w-16 h-16 rounded-xl bg-gradient-to-br ${sponsor.color} flex items-center justify-center mb-3`}
                   >
-                    <div className="flex flex-col items-center justify-center h-24">
-                      <div
-                        className={`w-16 h-16 rounded-xl bg-gradient-to-br ${sponsor.color} flex items-center justify-center mb-3`}
-                      >
-                        {sponsor.name === "FuturEd" ? (
-                          <Rocket className="w-8 h-8 text-white" />
-                        ) : (
-                          <span className="text-white font-bold text-xl">
-                            {sponsor.name.charAt(0)}
-                          </span>
-                        )}
-                      </div>
-                      <span className="text-foreground font-semibold text-sm text-center">
-                        {sponsor.name}
-                      </span>
-                    </div>
-                  </motion.div>
-                </CarouselItem>
-              ))}
-            </CarouselContent>
-          </Carousel>
+                    <span className="text-white font-bold text-xl">
+                      {sponsor.name.charAt(0)}
+                    </span>
+                  </div>
+                  <span className="text-foreground font-semibold text-sm text-center">
+                    {sponsor.name}
+                  </span>
+                </div>
+              </motion.div>
+            ))}
+          </div>
         </motion.div>
 
         {/* Tier Labels */}

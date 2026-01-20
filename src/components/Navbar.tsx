@@ -18,8 +18,10 @@ const Navbar = () => {
 
   const navLinks = [
     { name: "About", href: "#about" },
-    { name: "Events", href: "#events" },
-    { name: "Schedule", href: "#schedule" },
+    // 'Events' should point to the annual calendar section (Two Events, Endless Possibilities)
+    { name: "Events", href: "#schedule" },
+    // 'Key Offering' should point to the Four Pillars of Excellence section
+    { name: "Key Offering", href: "#events" },
     { name: "Contact", href: "#contact" },
   ];
 
@@ -59,14 +61,14 @@ const Navbar = () => {
         {/* CTA Buttons */}
         <div className="hidden md:flex items-center gap-4">
           <a href="tel:+919876543210">
-            <Button variant="heroOutline" size="default">
-              Call Us
-            </Button>
+          <Button variant="heroOutline" size="default">
+            Call Us
+          </Button>
           </a>
           <Link to="/register">
-            <Button variant="hero" size="default">
-              Register Now
-            </Button>
+          <Button variant="hero" size="default">
+            Register Now
+          </Button>
           </Link>
         </div>
 
@@ -101,14 +103,14 @@ const Navbar = () => {
               ))}
               <div className="flex flex-col gap-3 pt-4 border-t border-border">
                 <a href="tel:+919876543210" className="w-full">
-                  <Button variant="heroOutline" size="lg" className="w-full">
-                    Call Us
-                  </Button>
+                <Button variant="heroOutline" size="lg" className="w-full">
+                  Call Us
+                </Button>
                 </a>
                 <Link to="/register" className="w-full">
-                  <Button variant="hero" size="lg" className="w-full">
-                    Register Now
-                  </Button>
+                <Button variant="hero" size="lg" className="w-full">
+                  Register Now
+                </Button>
                 </Link>
               </div>
             </div>
