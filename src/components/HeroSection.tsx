@@ -4,7 +4,6 @@ import { Button } from "@/components/ui/button";
 import { ArrowRight, Calendar, MapPin, Users } from "lucide-react";
 import FloatingShapes from "./FloatingShapes";
 import SocialLinks from "./SocialLinks";
-import heroImage from "@/assets/hero-image.jpg";
 
 const HeroSection = () => {
   const stats = [
@@ -63,7 +62,7 @@ const HeroSection = () => {
             {/* Main Image Container */}
             <div className="relative rounded-2xl md:rounded-3xl overflow-hidden shadow-2xl border-2 border-border/50">
               <img
-                src={heroImage}
+                src="/Hero%20.jpeg"
                 alt="EdTech innovation showcasing students and professionals using advanced learning technology with VR headsets and digital displays"
                 className="w-full h-auto object-cover max-h-[280px] sm:max-h-[350px] md:max-h-[450px] lg:max-h-[500px]"
                 loading="eager"

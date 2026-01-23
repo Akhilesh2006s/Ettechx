@@ -17,13 +17,31 @@ const Navbar = () => {
   }, []);
 
   const navLinks = [
-    { name: "About", href: "#about" },
+    { name: "About", href: "#about", isRoute: false },
     // 'Events' should point to the annual calendar section (Two Events, Endless Possibilities)
-    { name: "Events", href: "#schedule" },
+    { name: "Events", href: "#schedule", isRoute: false },
     // 'Key Offering' should point to the Four Pillars of Excellence section
-    { name: "Key Offering", href: "#events" },
-    { name: "Contact", href: "#contact" },
+    { name: "Key Offering", href: "#events", isRoute: false },
+    { name: "Gallery", href: "#gallery", isRoute: false },
+    { name: "Contact", href: "#contact", isRoute: false },
   ];
+
+  const handleGalleryClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
+    e.preventDefault();
+    const currentPath = window.location.pathname;
+    
+    if (currentPath === "/") {
+      // If on homepage, scroll to gallery section
+      const gallerySection = document.getElementById("gallery");
+      if (gallerySection) {
+        gallerySection.scrollIntoView({ behavior: "smooth" });
+        setIsMobileMenuOpen(false);
+      }
+    } else {
+      // If on another page, navigate to homepage and scroll to gallery
+      window.location.href = "/#gallery";
+    }
+  };
 
   return (
     <motion.nav
@@ -36,26 +54,47 @@ const Navbar = () => {
     >
       <div className="container mx-auto px-4 flex items-center justify-between">
         {/* Logo */}
-        <a href="#" className="flex items-center gap-2 group">
+        <Link to="/" className="flex items-center gap-2 group">
           <img 
             src="/logo.png" 
             alt="Et Tech X Logo" 
             className="h-12 w-auto group-hover:scale-110 transition-transform duration-300"
           />
-        </a>
+        </Link>
 
         {/* Desktop Navigation */}
         <div className="hidden md:flex items-center gap-8">
-          {navLinks.map((link) => (
-            <a
-              key={link.name}
-              href={link.href}
-              className="text-muted-foreground hover:text-foreground transition-colors duration-300 font-medium relative group"
-            >
-              {link.name}
-              <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-primary group-hover:w-full transition-all duration-300" />
-            </a>
-          ))}
+          {navLinks.map((link) =>
+            link.name === "Gallery" ? (
+              <a
+                key={link.name}
+                href={link.href}
+                onClick={handleGalleryClick}
+                className="text-muted-foreground hover:text-foreground transition-colors duration-300 font-medium relative group"
+              >
+                {link.name}
+                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-primary group-hover:w-full transition-all duration-300" />
+              </a>
+            ) : link.isRoute ? (
+              <Link
+                key={link.name}
+                to={link.href}
+                className="text-muted-foreground hover:text-foreground transition-colors duration-300 font-medium relative group"
+              >
+                {link.name}
+                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-primary group-hover:w-full transition-all duration-300" />
+              </Link>
+            ) : (
+              <a
+                key={link.name}
+                href={link.href}
+                className="text-muted-foreground hover:text-foreground transition-colors duration-300 font-medium relative group"
+              >
+                {link.name}
+                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-primary group-hover:w-full transition-all duration-300" />
+              </a>
+            )
+          )}
         </div>
 
         {/* CTA Buttons */}
@@ -91,16 +130,39 @@ const Navbar = () => {
             className="md:hidden glass-strong border-t border-border mt-3"
           >
             <div className="container mx-auto px-4 py-6 flex flex-col gap-4">
-              {navLinks.map((link) => (
-                <a
-                  key={link.name}
-                  href={link.href}
-                  onClick={() => setIsMobileMenuOpen(false)}
-                  className="text-muted-foreground hover:text-foreground transition-colors duration-300 font-medium py-2"
-                >
-                  {link.name}
-                </a>
-              ))}
+              {navLinks.map((link) =>
+                link.name === "Gallery" ? (
+                  <a
+                    key={link.name}
+                    href={link.href}
+                    onClick={(e) => {
+                      handleGalleryClick(e);
+                      setIsMobileMenuOpen(false);
+                    }}
+                    className="text-muted-foreground hover:text-foreground transition-colors duration-300 font-medium py-2"
+                  >
+                    {link.name}
+                  </a>
+                ) : link.isRoute ? (
+                  <Link
+                    key={link.name}
+                    to={link.href}
+                    onClick={() => setIsMobileMenuOpen(false)}
+                    className="text-muted-foreground hover:text-foreground transition-colors duration-300 font-medium py-2"
+                  >
+                    {link.name}
+                  </Link>
+                ) : (
+                  <a
+                    key={link.name}
+                    href={link.href}
+                    onClick={() => setIsMobileMenuOpen(false)}
+                    className="text-muted-foreground hover:text-foreground transition-colors duration-300 font-medium py-2"
+                  >
+                    {link.name}
+                  </a>
+                )
+              )}
               <div className="flex flex-col gap-3 pt-4 border-t border-border">
                 <a href="tel:+919876543210" className="w-full">
                 <Button variant="heroOutline" size="lg" className="w-full">
