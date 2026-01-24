@@ -25,7 +25,7 @@ const partners: PartnerLogo[] = [
   { name: "Ryan Edunation", path: "/logos/ryan-group-logo_1628517995 - Sachin Gupta.png", type: "image", tier: "k12" },
   { name: "Possibility Edutech Pvt Ltd", path: "/logos/PrinceBoard - Pallav Singh.png", type: "image", tier: "k12" },
   { name: "Altus Learning Pvt Ltd", path: "/logos/Asliprep logo.png", type: "image", tier: "k12" },
-  { name: "jubilee hills public school", path: "/logos/JHPS AD LOGO white - Sachin Gupta.pdf", type: "pdf", tier: "k12" },
+  { name: "jubilee hills public school", path: "/logos/JHPS AD LOGO white - Sachin Gupta.png", type: "image", tier: "k12" },
   
   // University Partners
   { name: "Amrita Vishwa Vidyapeetham", path: "/logos/abhi creations logo - Abhi Creations.jpeg", type: "image", tier: "university" },
@@ -120,7 +120,7 @@ const SponsorsSection = () => {
                   <motion.div
                     key={`gold-${partner.name}-${index}`}
                     whileHover={{ scale: 1.05, y: -4 }}
-                    className="aspect-square"
+                    className="h-40"
                   >
                     {renderLogo(partner)}
                   </motion.div>
@@ -145,7 +145,7 @@ const SponsorsSection = () => {
                   <motion.div
                     key={`silver-${partner.name}-${index}`}
                     whileHover={{ scale: 1.05, y: -4 }}
-                    className="aspect-square"
+                    className="h-40"
                   >
                     {renderLogo(partner)}
                   </motion.div>
@@ -170,7 +170,7 @@ const SponsorsSection = () => {
                   <motion.div
                     key={`k12-${partner.name}-${index}`}
                     whileHover={{ scale: 1.05, y: -4 }}
-                    className="aspect-square"
+                    className="h-40"
                   >
                     {renderLogo(partner)}
                   </motion.div>
@@ -195,7 +195,7 @@ const SponsorsSection = () => {
                   <motion.div
                     key={`university-${partner.name}-${index}`}
                     whileHover={{ scale: 1.05, y: -4 }}
-                    className="aspect-square"
+                    className="h-40"
                   >
                     {renderLogo(partner)}
                   </motion.div>

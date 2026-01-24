@@ -91,7 +91,7 @@ const Gallery = () => {
               </p>
             </div>
 
-            {/* Gallery Grid */}
+            {/* Gallery Content */}
             {galleryItems.length === 0 ? (
               <motion.div
                 initial={{ opacity: 0 }}
@@ -109,89 +109,153 @@ const Gallery = () => {
                 </p>
               </motion.div>
             ) : (
-              <motion.div
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ duration: 0.6, delay: 0.2 }}
-                className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6"
-              >
-                {galleryItems.map((item, index) => (
-                  <motion.div
-                    key={item.id}
-                    initial={{ opacity: 0, scale: 0.9 }}
-                    animate={{ opacity: 1, scale: 1 }}
-                    transition={{ duration: 0.4, delay: index * 0.05 }}
-                    whileHover={{ scale: 1.05, y: -8 }}
-                    className="group relative cursor-pointer rounded-2xl overflow-hidden border border-border bg-card shadow-card flex flex-col"
-                    onClick={() => setSelectedItem(item)}
-                  >
-                    {/* Delete Button - Only visible to admins */}
-                    {isAuthenticated && (
-                      <button
-                        onClick={(e) => handleDelete(item.id, e)}
-                        className="absolute top-3 right-3 z-20 w-8 h-8 rounded-full bg-destructive text-destructive-foreground flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity hover:scale-110 shadow-lg"
-                        title="Delete item"
-                      >
-                        <Trash2 className="w-4 h-4" />
-                      </button>
-                    )}
-
-                    {item.type === "image" ? (
-                      <div className="relative w-full aspect-square overflow-hidden">
-                        <img
-                          src={item.url}
-                          alt={item.photoHeading || "Gallery"}
-                          className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-                          onError={(e) => {
-                            (e.target as HTMLImageElement).src = "/placeholder.svg";
-                          }}
-                        />
-                        <div className="absolute inset-0 bg-gradient-to-t from-foreground/80 via-foreground/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                        <div className="absolute bottom-0 left-0 right-0 p-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                          <div className="flex items-center gap-2 text-white mb-2">
-                            <ImageIcon className="w-4 h-4" />
-                            <span className="text-sm font-medium">Photo</span>
-                          </div>
-                        </div>
-                      </div>
-                    ) : (
-                      <div className="relative w-full aspect-square overflow-hidden bg-muted">
-                        <img
-                          src={item.thumbnail || "/placeholder.svg"}
-                          alt={item.videoHeading || "Video thumbnail"}
-                          className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-                        />
-                        <div className="absolute inset-0 bg-gradient-to-t from-foreground/80 via-foreground/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                        <div className="absolute inset-0 flex items-center justify-center bg-black/20 group-hover:bg-black/40 transition-colors duration-300">
-                          <div className="w-16 h-16 rounded-full bg-white/20 backdrop-blur-sm flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                            <Video className="w-8 h-8 text-white" />
-                          </div>
-                        </div>
-                        <div className="absolute bottom-0 left-0 right-0 p-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                          <div className="flex items-center gap-2 text-white mb-2">
-                            <Video className="w-4 h-4" />
-                            <span className="text-sm font-medium">Video</span>
-                          </div>
-                        </div>
-                      </div>
-                    )}
-
-                    {/* Content Section */}
-                    <div className="p-4 bg-card">
-                      <h3 className="font-display text-lg font-bold text-foreground mb-2 line-clamp-1">
-                        {item.type === "image" 
-                          ? (item.photoHeading || "Photo") 
-                          : (item.videoHeading || "Video")}
-                      </h3>
-                      {item.description && (
-                        <p className="text-sm text-muted-foreground line-clamp-2">
-                          {item.description}
-                        </p>
-                      )}
+              <div className="space-y-12">
+                {/* Photos Row */}
+                {galleryItems.some((item) => item.type === "image") && (
+                  <div>
+                    <div className="flex items-baseline justify-between mb-4">
+                      <h2 className="font-display text-2xl font-bold text-foreground">
+                        Photos
+                      </h2>
                     </div>
-                  </motion.div>
-                ))}
-              </motion.div>
+                    <motion.div
+                      initial={{ opacity: 0, y: 20 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      transition={{ duration: 0.6, delay: 0.2 }}
+                      className="grid grid-cols-1 md:grid-cols-2 gap-6"
+                    >
+                      {galleryItems
+                        .filter((item) => item.type === "image")
+                        .map((item, index) => (
+                          <motion.div
+                            key={item.id}
+                            initial={{ opacity: 0, scale: 0.9 }}
+                            animate={{ opacity: 1, scale: 1 }}
+                            transition={{ duration: 0.4, delay: index * 0.05 }}
+                            whileHover={{ scale: 1.03, y: -6 }}
+                            className="group relative cursor-pointer rounded-2xl overflow-hidden border border-border bg-card shadow-card flex flex-col"
+                            onClick={() => setSelectedItem(item)}
+                          >
+                            {/* Delete Button - Only visible to admins */}
+                            {isAuthenticated && (
+                              <button
+                                onClick={(e) => handleDelete(item.id, e)}
+                                className="absolute top-3 right-3 z-20 w-8 h-8 rounded-full bg-destructive text-destructive-foreground flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity hover:scale-110 shadow-lg"
+                                title="Delete item"
+                              >
+                                <Trash2 className="w-4 h-4" />
+                              </button>
+                            )}
+
+                            <div className="relative w-full aspect-video overflow-hidden">
+                              <img
+                                src={item.url}
+                                alt={item.photoHeading || "Gallery"}
+                                className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                                onError={(e) => {
+                                  (e.target as HTMLImageElement).src = "/placeholder.svg";
+                                }}
+                              />
+                              <div className="absolute inset-0 bg-gradient-to-t from-foreground/80 via-foreground/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                              <div className="absolute bottom-0 left-0 right-0 p-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                <div className="flex items-center gap-2 text-white mb-2">
+                                  <ImageIcon className="w-4 h-4" />
+                                  <span className="text-sm font-medium">Photo</span>
+                                </div>
+                              </div>
+                            </div>
+
+                            {/* Content Section */}
+                            <div className="p-4 bg-card">
+                              <h3 className="font-display text-lg font-bold text-foreground mb-2 line-clamp-1">
+                                {item.photoHeading || "Photo"}
+                              </h3>
+                              {item.description && (
+                                <p className="text-sm text-muted-foreground line-clamp-2">
+                                  {item.description}
+                                </p>
+                              )}
+                            </div>
+                          </motion.div>
+                        ))}
+                    </motion.div>
+                  </div>
+                )}
+
+                {/* Videos Row */}
+                {galleryItems.some((item) => item.type === "video") && (
+                  <div>
+                    <div className="flex items-baseline justify-between mb-4">
+                      <h2 className="font-display text-2xl font-bold text-foreground">
+                        Videos
+                      </h2>
+                    </div>
+                    <motion.div
+                      initial={{ opacity: 0, y: 20 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      transition={{ duration: 0.6, delay: 0.3 }}
+                      className="grid grid-cols-1 md:grid-cols-2 gap-6"
+                    >
+                      {galleryItems
+                        .filter((item) => item.type === "video")
+                        .map((item, index) => (
+                          <motion.div
+                            key={item.id}
+                            initial={{ opacity: 0, scale: 0.9 }}
+                            animate={{ opacity: 1, scale: 1 }}
+                            transition={{ duration: 0.4, delay: index * 0.05 }}
+                            whileHover={{ scale: 1.03, y: -6 }}
+                            className="group relative cursor-pointer rounded-2xl overflow-hidden border border-border bg-card shadow-card flex flex-col"
+                            onClick={() => setSelectedItem(item)}
+                          >
+                            {/* Delete Button - Only visible to admins */}
+                            {isAuthenticated && (
+                              <button
+                                onClick={(e) => handleDelete(item.id, e)}
+                                className="absolute top-3 right-3 z-20 w-8 h-8 rounded-full bg-destructive text-destructive-foreground flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity hover:scale-110 shadow-lg"
+                                title="Delete item"
+                              >
+                                <Trash2 className="w-4 h-4" />
+                              </button>
+                            )}
+
+                            <div className="relative w-full aspect-video overflow-hidden bg-muted">
+                              <img
+                                src={item.thumbnail || "/placeholder.svg"}
+                                alt={item.videoHeading || "Video thumbnail"}
+                                className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                              />
+                              <div className="absolute inset-0 bg-gradient-to-t from-foreground/80 via-foreground/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                              <div className="absolute inset-0 flex items-center justify-center bg-black/20 group-hover:bg-black/40 transition-colors duration-300">
+                                <div className="w-16 h-16 rounded-full bg-white/20 backdrop-blur-sm flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                                  <Video className="w-8 h-8 text-white" />
+                                </div>
+                              </div>
+                              <div className="absolute bottom-0 left-0 right-0 p-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                <div className="flex items-center gap-2 text-white mb-2">
+                                  <Video className="w-4 h-4" />
+                                  <span className="text-sm font-medium">Video</span>
+                                </div>
+                              </div>
+                            </div>
+
+                            {/* Content Section */}
+                            <div className="p-4 bg-card">
+                              <h3 className="font-display text-lg font-bold text-foreground mb-2 line-clamp-1">
+                                {item.videoHeading || "Video"}
+                              </h3>
+                              {item.description && (
+                                <p className="text-sm text-muted-foreground line-clamp-2">
+                                  {item.description}
+                                </p>
+                              )}
+                            </div>
+                          </motion.div>
+                        ))}
+                    </motion.div>
+                  </div>
+                )}
+              </div>
             )}
           </motion.div>
         </div>

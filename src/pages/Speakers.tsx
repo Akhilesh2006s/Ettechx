@@ -5,69 +5,13 @@ import { Button } from "@/components/ui/button";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { ArrowLeft, Linkedin, Twitter } from "lucide-react";
-import speaker1 from "@/assets/speakers/speaker-1.jpg";
-import speaker2 from "@/assets/speakers/speaker-2.jpg";
-import speaker3 from "@/assets/speakers/speaker-3.jpg";
-import speaker4 from "@/assets/speakers/speaker-4.jpg";
-import speaker5 from "@/assets/speakers/speaker-5.jpg";
-import speaker6 from "@/assets/speakers/speaker-6.jpg";
+import { allSpeakers } from "@/lib/speakersData";
 
 const Speakers = () => {
   useEffect(() => {
     document.title = "All Speakers - Et Tech X";
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+    window.scrollTo({ top: 0, behavior: "smooth" });
   }, []);
-
-  const speakers = [
-    {
-      name: "Rajesh Sharma",
-      title: "CEO, EduNext Technologies",
-      image: speaker1,
-      accentColor: "from-primary to-deep-purple",
-      bgAccent: "bg-primary/10",
-      borderAccent: "border-primary/30",
-    },
-    {
-      name: "Priya Menon",
-      title: "Chief Learning Officer, TechEd India",
-      image: speaker2,
-      accentColor: "from-secondary to-gold",
-      bgAccent: "bg-secondary/10",
-      borderAccent: "border-secondary/30",
-    },
-    {
-      name: "Vikram Patel",
-      title: "Director, National Education Policy",
-      image: speaker3,
-      accentColor: "from-accent to-teal",
-      bgAccent: "bg-accent/10",
-      borderAccent: "border-accent/30",
-    },
-    {
-      name: "Ananya Krishnan",
-      title: "Founder, LearnSmart AI",
-      image: speaker4,
-      accentColor: "from-deep-purple to-primary",
-      bgAccent: "bg-deep-purple/10",
-      borderAccent: "border-deep-purple/30",
-    },
-    {
-      name: "Dr. Suresh Nair",
-      title: "Innovation Head, IIT Delhi",
-      image: speaker5,
-      accentColor: "from-gold to-secondary",
-      bgAccent: "bg-gold/10",
-      borderAccent: "border-gold/30",
-    },
-    {
-      name: "Dr. Kavitha Rao",
-      title: "Education Policy Advisor, MHRD",
-      image: speaker6,
-      accentColor: "from-teal to-accent",
-      bgAccent: "bg-teal/10",
-      borderAccent: "border-teal/30",
-    },
-  ];
 
   return (
     <div className="min-h-screen bg-background overflow-x-hidden">
@@ -116,26 +60,30 @@ const Speakers = () => {
               </p>
             </motion.div>
 
-            {/* Speakers Grid */}
+            {/* All Speakers Grid */}
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 0.8, delay: 0.2 }}
               className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8"
             >
-              {speakers.map((speaker, index) => (
+              {allSpeakers.map((speaker, index) => (
                 <motion.div
-                  key={speaker.name}
+                  key={`${speaker.name}-${index}`}
                   initial={{ opacity: 0, y: 30 }}
                   animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.5, delay: 0.3 + index * 0.1 }}
+                  transition={{ duration: 0.5, delay: 0.3 + index * 0.05 }}
                   whileHover={{ y: -8 }}
                   className="group relative"
                 >
-                  <div className={`relative bg-card rounded-2xl border ${speaker.borderAccent} overflow-hidden shadow-card transition-all duration-500 hover:shadow-elevated`}>
+                  <div
+                    className={`relative bg-card rounded-2xl border ${speaker.borderAccent} overflow-hidden shadow-card transition-all duration-500 hover:shadow-elevated`}
+                  >
                     {/* Colorful accent background */}
-                    <div className={`absolute top-0 left-0 right-0 h-32 bg-gradient-to-br ${speaker.accentColor} opacity-90`} />
-                    
+                    <div
+                      className={`absolute top-0 left-0 right-0 h-32 bg-gradient-to-br ${speaker.accentColor} opacity-90`}
+                    />
+
                     {/* Decorative shapes */}
                     <div className="absolute top-4 right-4 w-16 h-16 rounded-full bg-white/10 blur-xl" />
                     <div className="absolute top-16 left-4 w-8 h-8 rounded-full bg-white/10 blur-lg" />
@@ -144,7 +92,9 @@ const Speakers = () => {
                     <div className="relative pt-16 pb-6 px-6">
                       {/* Profile Image */}
                       <div className="relative w-28 h-28 mx-auto mb-5">
-                        <div className={`absolute inset-0 rounded-full bg-gradient-to-br ${speaker.accentColor} p-1`}>
+                        <div
+                          className={`absolute inset-0 rounded-full bg-gradient-to-br ${speaker.accentColor} p-1`}
+                        >
                           <div className="w-full h-full rounded-full overflow-hidden bg-card">
                             <img
                               src={speaker.image}
@@ -167,10 +117,14 @@ const Speakers = () => {
 
                         {/* Social Links */}
                         <div className="flex justify-center gap-3">
-                          <button className={`w-9 h-9 rounded-full ${speaker.bgAccent} flex items-center justify-center transition-all duration-300 hover:scale-110`}>
+                          <button
+                            className={`w-9 h-9 rounded-full ${speaker.bgAccent} flex items-center justify-center transition-all duration-300 hover:scale-110`}
+                          >
                             <Linkedin className="w-4 h-4 text-foreground/70" />
                           </button>
-                          <button className={`w-9 h-9 rounded-full ${speaker.bgAccent} flex items-center justify-center transition-all duration-300 hover:scale-110`}>
+                          <button
+                            className={`w-9 h-9 rounded-full ${speaker.bgAccent} flex items-center justify-center transition-all duration-300 hover:scale-110`}
+                          >
                             <Twitter className="w-4 h-4 text-foreground/70" />
                           </button>
                         </div>

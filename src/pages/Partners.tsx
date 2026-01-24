@@ -252,7 +252,7 @@ const Partners = () => {
                           animate={{ opacity: 1, scale: 1 }}
                           transition={{ duration: 0.3, delay: index * 0.1 }}
                           whileHover={{ scale: 1.05, y: -4 }}
-                          className="aspect-square"
+                          className="h-40"
                         >
                           {renderLogo(logo)}
                         </motion.div>
@@ -281,7 +281,7 @@ const Partners = () => {
                           animate={{ opacity: 1, scale: 1 }}
                           transition={{ duration: 0.3, delay: index * 0.1 }}
                           whileHover={{ scale: 1.05, y: -4 }}
-                          className="aspect-square"
+                          className="h-40"
                         >
                           {renderLogo(logo)}
                         </motion.div>
@@ -310,7 +310,7 @@ const Partners = () => {
                           animate={{ opacity: 1, scale: 1 }}
                           transition={{ duration: 0.3, delay: index * 0.1 }}
                           whileHover={{ scale: 1.05, y: -4 }}
-                          className="aspect-square"
+                          className="h-40"
                         >
                           {renderLogo(logo)}
                         </motion.div>
@@ -339,7 +339,7 @@ const Partners = () => {
                           animate={{ opacity: 1, scale: 1 }}
                           transition={{ duration: 0.3, delay: index * 0.1 }}
                           whileHover={{ scale: 1.05, y: -4 }}
-                          className="aspect-square"
+                          className="h-40"
                         >
                           {renderLogo(logo)}
                         </motion.div>
@@ -373,7 +373,7 @@ const Partners = () => {
                         animate={{ opacity: 1, scale: 1 }}
                         transition={{ duration: 0.3, delay: index * 0.02 }}
                         whileHover={{ scale: 1.05, y: -4 }}
-                        className="aspect-square"
+                        className="h-32"
                       >
                         {renderLogo(logo)}
                       </motion.div>

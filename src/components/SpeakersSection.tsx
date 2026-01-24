@@ -2,64 +2,7 @@ import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Linkedin, Twitter } from "lucide-react";
-import speaker1 from "@/assets/speakers/speaker-1.jpg";
-import speaker2 from "@/assets/speakers/speaker-2.jpg";
-import speaker3 from "@/assets/speakers/speaker-3.jpg";
-import speaker4 from "@/assets/speakers/speaker-4.jpg";
-import speaker5 from "@/assets/speakers/speaker-5.jpg";
-import speaker6 from "@/assets/speakers/speaker-6.jpg";
-
-const SpeakersSection = () => {
-  const speakers = [
-    {
-      name: "Rajesh Sharma",
-      title: "CEO, EduNext Technologies",
-      image: speaker1,
-      accentColor: "from-primary to-deep-purple",
-      bgAccent: "bg-primary/10",
-      borderAccent: "border-primary/30",
-    },
-    {
-      name: "Priya Menon",
-      title: "Chief Learning Officer, TechEd India",
-      image: speaker2,
-      accentColor: "from-secondary to-gold",
-      bgAccent: "bg-secondary/10",
-      borderAccent: "border-secondary/30",
-    },
-    {
-      name: "Vikram Patel",
-      title: "Director, National Education Policy",
-      image: speaker3,
-      accentColor: "from-accent to-teal",
-      bgAccent: "bg-accent/10",
-      borderAccent: "border-accent/30",
-    },
-    {
-      name: "Ananya Krishnan",
-      title: "Founder, LearnSmart AI",
-      image: speaker4,
-      accentColor: "from-deep-purple to-primary",
-      bgAccent: "bg-deep-purple/10",
-      borderAccent: "border-deep-purple/30",
-    },
-    {
-      name: "Dr. Suresh Nair",
-      title: "Innovation Head, IIT Delhi",
-      image: speaker5,
-      accentColor: "from-gold to-secondary",
-      bgAccent: "bg-gold/10",
-      borderAccent: "border-gold/30",
-    },
-    {
-      name: "Dr. Kavitha Rao",
-      title: "Education Policy Advisor, MHRD",
-      image: speaker6,
-      accentColor: "from-teal to-accent",
-      bgAccent: "bg-teal/10",
-      borderAccent: "border-teal/30",
-    },
-  ];
+import { speakerGroups } from "@/lib/speakersData";
 
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -80,6 +23,7 @@ const SpeakersSection = () => {
     },
   };
 
+const SpeakersSection = () => {
   return (
     <section id="speakers" className="py-24 relative overflow-hidden">
       {/* Background gradients */}
@@ -108,69 +52,95 @@ const SpeakersSection = () => {
           </p>
         </motion.div>
 
-        {/* Speakers Grid */}
-        <motion.div
-          variants={containerVariants}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true }}
-          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8"
-        >
-          {speakers.map((speaker) => (
-            <motion.div
-              key={speaker.name}
-              variants={itemVariants}
-              whileHover={{ y: -8 }}
-              className="group relative"
-            >
-              <div className={`relative bg-card rounded-2xl border ${speaker.borderAccent} overflow-hidden shadow-card transition-all duration-500 hover:shadow-elevated`}>
-                {/* Colorful accent background */}
-                <div className={`absolute top-0 left-0 right-0 h-32 bg-gradient-to-br ${speaker.accentColor} opacity-90`} />
-                
-                {/* Decorative shapes */}
-                <div className="absolute top-4 right-4 w-16 h-16 rounded-full bg-white/10 blur-xl" />
-                <div className="absolute top-16 left-4 w-8 h-8 rounded-full bg-white/10 blur-lg" />
+        {/* Speakers Groups */}
+        <div className="space-y-16">
+          {speakerGroups.map((group) => (
+            <div key={group.id}>
+              <motion.h3
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5 }}
+                className="text-2xl md:text-3xl font-display font-semibold text-foreground mb-6 text-left"
+              >
+                {group.label}
+              </motion.h3>
 
-                {/* Content */}
-                <div className="relative pt-16 pb-6 px-6">
-                  {/* Profile Image */}
-                  <div className="relative w-28 h-28 mx-auto mb-5">
-                    <div className={`absolute inset-0 rounded-full bg-gradient-to-br ${speaker.accentColor} p-1`}>
-                      <div className="w-full h-full rounded-full overflow-hidden bg-card">
-                        <img
-                          src={speaker.image}
-                          alt={speaker.name}
-                          className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-                          loading="lazy"
-                        />
+              <motion.div
+                variants={containerVariants}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true, amount: 0.2 }}
+                className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8"
+              >
+                {group.speakers.map((speaker) => (
+                  <motion.div
+                    key={speaker.name}
+                    variants={itemVariants}
+                    whileHover={{ y: -8 }}
+                    className="group relative"
+                  >
+                    <div
+                      className={`relative bg-card rounded-2xl border ${speaker.borderAccent} overflow-hidden shadow-card transition-all duration-500 hover:shadow-elevated`}
+                    >
+                      {/* Colorful accent background */}
+                      <div
+                        className={`absolute top-0 left-0 right-0 h-32 bg-gradient-to-br ${speaker.accentColor} opacity-90`}
+                      />
+
+                      {/* Decorative shapes */}
+                      <div className="absolute top-4 right-4 w-16 h-16 rounded-full bg-white/10 blur-xl" />
+                      <div className="absolute top-16 left-4 w-8 h-8 rounded-full bg-white/10 blur-lg" />
+
+                      {/* Content */}
+                      <div className="relative pt-16 pb-6 px-6">
+                        {/* Profile Image */}
+                        <div className="relative w-28 h-28 mx-auto mb-5">
+                          <div
+                            className={`absolute inset-0 rounded-full bg-gradient-to-br ${speaker.accentColor} p-1`}
+                          >
+                            <div className="w-full h-full rounded-full overflow-hidden bg-card">
+                              <img
+                                src={speaker.image}
+                                alt={speaker.name}
+                                className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                                loading="lazy"
+                              />
+                            </div>
+                          </div>
+                        </div>
+
+                        {/* Info */}
+                        <div className="text-center">
+                          <h3 className="font-display text-xl font-bold text-foreground mb-1">
+                            {speaker.name}
+                          </h3>
+                          <p className="text-muted-foreground text-sm mb-4">
+                            {speaker.title}
+                          </p>
+
+                          {/* Social Links */}
+                          <div className="flex justify-center gap-3">
+                            <button
+                              className={`w-9 h-9 rounded-full ${speaker.bgAccent} flex items-center justify-center transition-all duration-300 hover:scale-110`}
+                            >
+                              <Linkedin className="w-4 h-4 text-foreground/70" />
+                            </button>
+                            <button
+                              className={`w-9 h-9 rounded-full ${speaker.bgAccent} flex items-center justify-center transition-all duration-300 hover:scale-110`}
+                            >
+                              <Twitter className="w-4 h-4 text-foreground/70" />
+                            </button>
+                          </div>
+                        </div>
                       </div>
                     </div>
-                  </div>
-
-                  {/* Info */}
-                  <div className="text-center">
-                    <h3 className="font-display text-xl font-bold text-foreground mb-1">
-                      {speaker.name}
-                    </h3>
-                    <p className="text-muted-foreground text-sm mb-4">
-                      {speaker.title}
-                    </p>
-
-                    {/* Social Links */}
-                    <div className="flex justify-center gap-3">
-                      <button className={`w-9 h-9 rounded-full ${speaker.bgAccent} flex items-center justify-center transition-all duration-300 hover:scale-110`}>
-                        <Linkedin className="w-4 h-4 text-foreground/70" />
-                      </button>
-                      <button className={`w-9 h-9 rounded-full ${speaker.bgAccent} flex items-center justify-center transition-all duration-300 hover:scale-110`}>
-                        <Twitter className="w-4 h-4 text-foreground/70" />
-                      </button>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </motion.div>
+                  </motion.div>
+                ))}
+              </motion.div>
+            </div>
           ))}
-        </motion.div>
+        </div>
 
         {/* View All CTA */}
         <motion.div
