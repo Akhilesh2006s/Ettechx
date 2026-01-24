@@ -115,6 +115,14 @@
     background-image: var(--gradient-hero);
   }
 
+  .bg-gradient-footer {
+    background-image:
+      radial-gradient(circle at top left, hsl(var(--accent) / 0.18), transparent 55%),
+      radial-gradient(circle at top right, hsl(var(--primary) / 0.16), transparent 55%),
+      radial-gradient(circle at bottom, hsl(var(--gold) / 0.14), transparent 60%),
+      linear-gradient(180deg, hsl(var(--background)) 0%, hsl(var(--muted)) 100%);
+  }
+
   .bg-gradient-card {
     background-image: var(--gradient-card);
   }
@@ -161,6 +169,10 @@
     background-size: 200% 200%;
     animation: gradientShift 5s ease infinite;
   }
+
+  .animate-spin-slow {
+    animation: spinSlow 18s linear infinite;
+  }
 }
 
 @keyframes float {
@@ -192,6 +204,15 @@
   }
   100% {
     background-position: 0% 50%;
+  }
+}
+
+@keyframes spinSlow {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
   }
 }
 

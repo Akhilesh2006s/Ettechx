@@ -33,6 +33,24 @@ const AboutSection = () => {
     },
   ];
 
+  const partners = [
+    {
+      name: "Edu Expo Global Private Limited",
+      description:
+        "Edu Expo Global is a joint initiative shaped by the long-standing association between Kakani Edu Media Pvt. Ltd. (Brainfeed Magazine) and S D Promo Media Pvt. Ltd., bringing together deep expertise in education media and large-format expo execution.",
+    },
+    {
+      name: "Brainfeed Magazine",
+      description:
+        "Brainfeed is a respected and widely read publication in the Indian education ecosystem, known for its Edu-leader conferences and awards for over a decade. Its monthly magazines reach a readership of nearly 2,00,000 across schools and institutions nationwide.",
+    },
+    {
+      name: "S D Promo Media Private Limited",
+      description:
+        "S D Promo Media is one of India’s leading expo organising companies, with more than a dozen successful expo brands in its portfolio. Their experience in curating high-impact exhibitions makes them a trusted partner for large-scale education and technology events.",
+    },
+  ];
+
   return (
     <section id="about" className="py-24 relative overflow-hidden bg-gradient-to-b from-primary/5 via-transparent to-accent/5">
       {/* Background decoration */}
@@ -98,6 +116,44 @@ const AboutSection = () => {
             ))}
           </motion.div>
         </div>
+
+        {/* Organising Partners */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.7, delay: 0.3 }}
+          className="mt-20"
+        >
+          <div className="text-center mb-10 max-w-3xl mx-auto">
+            <span className="inline-block px-4 py-1.5 rounded-full bg-primary/10 text-primary text-sm font-medium mb-3">
+              Organising Partners
+            </span>
+            <h3 className="font-display text-3xl md:text-4xl font-bold text-foreground mb-3">
+              Powered by Leaders in Education & Events
+            </h3>
+            <p className="text-muted-foreground text-base md:text-lg">
+              Et Tech X is backed by experienced organisations who have been shaping education
+              media, conferences, and large-scale expos across India.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+            {partners.map((partner) => (
+              <div
+                key={partner.name}
+                className="h-full rounded-2xl bg-card border border-border shadow-card p-6 flex flex-col"
+              >
+                <h4 className="font-display text-lg font-semibold text-foreground mb-3">
+                  {partner.name}
+                </h4>
+                <p className="text-sm md:text-[15px] text-muted-foreground leading-relaxed">
+                  {partner.description}
+                </p>
+              </div>
+            ))}
+          </div>
+        </motion.div>
       </div>
     </section>
   );

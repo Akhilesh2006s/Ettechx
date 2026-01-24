@@ -87,78 +87,81 @@ const GalleryPreviewSection = () => {
           </>
         ) : (
           <>
+            {/* Carousel-style horizontal scroll of latest items */}
             <motion.div
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
               transition={{ duration: 0.6, delay: 0.2 }}
               viewport={{ once: true }}
-              className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-8"
+              className="relative mb-8"
             >
-              {galleryItems.map((item, index) => (
-                <motion.div
-                  key={item.id}
-                  initial={{ opacity: 0, scale: 0.9 }}
-                  whileInView={{ opacity: 1, scale: 1 }}
-                  transition={{ duration: 0.4, delay: index * 0.1 }}
-                  viewport={{ once: true }}
-                  whileHover={{ scale: 1.05, y: -8 }}
-                  className="group relative cursor-pointer rounded-2xl overflow-hidden border border-border bg-card shadow-card flex flex-col"
-                >
-                  {item.type === "image" ? (
-                    <div className="relative w-full aspect-square overflow-hidden">
-                      <img
-                        src={item.url}
-                        alt={item.photoHeading || "Gallery"}
-                        className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-                        onError={(e) => {
-                          (e.target as HTMLImageElement).src = "/placeholder.svg";
-                        }}
-                      />
-                      <div className="absolute inset-0 bg-gradient-to-t from-foreground/80 via-foreground/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                      <div className="absolute bottom-0 left-0 right-0 p-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                        <div className="flex items-center gap-2 text-white mb-2">
-                          <ImageIcon className="w-4 h-4" />
-                          <span className="text-sm font-medium">Photo</span>
+              <div className="flex gap-6 overflow-x-auto pb-4 snap-x snap-mandatory">
+                {galleryItems.map((item, index) => (
+                  <motion.div
+                    key={item.id}
+                    initial={{ opacity: 0, scale: 0.9 }}
+                    whileInView={{ opacity: 1, scale: 1 }}
+                    transition={{ duration: 0.4, delay: index * 0.1 }}
+                    viewport={{ once: true }}
+                    whileHover={{ scale: 1.05, y: -8 }}
+                    className="group relative cursor-pointer rounded-2xl overflow-hidden border border-border bg-card shadow-card flex flex-col min-w-[200px] sm:min-w-[240px] max-w-xs snap-start"
+                  >
+                    {item.type === "image" ? (
+                      <div className="relative w-full aspect-video overflow-hidden">
+                        <img
+                          src={item.url}
+                          alt={item.photoHeading || "Gallery"}
+                          className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                          onError={(e) => {
+                            (e.target as HTMLImageElement).src = "/placeholder.svg";
+                          }}
+                        />
+                        <div className="absolute inset-0 bg-gradient-to-t from-foreground/80 via-foreground/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                        <div className="absolute bottom-0 left-0 right-0 p-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                          <div className="flex items-center gap-2 text-white mb-2">
+                            <ImageIcon className="w-4 h-4" />
+                            <span className="text-sm font-medium">Photo</span>
+                          </div>
                         </div>
                       </div>
-                    </div>
-                  ) : (
-                    <div className="relative w-full aspect-square overflow-hidden bg-muted">
-                      <img
-                        src={item.thumbnail || "/placeholder.svg"}
-                        alt={item.videoHeading || "Video thumbnail"}
-                        className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-                      />
-                      <div className="absolute inset-0 bg-gradient-to-t from-foreground/80 via-foreground/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                      <div className="absolute inset-0 flex items-center justify-center bg-black/20 group-hover:bg-black/40 transition-colors duration-300">
-                        <div className="w-16 h-16 rounded-full bg-white/20 backdrop-blur-sm flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                          <Video className="w-8 h-8 text-white" />
+                    ) : (
+                      <div className="relative w-full aspect-video overflow-hidden bg-muted">
+                        <img
+                          src={item.thumbnail || "/placeholder.svg"}
+                          alt={item.videoHeading || "Video thumbnail"}
+                          className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                        />
+                        <div className="absolute inset-0 bg-gradient-to-t from-foreground/80 via-foreground/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                        <div className="absolute inset-0 flex items-center justify-center bg-black/20 group-hover:bg-black/40 transition-colors duration-300">
+                          <div className="w-16 h-16 rounded-full bg-white/20 backdrop-blur-sm flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                            <Video className="w-8 h-8 text-white" />
+                          </div>
+                        </div>
+                        <div className="absolute bottom-0 left-0 right-0 p-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                          <div className="flex items-center gap-2 text-white mb-2">
+                            <Video className="w-4 h-4" />
+                            <span className="text-sm font-medium">Video</span>
+                          </div>
                         </div>
                       </div>
-                      <div className="absolute bottom-0 left-0 right-0 p-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                        <div className="flex items-center gap-2 text-white mb-2">
-                          <Video className="w-4 h-4" />
-                          <span className="text-sm font-medium">Video</span>
-                        </div>
-                      </div>
-                    </div>
-                  )}
-
-                  {/* Content Section */}
-                  <div className="p-4 bg-card">
-                    <h3 className="font-display text-lg font-bold text-foreground mb-2 line-clamp-1">
-                      {item.type === "image" 
-                        ? (item.photoHeading || "Photo") 
-                        : (item.videoHeading || "Video")}
-                    </h3>
-                    {item.description && (
-                      <p className="text-sm text-muted-foreground line-clamp-2">
-                        {item.description}
-                      </p>
                     )}
-                  </div>
-                </motion.div>
-              ))}
+
+                    {/* Content Section */}
+                    <div className="p-4 bg-card">
+                      <h3 className="font-display text-lg font-bold text-foreground mb-2 line-clamp-1">
+                        {item.type === "image" 
+                          ? (item.photoHeading || "Photo") 
+                          : (item.videoHeading || "Video")}
+                      </h3>
+                      {item.description && (
+                        <p className="text-sm text-muted-foreground line-clamp-2">
+                          {item.description}
+                        </p>
+                      )}
+                    </div>
+                  </motion.div>
+                ))}
+              </div>
             </motion.div>
 
             {/* View All Button */}

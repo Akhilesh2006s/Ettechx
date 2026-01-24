@@ -1,12 +1,14 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const location = useLocation();
+  const navigate = useNavigate();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -26,20 +28,25 @@ const Navbar = () => {
     { name: "Contact", href: "#contact", isRoute: false },
   ];
 
-  const handleGalleryClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
-    e.preventDefault();
-    const currentPath = window.location.pathname;
-    
-    if (currentPath === "/") {
-      // If on homepage, scroll to gallery section
-      const gallerySection = document.getElementById("gallery");
-      if (gallerySection) {
-        gallerySection.scrollIntoView({ behavior: "smooth" });
-        setIsMobileMenuOpen(false);
-      }
+  const scrollToSection = (id: string) => {
+    const section = document.getElementById(id);
+    if (section) {
+      section.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+  };
+
+  const handleGalleryClick = (e?: React.MouseEvent<HTMLAnchorElement>) => {
+    if (e) e.preventDefault();
+
+    if (location.pathname === "/") {
+      scrollToSection("gallery");
+      setIsMobileMenuOpen(false);
     } else {
-      // If on another page, navigate to homepage and scroll to gallery
-      window.location.href = "/#gallery";
+      navigate("/", { replace: false });
+      // Wait for the homepage to render, then scroll
+      setTimeout(() => {
+        scrollToSection("gallery");
+      }, 200);
     }
   };
 

@@ -122,7 +122,7 @@ const Gallery = () => {
                       initial={{ opacity: 0, y: 20 }}
                       animate={{ opacity: 1, y: 0 }}
                       transition={{ duration: 0.6, delay: 0.2 }}
-                      className="grid grid-cols-1 md:grid-cols-2 gap-6"
+                      className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5"
                     >
                       {galleryItems
                         .filter((item) => item.type === "image")
@@ -133,7 +133,7 @@ const Gallery = () => {
                             animate={{ opacity: 1, scale: 1 }}
                             transition={{ duration: 0.4, delay: index * 0.05 }}
                             whileHover={{ scale: 1.03, y: -6 }}
-                            className="group relative cursor-pointer rounded-2xl overflow-hidden border border-border bg-card shadow-card flex flex-col"
+                            className="group relative cursor-pointer rounded-2xl overflow-hidden border border-border bg-card shadow-card flex flex-col max-w-sm mx-auto"
                             onClick={() => setSelectedItem(item)}
                           >
                             {/* Delete Button - Only visible to admins */}
@@ -194,7 +194,7 @@ const Gallery = () => {
                       initial={{ opacity: 0, y: 20 }}
                       animate={{ opacity: 1, y: 0 }}
                       transition={{ duration: 0.6, delay: 0.3 }}
-                      className="grid grid-cols-1 md:grid-cols-2 gap-6"
+                      className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5"
                     >
                       {galleryItems
                         .filter((item) => item.type === "video")
@@ -205,7 +205,7 @@ const Gallery = () => {
                             animate={{ opacity: 1, scale: 1 }}
                             transition={{ duration: 0.4, delay: index * 0.05 }}
                             whileHover={{ scale: 1.03, y: -6 }}
-                            className="group relative cursor-pointer rounded-2xl overflow-hidden border border-border bg-card shadow-card flex flex-col"
+                            className="group relative cursor-pointer rounded-2xl overflow-hidden border border-border bg-card shadow-card flex flex-col max-w-sm mx-auto"
                             onClick={() => setSelectedItem(item)}
                           >
                             {/* Delete Button - Only visible to admins */}

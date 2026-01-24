@@ -14,7 +14,7 @@ const Expo = () => {
   }, []);
 
   const expoHighlights = [
-    { title: "50+ Exhibitors", description: "Leading EdTech companies showcasing innovations" },
+    { title: "150+ Exhibitors", description: "Leading EdTech companies showcasing innovations" },
     { title: "Product Launches", description: "Be the first to see cutting-edge solutions" },
     { title: "Live Demos", description: "Experience products and technologies firsthand" },
     { title: "B2B Networking", description: "Connect with suppliers and partners" },

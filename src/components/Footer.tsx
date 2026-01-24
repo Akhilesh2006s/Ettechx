@@ -30,8 +30,15 @@ const Footer = () => {
   ];
 
   return (
-    <footer className="relative pt-20 pb-8 border-t border-border bg-gradient-to-b from-background to-muted/40">
-      <div className="container mx-auto px-4">
+    <footer className="relative pt-20 pb-8 border-t border-border bg-gradient-footer animate-gradient overflow-hidden">
+      {/* Decorative animated background shapes */}
+      <div className="pointer-events-none absolute inset-0 opacity-70">
+        <div className="absolute -top-24 -left-16 w-64 h-64 rounded-full bg-accent/15 blur-3xl animate-float" />
+        <div className="absolute -bottom-32 -right-10 w-72 h-72 rounded-full bg-primary/12 blur-3xl animate-float-delayed" />
+        <div className="absolute top-1/2 left-1/3 w-40 h-40 rounded-3xl border border-white/10 bg-card/10 backdrop-blur-lg rotate-6 animate-pulse-glow" />
+      </div>
+
+      <div className="container mx-auto px-4 relative z-10">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12 mb-16">
           {/* Brand Column */}
           <motion.div
