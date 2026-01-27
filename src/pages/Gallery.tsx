@@ -48,6 +48,40 @@ const Gallery = () => {
     });
   };
 
+  // Convert video URL to embed format
+  const getVideoEmbedUrl = (url: string): string => {
+    // If already an embed URL, return as is
+    if (url.includes("/embed/") || url.includes("youtube.com/embed") || url.includes("player.vimeo.com")) {
+      return url;
+    }
+    
+    // YouTube watch URL conversion
+    if (url.includes("youtube.com/watch") || url.includes("youtu.be/")) {
+      let videoId = "";
+      if (url.includes("youtube.com/watch")) {
+        const match = url.match(/[?&]v=([^&]+)/);
+        videoId = match ? match[1] : "";
+      } else if (url.includes("youtu.be/")) {
+        const match = url.match(/youtu.be\/([^?]+)/);
+        videoId = match ? match[1] : "";
+      }
+      if (videoId) {
+        return `https://www.youtube.com/embed/${videoId}`;
+      }
+    }
+    
+    // Vimeo URL conversion
+    if (url.includes("vimeo.com/")) {
+      const match = url.match(/vimeo.com\/(\d+)/);
+      if (match) {
+        return `https://player.vimeo.com/video/${match[1]}`;
+      }
+    }
+    
+    // Return original URL if no conversion needed
+    return url;
+  };
+
   return (
     <div className="min-h-screen bg-background overflow-x-hidden">
       <Navbar />
@@ -277,47 +311,51 @@ const Gallery = () => {
             className="relative max-w-5xl w-full max-h-[90vh]"
             onClick={(e) => e.stopPropagation()}
           >
-            <button
-              onClick={() => setSelectedItem(null)}
-              className="absolute -top-12 right-0 z-10 w-10 h-10 rounded-full bg-white text-foreground flex items-center justify-center hover:scale-110 transition-transform"
-            >
-              <X className="w-6 h-6" />
-            </button>
-            <div className="bg-card rounded-2xl overflow-hidden shadow-2xl">
-              {/* Modal Header */}
-              <div className="p-6 border-b border-border">
-                <h2 className="font-display text-2xl font-bold text-foreground mb-2">
-                  {selectedItem.type === "image" 
-                    ? (selectedItem.photoHeading || "Photo") 
-                    : (selectedItem.videoHeading || "Video")}
-                </h2>
-                {selectedItem.description && (
-                  <p className="text-muted-foreground">
-                    {selectedItem.description}
-                  </p>
-                )}
+            <div className="bg-card rounded-2xl overflow-hidden shadow-2xl max-h-[90vh] flex flex-col">
+              {/* Sticky header with close button */}
+              <div className="flex items-start justify-between gap-4 p-6 border-b border-border sticky top-0 bg-card z-10">
+                <div>
+                  <h2 className="font-display text-2xl font-bold text-foreground mb-2">
+                    {selectedItem.type === "image" 
+                      ? (selectedItem.photoHeading || "Photo") 
+                      : (selectedItem.videoHeading || "Video")}
+                  </h2>
+                  {selectedItem.description && (
+                    <p className="text-muted-foreground">
+                      {selectedItem.description}
+                    </p>
+                  )}
+                </div>
+                <button
+                  onClick={() => setSelectedItem(null)}
+                  className="ml-4 w-10 h-10 rounded-full bg-white text-foreground flex items-center justify-center hover:scale-110 transition-transform shadow-md shrink-0"
+                >
+                  <X className="w-6 h-6" />
+                </button>
               </div>
               
-              {/* Modal Content */}
-              {selectedItem.type === "image" ? (
-                <img
-                  src={selectedItem.url}
-                  alt={selectedItem.photoHeading || "Gallery"}
-                  className="w-full h-auto"
-                  onError={(e) => {
-                    (e.target as HTMLImageElement).src = "/placeholder.svg";
-                  }}
-                />
-              ) : (
-                <div className="relative w-full aspect-video bg-black">
-                  <iframe
+              {/* Scrollable body */}
+              <div className="overflow-y-auto">
+                {selectedItem.type === "image" ? (
+                  <img
                     src={selectedItem.url}
-                    className="w-full h-full"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                    allowFullScreen
+                    alt={selectedItem.photoHeading || "Gallery"}
+                    className="w-full h-auto"
+                    onError={(e) => {
+                      (e.target as HTMLImageElement).src = "/placeholder.svg";
+                    }}
                   />
-                </div>
-              )}
+                ) : (
+                  <div className="relative w-full aspect-video bg-black">
+                    <iframe
+                      src={getVideoEmbedUrl(selectedItem.url)}
+                      className="w-full h-full"
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                      allowFullScreen
+                    />
+                  </div>
+                )}
+              </div>
             </div>
           </motion.div>
         </motion.div>

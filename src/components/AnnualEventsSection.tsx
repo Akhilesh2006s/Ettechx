@@ -8,7 +8,7 @@ const AnnualEventsSection = () => {
       id: 1,
       season: "Spring Edition",
       title: "ET TECH X",
-      date: "February 2025 (Tentative)",
+      date: "February 2026",
       location: "Kathmandu, Nepal (Tentative)",
       description:
         "Kickstart the year with ET TECH X in Kathmandu, Nepal (tentative), bringing together EdTech leaders and innovators from across the region.",

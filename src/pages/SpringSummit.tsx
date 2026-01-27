@@ -68,7 +68,7 @@ const SpringSummit = () => {
                 <div className="flex flex-wrap gap-4 mb-6">
                   <div className="flex items-center gap-2 text-muted-foreground">
                     <Calendar className="w-5 h-5 text-primary" />
-                    <span className="font-medium">February 2025 (Tentative)</span>
+                    <span className="font-medium">February 2026</span>
                   </div>
                   <div className="flex items-center gap-2 text-muted-foreground">
                     <MapPin className="w-5 h-5 text-primary" />
