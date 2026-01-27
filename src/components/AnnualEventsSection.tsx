@@ -6,27 +6,27 @@ const AnnualEventsSection = () => {
   const events = [
     {
       id: 1,
-      season: "Spring Edition",
-      title: "ET TECH X",
-      date: "February 2026",
-      location: "Kathmandu, Nepal (Tentative)",
-      description:
-        "Kickstart the year with ET TECH X in Kathmandu, Nepal (tentative), bringing together EdTech leaders and innovators from across the region.",
-      gradient: "from-primary via-electric to-accent",
-      accentColor: "primary",
-      link: "/spring-summit",
-    },
-    {
-      id: 2,
       season: "Autumn Edition",
-      title: "ET TECH X",
-      date: "September 22, 23, 24",
-      location: "New Delhi, India",
+      title: "7th Edition ET TECH X",
+      date: "22, 23, 24 September 2026",
+      location: "Yashnabhoomi, Dwaraka, New Delhi",
       description:
-        "Join ET TECH X in New Delhi for three power-packed days of awards, exhibitions, and future-forward discussions on education technology.",
+        "Join the 7th Edition ET TECH X at Yashnabhoomi, Dwaraka, New Delhi for three power-packed days of awards, exhibitions, and future-forward discussions on education technology.",
       gradient: "from-secondary via-coral to-gold",
       accentColor: "secondary",
       link: "/autumn-conference",
+    },
+    {
+      id: 2,
+      season: "Spring Edition",
+      title: "7th Edition ET TECH X",
+      date: "February 2027",
+      location: "Nepal",
+      description:
+        "Kickstart the year with the 7th Edition ET TECH X in Nepal, bringing together EdTech leaders and innovators from across the region.",
+      gradient: "from-primary via-electric to-accent",
+      accentColor: "primary",
+      link: "/spring-summit",
     },
   ];
 

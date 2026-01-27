@@ -76,15 +76,30 @@ const HeroSection = () => {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.6 }}
-                className="absolute bottom-3 left-3 right-3 md:bottom-4 md:left-4 md:right-4 p-3 md:p-4 rounded-lg md:rounded-xl glass-strong"
+                className="absolute bottom-3 left-3 right-3 md:bottom-4 md:left-4 md:right-4"
               >
-                <div className="flex items-center justify-between">
+                {/* Glowing highlight behind card */}
+                <div className="absolute inset-0 blur-xl bg-gradient-to-r from-primary/40 via-accent/40 to-gold/40 opacity-70 animate-pulse-slow pointer-events-none" />
+
+                <div className="relative flex items-center justify-between rounded-lg md:rounded-xl glass-strong border border-accent/40 shadow-[0_0_40px_rgba(34,197,94,0.35)] px-3 py-3 md:px-4 md:py-4">
                   <div className="text-left">
-                    <p className="text-sm font-medium text-foreground">Next Event</p>
-                    <p className="text-xs text-muted-foreground">March 2025, New Delhi</p>
+                    <p className="text-xs md:text-sm font-semibold text-accent tracking-wide uppercase">
+                      Next Event Highlight
+                    </p>
+                    <p className="text-sm md:text-base font-bold text-foreground mt-1">
+                      22, 23, 24 September 2026
+                    </p>
+                    <p className="text-[11px] md:text-xs text-muted-foreground mt-0.5">
+                      Yashnabhoomi, Dwaraka, New Delhi
+                    </p>
                   </div>
-                  <div className="w-8 h-8 md:w-10 md:h-10 rounded-full bg-accent flex items-center justify-center">
-                    <Calendar className="w-4 h-4 md:w-5 md:h-5 text-accent-foreground" />
+                  <div className="flex flex-col items-end gap-2">
+                    <div className="w-8 h-8 md:w-10 md:h-10 rounded-full bg-accent flex items-center justify-center shadow-glow-primary">
+                      <Calendar className="w-4 h-4 md:w-5 md:h-5 text-accent-foreground" />
+                    </div>
+                    <span className="hidden md:inline-flex text-[11px] font-medium text-accent">
+                      Book your dates
+                    </span>
                   </div>
                 </div>
               </motion.div>

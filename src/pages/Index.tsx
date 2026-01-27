@@ -12,6 +12,7 @@ import AnnualEventsSection from "@/components/AnnualEventsSection";
 import CTASection from "@/components/CTASection";
 import KeepInTouchSection from "@/components/KeepInTouchSection";
 import Footer from "@/components/Footer";
+import PopupAd from "@/components/PopupAd";
 
 const Index = () => {
   useEffect(() => {
@@ -21,6 +22,7 @@ const Index = () => {
 
   return (
     <div className="min-h-screen bg-background overflow-x-hidden">
+      <PopupAd />
       <Navbar />
       <main>
         <article>

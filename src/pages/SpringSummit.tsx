@@ -59,20 +59,20 @@ const SpringSummit = () => {
                 </div>
                 
                 <h1 className="font-display text-4xl md:text-5xl font-bold text-foreground mb-4">
-                  ET TECH X
+                  7th Edition ET TECH X
                 </h1>
                 <p className="text-muted-foreground text-lg mb-6">
-                  Kickstart the year with ET TECH X in Kathmandu, Nepal (tentative), bringing together visionaries, educators, and EdTech leaders.
+                  Kickstart the year with the 7th Edition ET TECH X in Nepal, bringing together visionaries, educators, and EdTech leaders.
                 </p>
                 
                 <div className="flex flex-wrap gap-4 mb-6">
                   <div className="flex items-center gap-2 text-muted-foreground">
                     <Calendar className="w-5 h-5 text-primary" />
-                    <span className="font-medium">February 2026</span>
+                    <span className="font-medium">February 2027</span>
                   </div>
                   <div className="flex items-center gap-2 text-muted-foreground">
                     <MapPin className="w-5 h-5 text-primary" />
-                    <span className="font-medium">Kathmandu, Nepal (Tentative)</span>
+                    <span className="font-medium">Nepal</span>
                   </div>
                   <div className="flex items-center gap-2 text-muted-foreground">
                     <Users className="w-5 h-5 text-primary" />

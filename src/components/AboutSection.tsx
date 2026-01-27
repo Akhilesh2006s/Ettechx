@@ -38,16 +38,19 @@ const AboutSection = () => {
       name: "Edu Expo Global Private Limited",
       description:
         "Edu Expo Global is a joint initiative shaped by the long-standing association between Kakani Edu Media Pvt. Ltd. (Brainfeed Magazine) and S D Promo Media Pvt. Ltd., bringing together deep expertise in education media and large-format expo execution.",
+      logo: "/Eduexpoglobal.PNG",
     },
     {
       name: "Brainfeed Magazine",
       description:
         "Brainfeed is a respected and widely read publication in the Indian education ecosystem, known for its Edu-leader conferences and awards for over a decade. Its monthly magazines reach a readership of nearly 2,00,000 across schools and institutions nationwide.",
+      logo: "/brainfeed logo.png",
     },
     {
       name: "S D Promo Media Private Limited",
       description:
         "S D Promo Media is one of India’s leading expo organising companies, with more than a dozen successful expo brands in its portfolio. Their experience in curating high-impact exhibitions makes them a trusted partner for large-scale education and technology events.",
+      logo: "/sd promo medaia.PNG",
     },
   ];
 
@@ -142,12 +145,22 @@ const AboutSection = () => {
             {partners.map((partner) => (
               <div
                 key={partner.name}
-                className="h-full rounded-2xl bg-card border border-border shadow-card p-6 flex flex-col"
+                className="h-full rounded-2xl bg-card border border-border shadow-card p-6 flex flex-col items-center text-center"
               >
+                {partner.logo && (
+                  <div className="w-full flex items-center justify-center mb-4">
+                    <img
+                      src={partner.logo}
+                      alt={partner.name}
+                      className="max-h-16 w-auto object-contain"
+                      loading="lazy"
+                    />
+                  </div>
+                )}
                 <h4 className="font-display text-lg font-semibold text-foreground mb-3">
                   {partner.name}
                 </h4>
-                <p className="text-sm md:text-[15px] text-muted-foreground leading-relaxed">
+                <p className="text-sm md:text-[15px] text-muted-foreground leading-relaxed text-left md:text-center">
                   {partner.description}
                 </p>
               </div>

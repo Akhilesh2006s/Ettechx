@@ -3,13 +3,13 @@ import { Phone, Mail } from "lucide-react";
 
 const contacts = [
   {
-    name: "Ms. Ritu Siddiqui",
-    initial: "R",
-    role: "Sr. Director",
-    phoneLabel: "+91-8130990664",
-    phoneHref: "tel:+918130990664",
-    email: "ritu@ettechx.com",
-    avatarColor: "from-emerald-400 to-teal-500",
+    name: "Mr. Sachin Gupta",
+    initial: "S",
+    role: "Project Director",
+    phoneLabel: "+91-80088 45432",
+    phoneHref: "tel:+918008845432",
+    email: "sachin@ettechx.com",
+    avatarColor: "from-orange-400 to-amber-500",
   },
   {
     name: "Ms. Simran Kashyap",
@@ -39,13 +39,13 @@ const contacts = [
     avatarColor: "from-fuchsia-500 to-violet-500",
   },
   {
-    name: "Mr. Sachin Gupta",
-    initial: "S",
-    role: "Project Director",
-    phoneLabel: "+91-80088 45432",
-    phoneHref: "tel:+918008845432",
-    email: "sachin@ettechx.com",
-    avatarColor: "from-orange-400 to-amber-500",
+    name: "Ms. Ritu Siddiqui",
+    initial: "R",
+    role: "Sr. Director",
+    phoneLabel: "+91-8130990664",
+    phoneHref: "tel:+918130990664",
+    email: "ritu@ettechx.com",
+    avatarColor: "from-emerald-400 to-teal-500",
   },
 ];
 

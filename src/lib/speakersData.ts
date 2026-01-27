@@ -2,16 +2,22 @@ import ashishVidyarthiImg from "../../Speakers images/Ashish Vidyarthi  1.png";
 import vvLaxminarayanImg from "../../Speakers images/shri v.v lakshmi Narayana.png";
 import liisaToivonenImg from "../../Speakers images/Liisa_Toivonen-Picsart-AiImageEnhancer-removebg-preview.png";
 import biswajitSahaImg from "../../Speakers images/Biswajit Saha.png";
+import francisJosephImg from "../../Speakers images/Francis Joseph formal Photo.png";
+import geetaRamanujamImg from "../../Speakers images/Geeta Ramanujam 2.png";
 
 import chinuAgrawalImg from "../../Speakers images/Chinu Agrawal.png";
 import swatiPopatImg from "../../Speakers images/5__Dr._Swati_Popat_Vats-removebg.png";
 import sonalAndrewsImg from "../../Speakers images/Sonal Profile pic.png";
 import anjumBabuKhanImg from "../../Speakers images/Anjum Babu Khan.png";
+import drReetaSonawatImg from "../../Speakers images/Dr Reeta Sonawat.png";
+import drMayuriImg from "../../Speakers images/Dr Mayuri.png";
 
 import balakistaReddyImg from "../../Speakers images/Balakista Reddy 2.png";
 import brVishwanathamritaImg from "../../Speakers images/Br. Vishwanathamrita Chaitanya.png";
 import profPushpanadhamImg from "../../Speakers images/Prof. Karanam.png";
 import jawaharSurisettiImg from "../../Speakers images/Jawahar Surisetti.png";
+import drKondalReddyImg from "../../Speakers images/Dr Kondal Reddy.png";
+import krishnaChalamImg from "../../Speakers images/Krishna Chalam Vice-Chancellor 1.png";
 
 export type Speaker = {
   name: string;
@@ -92,6 +98,18 @@ export const speakerGroups: SpeakerGroup[] = [
         image: biswajitSahaImg,
         ...withAccent(3),
       },
+      {
+        name: "Francis Joseph",
+        title: "K12 Keynote Speaker",
+        image: francisJosephImg,
+        ...withAccent(4),
+      },
+      {
+        name: "Geeta Ramanujam",
+        title: "K12 Keynote Speaker",
+        image: geetaRamanujamImg,
+        ...withAccent(5),
+      },
     ],
   },
   {
@@ -121,6 +139,18 @@ export const speakerGroups: SpeakerGroup[] = [
         title: "Foundational Years Speaker",
         image: anjumBabuKhanImg,
         ...withAccent(4),
+      },
+      {
+        name: "Dr. Reeta Sonawat",
+        title: "Foundational Years Speaker",
+        image: drReetaSonawatImg,
+        ...withAccent(5),
+      },
+      {
+        name: "Dr. Mayuri",
+        title: "Foundational Years Speaker",
+        image: drMayuriImg,
+        ...withAccent(0),
       },
     ],
   },
@@ -152,6 +182,18 @@ export const speakerGroups: SpeakerGroup[] = [
         image: jawaharSurisettiImg,
         ...withAccent(5),
       },
+      {
+        name: "Dr. Kondal Reddy",
+        title: "Higher Education Institution Speaker",
+        image: drKondalReddyImg,
+        ...withAccent(0),
+      },
+      {
+        name: "Krishna Chalam",
+        title: "Higher Education Institution Speaker",
+        image: krishnaChalamImg,
+        ...withAccent(1),
+      },
     ],
   },
 ];
@@ -174,6 +216,12 @@ const fileNameOverrides: Record<string, string> = {
   "Sonal Profile pic.png": "Sonal Andrews",
   "Jawahar Surisetti.png": "Dr. Jawahar Surisetti",
   "Prof. Karanam.png": "Prof. K. Pushpanadham",
+  "Francis Joseph formal Photo.png": "Francis Joseph",
+  "Geeta Ramanujam 2.png": "Geeta Ramanujam",
+  "Dr Reeta Sonawat.png": "Dr. Reeta Sonawat",
+  "Dr Mayuri.png": "Dr. Mayuri",
+  "Dr Kondal Reddy.png": "Dr. Kondal Reddy",
+  "Krishna Chalam Vice-Chancellor 1.png": "Krishna Chalam",
 };
 
 const fileNameToDisplayName = (fileName: string): string => {

@@ -181,24 +181,39 @@ const StatsSection = () => {
             </div>
 
             <div className="flex flex-col sm:flex-row items-center gap-6">
-              <div
-                className="relative w-40 h-40 sm:w-48 sm:h-48 rounded-full shadow-card transition-transform duration-300 hover:scale-105"
-                style={{
-                  backgroundImage:
-                    "conic-gradient(#22c55e 0 40%, #f97316 40% 60%, #3b82f6 60% 80%, #a855f7 80% 92%, #facc15 92% 100%)",
-                }}
-              >
-                <div className="absolute inset-7 rounded-full bg-card flex flex-col items-center justify-center border border-border/60">
-                  <span className="text-xs text-muted-foreground uppercase tracking-[0.2em] mb-1">
-                    Reach
-                  </span>
-                  <span className="font-display text-2xl font-bold text-primary">
-                    100%
-                  </span>
-                  <span className="text-[11px] text-muted-foreground">
-                    Event Impact
-                  </span>
-                </div>
+              <div className="flex items-center justify-center flex-shrink-0">
+                <motion.div
+                  initial={{ scale: 0, rotate: -180 }}
+                  whileInView={{ scale: 1, rotate: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 1.2, ease: "easeOut" }}
+                  whileHover={{ scale: 1.05, rotate: 5 }}
+                  className="relative shadow-card overflow-hidden"
+                  style={{
+                    width: "160px",
+                    height: "160px",
+                    minWidth: "160px",
+                    minHeight: "160px",
+                    borderRadius: "50%",
+                  }}
+                >
+                  <motion.div
+                    initial={{ opacity: 0 }}
+                    whileInView={{ opacity: 1 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.8, delay: 0.3 }}
+                    style={{
+                      position: "absolute",
+                      top: 0,
+                      left: 0,
+                      width: "100%",
+                      height: "100%",
+                      borderRadius: "50%",
+                      backgroundImage:
+                        "conic-gradient(#22c55e 0 40%, #f97316 40% 60%, #3b82f6 60% 80%, #a855f7 80% 92%, #facc15 92% 100%)",
+                    }}
+                  />
+                </motion.div>
               </div>
 
               <div className="grid grid-cols-2 gap-x-4 gap-y-3 text-sm w-full max-w-xs">
