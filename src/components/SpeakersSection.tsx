@@ -66,78 +66,78 @@ const SpeakersSection = () => {
                 {group.label}
               </motion.h3>
 
-              <motion.div
-                variants={containerVariants}
-                initial="hidden"
-                whileInView="visible"
+        <motion.div
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
                 viewport={{ once: true, amount: 0.2 }}
-                className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8"
-              >
+          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8"
+        >
                 {group.speakers.map((speaker) => (
-                  <motion.div
-                    key={speaker.name}
-                    variants={itemVariants}
-                    whileHover={{ y: -8 }}
-                    className="group relative"
-                  >
+            <motion.div
+              key={speaker.name}
+              variants={itemVariants}
+              whileHover={{ y: -8 }}
+              className="group relative"
+            >
                     <div
                       className={`relative bg-card rounded-2xl border ${speaker.borderAccent} overflow-hidden shadow-card transition-all duration-500 hover:shadow-elevated`}
                     >
-                      {/* Colorful accent background */}
+                {/* Colorful accent background */}
                       <div
                         className={`absolute top-0 left-0 right-0 h-32 bg-gradient-to-br ${speaker.accentColor} opacity-90`}
                       />
+                
+                {/* Decorative shapes */}
+                <div className="absolute top-4 right-4 w-16 h-16 rounded-full bg-white/10 blur-xl" />
+                <div className="absolute top-16 left-4 w-8 h-8 rounded-full bg-white/10 blur-lg" />
 
-                      {/* Decorative shapes */}
-                      <div className="absolute top-4 right-4 w-16 h-16 rounded-full bg-white/10 blur-xl" />
-                      <div className="absolute top-16 left-4 w-8 h-8 rounded-full bg-white/10 blur-lg" />
-
-                      {/* Content */}
-                      <div className="relative pt-16 pb-6 px-6">
-                        {/* Profile Image */}
-                        <div className="relative w-28 h-28 mx-auto mb-5">
+                {/* Content */}
+                <div className="relative pt-16 pb-6 px-6">
+                  {/* Profile Image */}
+                  <div className="relative w-28 h-28 mx-auto mb-5">
                           <div
                             className={`absolute inset-0 rounded-full bg-gradient-to-br ${speaker.accentColor} p-1`}
                           >
-                            <div className="w-full h-full rounded-full overflow-hidden bg-card">
-                              <img
-                                src={speaker.image}
-                                alt={speaker.name}
-                                className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-                                loading="lazy"
-                              />
-                            </div>
-                          </div>
-                        </div>
-
-                        {/* Info */}
-                        <div className="text-center">
-                          <h3 className="font-display text-xl font-bold text-foreground mb-1">
-                            {speaker.name}
-                          </h3>
-                          <p className="text-muted-foreground text-sm mb-4">
-                            {speaker.title}
-                          </p>
-
-                          {/* Social Links */}
-                          <div className="flex justify-center gap-3">
-                            <button
-                              className={`w-9 h-9 rounded-full ${speaker.bgAccent} flex items-center justify-center transition-all duration-300 hover:scale-110`}
-                            >
-                              <Linkedin className="w-4 h-4 text-foreground/70" />
-                            </button>
-                            <button
-                              className={`w-9 h-9 rounded-full ${speaker.bgAccent} flex items-center justify-center transition-all duration-300 hover:scale-110`}
-                            >
-                              <Twitter className="w-4 h-4 text-foreground/70" />
-                            </button>
-                          </div>
-                        </div>
+                      <div className="w-full h-full rounded-full overflow-hidden bg-card">
+                        <img
+                          src={speaker.image}
+                          alt={speaker.name}
+                          className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                          loading="lazy"
+                        />
                       </div>
                     </div>
-                  </motion.div>
-                ))}
-              </motion.div>
+                  </div>
+
+                  {/* Info */}
+                  <div className="text-center">
+                    <h3 className="font-display text-xl font-bold text-foreground mb-1">
+                      {speaker.name}
+                    </h3>
+                    <p className="text-muted-foreground text-sm mb-4">
+                      {speaker.title}
+                    </p>
+
+                    {/* Social Links */}
+                    <div className="flex justify-center gap-3">
+                            <button
+                              className={`w-9 h-9 rounded-full ${speaker.bgAccent} flex items-center justify-center transition-all duration-300 hover:scale-110`}
+                            >
+                        <Linkedin className="w-4 h-4 text-foreground/70" />
+                      </button>
+                            <button
+                              className={`w-9 h-9 rounded-full ${speaker.bgAccent} flex items-center justify-center transition-all duration-300 hover:scale-110`}
+                            >
+                        <Twitter className="w-4 h-4 text-foreground/70" />
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </motion.div>
+          ))}
+        </motion.div>
             </div>
           ))}
         </div>

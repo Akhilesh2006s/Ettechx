@@ -59,20 +59,20 @@ const AutumnConference = () => {
                 </div>
                 
                 <h1 className="font-display text-4xl md:text-5xl font-bold text-foreground mb-4">
-                  Et Tech X <span className="text-gradient-secondary">Conference</span>
+                  ET TECH X
                 </h1>
                 <p className="text-muted-foreground text-lg mb-6">
-                  Culminate the year with awards, exhibitions, and future-forward discussions on education technology.
+                  Culminate the year with ET TECH X in New Delhi, featuring awards, exhibitions, and future-forward discussions on education technology.
                 </p>
                 
                 <div className="flex flex-wrap gap-4 mb-6">
                   <div className="flex items-center gap-2 text-muted-foreground">
                     <Calendar className="w-5 h-5 text-secondary" />
-                    <span className="font-medium">September 2025</span>
+                    <span className="font-medium">September 22, 23, 24</span>
                   </div>
                   <div className="flex items-center gap-2 text-muted-foreground">
                     <MapPin className="w-5 h-5 text-secondary" />
-                    <span className="font-medium">Mumbai, India</span>
+                    <span className="font-medium">New Delhi, India</span>
                   </div>
                   <div className="flex items-center gap-2 text-muted-foreground">
                     <Users className="w-5 h-5 text-secondary" />

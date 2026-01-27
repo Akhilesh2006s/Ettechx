@@ -110,9 +110,9 @@ const EventsSection = () => {
             >
               <Link to={event.link} className="block h-full">
                 <div className={`h-full rounded-2xl bg-card border border-border ${event.hoverBorder} transition-all duration-500 shadow-card overflow-hidden cursor-pointer`}>
-                  {/* Colored background accent */}
-                  <div className={`absolute top-0 right-0 w-40 h-40 ${event.bgColor} rounded-bl-[120px] rounded-tr-2xl opacity-60`} />
-
+                {/* Colored background accent */}
+                <div className={`absolute top-0 right-0 w-40 h-40 ${event.bgColor} rounded-bl-[120px] rounded-tr-2xl opacity-60`} />
+                
                   {/* Content */}
                   <div className="p-6 sm:p-8 relative z-10">
                     {/* Icon */}

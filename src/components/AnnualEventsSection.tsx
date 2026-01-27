@@ -7,10 +7,11 @@ const AnnualEventsSection = () => {
     {
       id: 1,
       season: "Spring Edition",
-      title: "Et Tech X Summit",
-      date: "March 2025",
-      location: "New Delhi, India",
-      description: "Kickstart the year with groundbreaking innovations and networking opportunities with EdTech leaders.",
+      title: "ET TECH X",
+      date: "February 2025 (Tentative)",
+      location: "Kathmandu, Nepal (Tentative)",
+      description:
+        "Kickstart the year with ET TECH X in Kathmandu, Nepal (tentative), bringing together EdTech leaders and innovators from across the region.",
       gradient: "from-primary via-electric to-accent",
       accentColor: "primary",
       link: "/spring-summit",
@@ -18,10 +19,11 @@ const AnnualEventsSection = () => {
     {
       id: 2,
       season: "Autumn Edition",
-      title: "Et Tech X Conference",
-      date: "September 2025",
-      location: "Mumbai, India",
-      description: "Culminate the year with awards, exhibitions, and future-forward discussions on education technology.",
+      title: "ET TECH X",
+      date: "September 22, 23, 24",
+      location: "New Delhi, India",
+      description:
+        "Join ET TECH X in New Delhi for three power-packed days of awards, exhibitions, and future-forward discussions on education technology.",
       gradient: "from-secondary via-coral to-gold",
       accentColor: "secondary",
       link: "/autumn-conference",

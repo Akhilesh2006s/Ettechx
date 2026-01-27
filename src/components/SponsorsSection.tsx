@@ -109,7 +109,7 @@ const SponsorsSection = () => {
               transition={{ duration: 0.6, delay: 0.3 }}
               viewport={{ once: true }}
               className="space-y-4"
-            >
+          >
               <div className="text-center mb-4">
                 <h3 className="text-lg font-bold text-foreground mb-2">Gold Partner</h3>
                 <div className="h-1 w-16 bg-gradient-to-r from-amber-500 to-orange-500 mx-auto rounded-full" />
@@ -159,11 +159,11 @@ const SponsorsSection = () => {
               transition={{ duration: 0.6, delay: 0.5 }}
               viewport={{ once: true }}
               className="space-y-4"
-            >
+                  >
               <div className="text-center mb-4">
                 <h3 className="text-lg font-bold text-foreground mb-2">K12 Partner</h3>
                 <div className="h-1 w-16 bg-gradient-to-r from-green-500 to-emerald-500 mx-auto rounded-full" />
-              </div>
+                      </div>
               {partners
                 .filter((p) => p.tier === "k12")
                 .map((partner, index) => (
@@ -188,7 +188,7 @@ const SponsorsSection = () => {
               <div className="text-center mb-4">
                 <h3 className="text-lg font-bold text-foreground mb-2">University Partner</h3>
                 <div className="h-1 w-16 bg-gradient-to-r from-blue-500 to-indigo-500 mx-auto rounded-full" />
-              </div>
+                    </div>
               {partners
                 .filter((p) => p.tier === "university")
                 .map((partner, index) => (
@@ -199,7 +199,7 @@ const SponsorsSection = () => {
                   >
                     {renderLogo(partner)}
                   </motion.div>
-                ))}
+              ))}
             </motion.div>
           </div>
         </motion.div>

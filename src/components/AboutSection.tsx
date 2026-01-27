@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Target, Lightbulb, Globe, TrendingUp } from "lucide-react";
+import { Target, Lightbulb, Globe, TrendingUp, Phone, Mail } from "lucide-react";
 
 const AboutSection = () => {
   const features = [
@@ -47,7 +47,55 @@ const AboutSection = () => {
     {
       name: "S D Promo Media Private Limited",
       description:
-        "S D Promo Media is one of India’s leading expo organising companies, with more than a dozen successful expo brands in its portfolio. Their experience in curating high-impact exhibitions makes them a trusted partner for large-scale education and technology events.",
+        "S D Promo Media is one of India's leading expo organising companies, with more than a dozen successful expo brands in its portfolio. Their experience in curating high-impact exhibitions makes them a trusted partner for large-scale education and technology events.",
+    },
+  ];
+
+  const teamMembers = [
+    {
+      name: "Ms. Ritu Siddiqui",
+      role: "Sr. Director",
+      phone: "+91-8130990664",
+      phoneHref: "tel:+918130990664",
+      email: "ritu@ettechx.com",
+      avatarColor: "from-purple-400 to-pink-500",
+      initial: "R",
+    },
+    {
+      name: "Ms. Simran Kashyap",
+      role: "Asst. Manager",
+      phone: "+91-9650615197",
+      phoneHref: "tel:+919650615197",
+      email: "simran@ettechx.com",
+      avatarColor: "from-blue-400 to-cyan-500",
+      initial: "S",
+    },
+    {
+      name: "Mr. Tanmay Sharma",
+      role: "Asst. Manager",
+      phone: "+91-98716 76622",
+      phoneHref: "tel:+919871676622",
+      email: "tanmay@ettechx.com",
+      avatarColor: "from-green-400 to-emerald-500",
+      initial: "T",
+    },
+    {
+      name: "Mr. Pallav Singh",
+      role: "Sr. Director",
+      phone: "+91-8130990660",
+      phoneHref: "tel:+918130990660",
+      email: "pallav@ettechx.com",
+      avatarColor: "from-sky-500 to-indigo-500",
+      initial: "P",
+    },
+    {
+      name: "Mr. Sachin Gupta",
+      role: "Project Director",
+      phone: "+91-80088 45432",
+      phoneHref: "tel:+918008845432",
+      email: "sachin@ettechx.com",
+      avatarColor: "from-orange-400 to-amber-500",
+      initial: "S",
     },
   ];
 
@@ -151,6 +199,75 @@ const AboutSection = () => {
                   {partner.description}
                 </p>
               </div>
+            ))}
+          </div>
+        </motion.div>
+
+        {/* Connect With Our Team */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.7, delay: 0.4 }}
+          className="mt-20"
+        >
+          <div className="text-center mb-10 max-w-3xl mx-auto">
+            <span className="inline-block px-4 py-1.5 rounded-full bg-accent/10 text-accent text-sm font-medium mb-3">
+              Let&apos;s Keep In Touch
+            </span>
+            <h3 className="font-display text-3xl md:text-4xl font-bold text-foreground mb-3">
+              Connect With Our Team
+            </h3>
+            <p className="text-muted-foreground text-base md:text-lg">
+              Reach out to our dedicated team members for any inquiries, partnerships, or support.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-7xl mx-auto">
+            {teamMembers.map((member, index) => (
+              <motion.div
+                key={member.email}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: 0.1 * index }}
+                className="flex flex-col items-center text-center rounded-2xl bg-card border border-border shadow-card px-6 py-8 hover:shadow-lg transition-all duration-300"
+              >
+                {/* Avatar */}
+                <div className="relative mb-4">
+                  <div
+                    className={`w-16 h-16 rounded-full bg-gradient-to-br ${member.avatarColor} flex items-center justify-center text-white shadow-lg`}
+                  >
+                    <span className="text-xl font-semibold">
+                      {member.initial}
+                    </span>
+                  </div>
+                </div>
+
+                <h4 className="font-display text-lg font-semibold text-foreground mb-1">
+                  {member.name}
+                </h4>
+                <p className="text-sm text-muted-foreground mb-4">
+                  {member.role}
+                </p>
+
+                <div className="space-y-2 text-sm w-full">
+                  <a
+                    href={member.phoneHref}
+                    className="flex items-center justify-center gap-2 text-muted-foreground hover:text-primary transition-colors"
+                  >
+                    <Phone className="w-4 h-4" />
+                    <span>{member.phone}</span>
+                  </a>
+                  <a
+                    href={`mailto:${member.email}`}
+                    className="flex items-center justify-center gap-2 text-muted-foreground hover:text-secondary transition-colors"
+                  >
+                    <Mail className="w-4 h-4" />
+                    <span className="text-xs break-all">{member.email}</span>
+                  </a>
+                </div>
+              </motion.div>
             ))}
           </div>
         </motion.div>
