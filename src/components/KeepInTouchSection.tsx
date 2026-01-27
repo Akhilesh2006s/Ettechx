@@ -3,18 +3,49 @@ import { Phone, Mail } from "lucide-react";
 
 const contacts = [
   {
-    name: "Sachin Gupta",
+    name: "Ms. Ritu Siddiqui",
+    initial: "R",
+    role: "Sr. Director",
+    phoneLabel: "+91-8130990664",
+    phoneHref: "tel:+918130990664",
+    email: "ritu@ettechx.com",
+    avatarColor: "from-emerald-400 to-teal-500",
+  },
+  {
+    name: "Ms. Simran Kashyap",
+    initial: "S",
+    role: "Asst. Manager",
+    phoneLabel: "+91-9650615197",
+    phoneHref: "tel:+919650615197",
+    email: "simran@ettechx.com",
+    avatarColor: "from-sky-400 to-indigo-500",
+  },
+  {
+    name: "Mr. Tanmay Sharma",
+    initial: "T",
+    role: "Asst. Manager",
+    phoneLabel: "+91-98716 76622",
+    phoneHref: "tel:+919871676622",
+    email: "tanmay@ettechx.com",
+    avatarColor: "from-amber-400 to-orange-500",
+  },
+  {
+    name: "Mr. Pallav Singh",
+    initial: "P",
+    role: "Sr. Director",
+    phoneLabel: "+91-8130990660",
+    phoneHref: "tel:+918130990660",
+    email: "pallav@ettechx.com",
+    avatarColor: "from-fuchsia-500 to-violet-500",
+  },
+  {
+    name: "Mr. Sachin Gupta",
+    initial: "S",
+    role: "Project Director",
     phoneLabel: "+91-80088 45432",
     phoneHref: "tel:+918008845432",
     email: "sachin@ettechx.com",
     avatarColor: "from-orange-400 to-amber-500",
-  },
-  {
-    name: "Pallav Singh",
-    phoneLabel: "+91-81309 90685",
-    phoneHref: "tel:+918130990685",
-    email: "pallav@ettechx.com",
-    avatarColor: "from-sky-500 to-indigo-500",
   },
 ];
 
@@ -37,7 +68,7 @@ const KeepInTouchSection = () => {
           </h2>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
           {contacts.map((contact, index) => (
             <motion.div
               key={contact.email}
@@ -53,14 +84,17 @@ const KeepInTouchSection = () => {
                   className={`w-20 h-20 rounded-full bg-gradient-to-br ${contact.avatarColor} flex items-center justify-center text-card shadow-glow-primary`}
                 >
                   <span className="text-2xl font-semibold">
-                    {contact.name.charAt(0)}
+                    {contact.initial ?? contact.name.charAt(0)}
                   </span>
                 </div>
               </div>
 
-              <h3 className="font-display text-xl font-semibold text-foreground mb-2">
+              <h3 className="font-display text-xl font-semibold text-foreground">
                 {contact.name}
               </h3>
+              {contact.role && (
+                <p className="text-sm text-muted-foreground mb-2">{contact.role}</p>
+              )}
 
               <div className="space-y-2 text-sm text-muted-foreground">
                 <a
