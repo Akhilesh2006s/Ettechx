@@ -1,0 +1,9 @@
+RewriteEngine On
+
+# Keep existing files/folders directly accessible
+RewriteCond %{REQUEST_FILENAME} -f [OR]
+RewriteCond %{REQUEST_FILENAME} -d
+RewriteRule ^ - [L]
+
+# SPA fallback (supports routes like /shortline/team-name)
+RewriteRule ^ index.html [L]
