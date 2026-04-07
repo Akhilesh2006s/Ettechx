@@ -134,7 +134,7 @@ const Footer = () => {
             transition={{ duration: 0.5, delay: 0.1 }}
           >
             <h4 className="font-display font-semibold text-foreground mb-4">Quick Links</h4>
-            <ul className="space-y-3">
+            <ul className="grid grid-cols-2 gap-y-3 gap-x-8">
               {links.quickLinks.map((link) => (
                 <li key={link.name}>
                   <a

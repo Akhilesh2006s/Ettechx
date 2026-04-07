@@ -29,24 +29,6 @@ const contacts = [
     email: "tanmay@ettechx.com",
     avatarColor: "from-amber-400 to-orange-500",
   },
-  {
-    name: "Ms. Ritu Siddiqui",
-    initial: "R",
-    role: "Sr. Director",
-    phoneLabel: "+91-8130990664",
-    phoneHref: "tel:+918130990664",
-    email: "ritu@ettechx.com",
-    avatarColor: "from-emerald-400 to-teal-500",
-  },
-  {
-    name: "Ms. Simran Kashyap",
-    initial: "S",
-    role: "Asst. Manager",
-    phoneLabel: "+91-9650615197",
-    phoneHref: "tel:+919650615197",
-    email: "simran@ettechx.com",
-    avatarColor: "from-sky-400 to-indigo-500",
-  },
 ];
 
 const KeepInTouchSection = () => {

@@ -27,7 +27,7 @@ import {
   deleteImage as deleteImageApi,
   deleteYear as deleteYearApi,
 } from "@/lib/galleryApi";
-import { resolveMediaUrl } from "@/lib/mediaUrl";
+import { resolveMediaUrl, resolveMediaFallbackUrl } from "@/lib/mediaUrl";
 
 const GalleryManager = () => {
   const { isAuthenticated, logout } = useAuth();
@@ -664,7 +664,13 @@ const GalleryManager = () => {
                                     loading="lazy"
                                     decoding="async"
                                     onError={(e) => {
-                                      (e.target as HTMLImageElement).src = "/placeholder.svg";
+                                      const img = e.currentTarget;
+                                      if (img.dataset.mediaFallbackTried !== "1") {
+                                        img.dataset.mediaFallbackTried = "1";
+                                        img.src = resolveMediaFallbackUrl(image.src);
+                                      } else {
+                                        img.src = "/placeholder.svg";
+                                      }
                                     }}
                                   />
                                   <button

@@ -100,13 +100,15 @@ const TestimonialsSection = () => {
   const minSwipeDistance = 50; // Minimum distance in pixels to trigger a swipe
 
   const handlePrev = () => {
+    if (isTransitioning) return;
     setIsTransitioning(true);
-    setActiveIndex((prev) => prev - 1);
+    setActiveIndex((prev) => Math.max(prev - 1, 0));
   };
 
   const handleNext = () => {
+    if (isTransitioning) return;
     setIsTransitioning(true);
-    setActiveIndex((prev) => prev + 1);
+    setActiveIndex((prev) => Math.min(prev + 1, extendedTestimonials.length - 1));
   };
 
   const onTouchStart = (e: React.TouchEvent) => {
@@ -156,14 +158,18 @@ const TestimonialsSection = () => {
   // Auto-play loop for testimonials
   useEffect(() => {
     const intervalId = window.setInterval(() => {
-      setIsTransitioning(true);
-      setActiveIndex((prev) => prev + 1);
+      setActiveIndex((prev) => {
+        // Avoid stacking updates while a transition is already in progress.
+        if (isTransitioning) return prev;
+        setIsTransitioning(true);
+        return Math.min(prev + 1, extendedTestimonials.length - 1);
+      });
     }, 8000); // change slide every 8 seconds
 
     return () => {
       window.clearInterval(intervalId);
     };
-  }, []);
+  }, [isTransitioning, extendedTestimonials.length]);
 
   return (
     <section className="py-12 sm:py-16 md:py-20 bg-gradient-to-b from-background via-muted/40 to-background" id="testimonials">
@@ -265,6 +271,7 @@ const TestimonialsSection = () => {
                   key={index}
                   type="button"
                   onClick={() => {
+                    if (isTransitioning) return;
                     setIsTransitioning(true);
                     setActiveIndex(index + 1); // +1 because of leading clone
                   }}

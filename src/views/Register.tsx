@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
-import Link from "next/link";
+import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -143,7 +143,7 @@ const Register = () => {
             className="max-w-2xl mx-auto"
           >
             {/* Back Button */}
-            <Link href="/">
+            <Link to="/">
               <Button
                 variant="ghost"
                 className="mb-6 text-muted-foreground hover:text-foreground"
@@ -178,7 +178,7 @@ const Register = () => {
                   <p className="text-muted-foreground mb-8">
                     Thank you for registering for Et Tech X. Your details have been submitted successfully.
                   </p>
-                  <Link href="/">
+                  <Link to="/">
                     <Button variant="hero" size="lg">
                       Return to Home
                     </Button>

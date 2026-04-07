@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import { motion } from "framer-motion";
-import Link from "next/link";
+import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
@@ -35,7 +35,7 @@ const Expo = () => {
             className="max-w-5xl mx-auto"
           >
             {/* Back Button */}
-            <Link href="/">
+            <Link to="/">
               <Button
                 variant="ghost"
                 className="mb-6 text-muted-foreground hover:text-foreground"
@@ -84,7 +84,7 @@ const Expo = () => {
                   </div>
                   
                   <div className="flex flex-col sm:flex-row gap-4">
-                    <Link href="/register">
+                    <Link to="/register">
                       <Button variant="glow" size="lg" className="group">
                         Visit Expo
                         <ArrowLeft className="w-5 h-5 rotate-180 group-hover:translate-x-1 transition-transform" />

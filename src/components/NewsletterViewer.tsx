@@ -6,6 +6,17 @@ interface NewsletterViewerProps {
 }
 
 const NewsletterViewer = ({ newsletter }: NewsletterViewerProps) => {
+  const hasArticleContent = (article?: { image?: string; title?: string; description?: string; link?: string }) =>
+    Boolean(
+      article &&
+        (
+          article.image?.trim() ||
+          article.title?.trim() ||
+          article.description?.trim() ||
+          article.link?.trim()
+        )
+    );
+
   return (
     <div style={{ margin: 0, padding: 0, backgroundColor: "#f5f5f5", fontFamily: "Arial, Helvetica, sans-serif" }}>
       {/* Main Wrapper */}
@@ -99,16 +110,18 @@ const NewsletterViewer = ({ newsletter }: NewsletterViewerProps) => {
                   </table>
                   
                   {/* Article 1 */}
-                  {newsletter.article1 && (
+                  {hasArticleContent(newsletter.article1) && (
                     <table role="presentation" width="100%" cellPadding="0" cellSpacing="0" border={0} style={{ marginBottom: "30px", backgroundColor: "#f9f9f9", borderRadius: "8px", overflow: "hidden" }}>
                       <tr>
                         <td style={{ padding: "20px" }}>
                           <table role="presentation" width="100%" cellPadding="0" cellSpacing="0" border={0}>
-                            <tr>
-                              <td style={{ paddingBottom: "15px" }}>
+                            {newsletter.article1.image?.trim() && (
+                              <tr>
+                                <td style={{ paddingBottom: "15px" }}>
                                 <img src={resolveMediaUrl(newsletter.article1.image)} alt={newsletter.article1.title} width="100%" style={{ display: "block", width: "100%", maxWidth: "540px", height: "auto", border: 0, borderRadius: "8px" }} />
-                              </td>
-                            </tr>
+                                </td>
+                              </tr>
+                            )}
                             <tr>
                               <td style={{ paddingBottom: "10px" }}>
                                 <h3 style={{ margin: 0, fontSize: "20px", fontWeight: "bold", color: "#0B1C2D", fontFamily: "Arial, Helvetica, sans-serif", lineHeight: 1.3 }}>
@@ -143,16 +156,18 @@ const NewsletterViewer = ({ newsletter }: NewsletterViewerProps) => {
                   )}
 
                   {/* Article 2 */}
-                  {newsletter.article2 && (
+                  {hasArticleContent(newsletter.article2) && (
                     <table role="presentation" width="100%" cellPadding="0" cellSpacing="0" border={0} style={{ marginBottom: "30px", backgroundColor: "#f9f9f9", borderRadius: "8px", overflow: "hidden" }}>
                       <tr>
                         <td style={{ padding: "20px" }}>
                           <table role="presentation" width="100%" cellPadding="0" cellSpacing="0" border={0}>
-                            <tr>
-                              <td style={{ paddingBottom: "15px" }}>
+                            {newsletter.article2.image?.trim() && (
+                              <tr>
+                                <td style={{ paddingBottom: "15px" }}>
                                 <img src={resolveMediaUrl(newsletter.article2.image)} alt={newsletter.article2.title} width="100%" style={{ display: "block", width: "100%", maxWidth: "540px", height: "auto", border: 0, borderRadius: "8px" }} />
-                              </td>
-                            </tr>
+                                </td>
+                              </tr>
+                            )}
                             <tr>
                               <td style={{ paddingBottom: "10px" }}>
                                 <h3 style={{ margin: 0, fontSize: "20px", fontWeight: "bold", color: "#0B1C2D", fontFamily: "Arial, Helvetica, sans-serif", lineHeight: 1.3 }}>
@@ -187,16 +202,18 @@ const NewsletterViewer = ({ newsletter }: NewsletterViewerProps) => {
                   )}
 
                   {/* Article 3 */}
-                  {newsletter.article3 && (
+                  {hasArticleContent(newsletter.article3) && (
                     <table role="presentation" width="100%" cellPadding="0" cellSpacing="0" border={0} style={{ marginBottom: "30px", backgroundColor: "#f9f9f9", borderRadius: "8px", overflow: "hidden" }}>
                       <tr>
                         <td style={{ padding: "20px" }}>
                           <table role="presentation" width="100%" cellPadding="0" cellSpacing="0" border={0}>
-                            <tr>
-                              <td style={{ paddingBottom: "15px" }}>
+                            {newsletter.article3.image?.trim() && (
+                              <tr>
+                                <td style={{ paddingBottom: "15px" }}>
                                 <img src={resolveMediaUrl(newsletter.article3.image)} alt={newsletter.article3.title} width="100%" style={{ display: "block", width: "100%", maxWidth: "540px", height: "auto", border: 0, borderRadius: "8px" }} />
-                              </td>
-                            </tr>
+                                </td>
+                              </tr>
+                            )}
                             <tr>
                               <td style={{ paddingBottom: "10px" }}>
                                 <h3 style={{ margin: 0, fontSize: "20px", fontWeight: "bold", color: "#0B1C2D", fontFamily: "Arial, Helvetica, sans-serif", lineHeight: 1.3 }}>
@@ -250,7 +267,7 @@ const NewsletterViewer = ({ newsletter }: NewsletterViewerProps) => {
               )}
 
               {/* ==================== 5. MULTIPLE ARTICLES SECTION ==================== */}
-              {newsletter.articles && newsletter.articles.length > 0 && newsletter.articles.map((article, index) => (
+              {newsletter.articles && newsletter.articles.filter(hasArticleContent).length > 0 && newsletter.articles.filter(hasArticleContent).map((article, index) => (
                 <tr key={index}>
                   <td style={{ padding: "0 30px 40px 30px", backgroundColor: "#ffffff" }}>
                     <table role="presentation" width="100%" cellPadding="0" cellSpacing="0" border={0} style={{ backgroundColor: "#f9f9f9", borderRadius: "8px", overflow: "hidden" }}>
@@ -258,10 +275,10 @@ const NewsletterViewer = ({ newsletter }: NewsletterViewerProps) => {
                         <td style={{ padding: "20px" }}>
                           <table role="presentation" width="100%" cellPadding="0" cellSpacing="0" border={0}>
                             <tr>
-                              <td width="40%" style={{ paddingRight: "15px", paddingBottom: "15px", verticalAlign: "top" }}>
+                              <td width={article.image?.trim() ? "40%" : "0%"} style={{ paddingRight: article.image?.trim() ? "15px" : "0", paddingBottom: "15px", verticalAlign: "top", display: article.image?.trim() ? "table-cell" : "none" }}>
                                 <img src={resolveMediaUrl(article.image)} alt={article.title} width="100%" style={{ display: "block", width: "100%", maxWidth: "200px", height: "auto", border: 0, borderRadius: "8px" }} />
                               </td>
-                              <td width="60%" style={{ verticalAlign: "top" }}>
+                              <td width={article.image?.trim() ? "60%" : "100%"} style={{ verticalAlign: "top" }}>
                                 <h3 style={{ margin: "0 0 10px 0", fontSize: "18px", fontWeight: "bold", color: "#0B1C2D", fontFamily: "Arial, Helvetica, sans-serif", lineHeight: 1.3 }}>
                                   {article.title}
                                 </h3>

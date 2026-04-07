@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import { motion } from "framer-motion";
-import Link from "next/link";
+import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
@@ -36,7 +36,7 @@ const SpringSummit = () => {
             className="max-w-5xl mx-auto"
           >
             {/* Back Button */}
-            <Link href="/">
+            <Link to="/">
               <Button
                 variant="ghost"
                 className="mb-6 text-muted-foreground hover:text-foreground"
@@ -80,7 +80,7 @@ const SpringSummit = () => {
                   </div>
                 </div>
                 
-                <Link href="/register">
+                <Link to="/register">
                   <Button variant="hero" size="lg" className="group">
                     Register for Spring Summit
                     <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />

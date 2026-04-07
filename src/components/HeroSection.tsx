@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import Link from "next/link";
+import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Calendar, MapPin, Users } from "lucide-react";
 import FloatingShapes from "./FloatingShapes";
@@ -68,7 +68,6 @@ const HeroSection = () => {
                 className="w-full h-full object-cover"
                 loading="eager"
                 decoding="async"
-                fetchPriority="high"
               />
               
               {/* Overlay gradient */}
@@ -99,7 +98,7 @@ const HeroSection = () => {
                       Yashobhoomi, Dwaraka, New Delhi
                     </p>
                   </div>
-                  <Link href="/register" className="flex flex-col items-center gap-1 sm:gap-2 cursor-pointer group/calendar ml-2 sm:ml-4 shrink-0">
+                  <Link to="/register" className="flex flex-col items-center gap-1 sm:gap-2 cursor-pointer group/calendar ml-2 sm:ml-4 shrink-0">
                     <div className="w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 lg:w-16 lg:h-16 rounded-full bg-accent flex items-center justify-center shadow-glow-primary group-hover/calendar:scale-110 active:scale-95 transition-transform duration-300">
                       <Calendar className="w-5 h-5 sm:w-6 sm:h-6 md:w-7 md:h-7 lg:w-8 lg:h-8 text-accent-foreground" />
                     </div>
@@ -182,7 +181,7 @@ const HeroSection = () => {
             transition={{ duration: 0.7, delay: 0.5 }}
             className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4 mb-8 sm:mb-12 w-full px-4"
           >
-            <Link href="/register">
+            <Link to="/register">
             <Button variant="hero" size="xl" className="group">
               Register Now
               <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />

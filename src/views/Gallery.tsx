@@ -6,6 +6,7 @@ import Footer from "@/components/Footer";
 import { X, ChevronDown, ChevronUp, Lock } from "lucide-react";
 import { loadGalleryData, iconMap, GalleryYear, defaultGalleryData } from "@/lib/galleryData";
 import { fetchGalleryData } from "@/lib/galleryApi";
+import { resolveMediaUrl, resolveMediaFallbackUrl } from "@/lib/mediaUrl";
 
 const Gallery = () => {
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
@@ -188,13 +189,19 @@ const Gallery = () => {
                                   onClick={() => setSelectedImage(image.src)}
                                 >
                                   <img
-                                    src={image.src}
+                                    src={resolveMediaUrl(image.src)}
                                     alt={image.alt}
                                     className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                                     loading="lazy"
                                     decoding="async"
                                     onError={(e) => {
-                                      (e.target as HTMLImageElement).src = "/placeholder.svg";
+                                      const img = e.currentTarget;
+                                      if (img.dataset.mediaFallbackTried !== "1") {
+                                        img.dataset.mediaFallbackTried = "1";
+                                        img.src = resolveMediaFallbackUrl(image.src);
+                                      } else {
+                                        img.src = "/placeholder.svg";
+                                      }
                                     }}
                                   />
                                   <div className="absolute inset-0 bg-gradient-to-t from-foreground/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
@@ -248,13 +255,19 @@ const Gallery = () => {
               <X className="w-6 h-6" />
             </button>
             <img
-              src={selectedImage}
+              src={resolveMediaUrl(selectedImage)}
               alt="Gallery Image"
               className="w-full h-auto max-h-[90vh] object-contain rounded-lg"
               loading="lazy"
               decoding="async"
               onError={(e) => {
-                (e.target as HTMLImageElement).src = "/placeholder.svg";
+                const img = e.currentTarget;
+                if (img.dataset.mediaFallbackTried !== "1") {
+                  img.dataset.mediaFallbackTried = "1";
+                  img.src = resolveMediaFallbackUrl(selectedImage);
+                } else {
+                  img.src = "/placeholder.svg";
+                }
               }}
             />
           </motion.div>

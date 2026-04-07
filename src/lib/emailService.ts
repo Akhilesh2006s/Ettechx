@@ -2,11 +2,11 @@ import emailjs from '@emailjs/browser';
 
 // EmailJS configuration
 // These should be set in your .env file
-// Next.js does not provide `import.meta.env` at runtime like Vite.
-// Use NEXT_PUBLIC_* so these values are available in the browser bundle where EmailJS runs.
-const EMAILJS_SERVICE_ID = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID || '';
-const EMAILJS_TEMPLATE_ID = process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID || '';
-const EMAILJS_PUBLIC_KEY = process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY || '';
+const env: Record<string, string | undefined> =
+  (import.meta as ImportMeta & { env?: Record<string, string | undefined> }).env ?? {};
+const EMAILJS_SERVICE_ID = env.VITE_EMAILJS_SERVICE_ID || '';
+const EMAILJS_TEMPLATE_ID = env.VITE_EMAILJS_TEMPLATE_ID || '';
+const EMAILJS_PUBLIC_KEY = env.VITE_EMAILJS_PUBLIC_KEY || '';
 const RECIPIENT_EMAIL = 'info@ettechx.com';
 
 // Initialize EmailJS

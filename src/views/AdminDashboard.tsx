@@ -1,7 +1,6 @@
 import { useEffect } from "react";
 import { motion } from "framer-motion";
-import Link from "next/link";
-import { useRouter } from "next/navigation";
+import { Link, useNavigate } from "react-router-dom";
 import { useAuth } from "@/context/useAuth";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
@@ -10,18 +9,18 @@ import { Image, Users, Building2, Mail, LogOut, ArrowLeft } from "lucide-react";
 
 const AdminDashboard = () => {
   const { isAuthenticated, isReady, logout } = useAuth();
-  const router = useRouter();
+  const navigate = useNavigate();
 
   useEffect(() => {
     document.title = "Admin Dashboard - Et Tech X";
     if (isReady && !isAuthenticated) {
-      router.replace("/admin/login");
+      navigate("/admin/login", { replace: true });
     }
-  }, [isAuthenticated, isReady, router]);
+  }, [isAuthenticated, isReady, navigate]);
 
   const handleLogout = () => {
     logout();
-    router.push("/");
+    navigate("/");
   };
 
   if (!isReady) {
@@ -34,7 +33,7 @@ const AdminDashboard = () => {
 
   return (
     <div className="min-h-screen bg-background overflow-x-hidden">
-      <Navbar />
+      <Navbar hideMenuItems />
       
       <section className="relative min-h-screen py-24">
         <div className="container mx-auto px-4">
@@ -53,7 +52,7 @@ const AdminDashboard = () => {
               <div className="flex gap-2">
                 <Button
                   variant="outline"
-                  onClick={() => router.push("/")}
+                  onClick={() => navigate("/")}
                   className="flex items-center gap-2"
                 >
                   <ArrowLeft className="w-4 h-4" />
@@ -88,7 +87,7 @@ const AdminDashboard = () => {
                 <p className="text-muted-foreground mb-6">
                   Upload and manage gallery images, organize by year and category
                 </p>
-                <Link href="/admin/gallery">
+                <Link to="/admin/gallery">
                   <Button className="w-full">
                     Manage Gallery
                   </Button>
@@ -111,7 +110,7 @@ const AdminDashboard = () => {
                 <p className="text-muted-foreground mb-6">
                   Add, edit, and manage speakers and speaker groups
                 </p>
-                <Link href="/admin/speakers">
+                <Link to="/admin/speakers">
                   <Button className="w-full">
                     Manage Speakers
                   </Button>
@@ -134,7 +133,7 @@ const AdminDashboard = () => {
                 <p className="text-muted-foreground mb-6">
                   Add, edit, and manage sponsors and partners
                 </p>
-                <Link href="/admin/sponsors">
+                <Link to="/admin/sponsors">
                   <Button className="w-full">
                     Manage Sponsors
                   </Button>
@@ -157,7 +156,7 @@ const AdminDashboard = () => {
                 <p className="text-muted-foreground mb-6">
                   Create and manage email newsletters
                 </p>
-                <Link href="/admin/newsletter">
+                <Link to="/admin/newsletter">
                   <Button className="w-full">
                     Manage Newsletter
                   </Button>

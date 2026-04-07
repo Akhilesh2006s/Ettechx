@@ -20,6 +20,7 @@ import {
   deleteSponsor,
   type Sponsor,
 } from "@/lib/sponsorsApi";
+import { resolveMediaUrl, resolveMediaFallbackUrl } from "@/lib/mediaUrl";
 
 // Default sponsors data from SponsorsSection
 const defaultSponsors: Sponsor[] = [
@@ -193,6 +194,17 @@ const SponsorsManager = () => {
   const handleFileSelect = (e: React.ChangeEvent<HTMLInputElement>) => {
     const file = e.target.files?.[0];
     if (file) {
+      if (!file.type.startsWith("image/")) {
+        toast({
+          title: "Invalid file",
+          description: "Please choose an image file for sponsor logo.",
+          variant: "destructive",
+        });
+        setSelectedFile(null);
+        setFilePreview("");
+        e.target.value = "";
+        return;
+      }
       setSelectedFile(file);
       const reader = new FileReader();
       reader.onloadend = () => {
@@ -503,7 +515,7 @@ const SponsorsManager = () => {
                   <Input
                     id="sponsor-logo"
                     type="file"
-                    accept="image/*,.pdf"
+                    accept="image/*"
                     onChange={handleFileSelect}
                     className="flex-1"
                   />
@@ -568,11 +580,17 @@ const SponsorsManager = () => {
                       >
                         {sponsor.type === "image" ? (
                           <img
-                            src={sponsor.path}
+                            src={resolveMediaUrl(sponsor.path)}
                             alt={sponsor.name}
                             className="w-16 h-16 object-contain rounded border border-border"
                             onError={(e) => {
-                              (e.target as HTMLImageElement).src = '/placeholder.svg';
+                              const img = e.currentTarget;
+                              if (img.dataset.mediaFallbackTried !== "1") {
+                                img.dataset.mediaFallbackTried = "1";
+                                img.src = resolveMediaFallbackUrl(sponsor.path);
+                              } else {
+                                img.src = "/placeholder.svg";
+                              }
                             }}
                           />
                         ) : (

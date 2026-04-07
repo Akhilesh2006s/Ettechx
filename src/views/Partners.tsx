@@ -4,6 +4,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { Link } from "react-router-dom";
 import { ArrowLeft, FileText, Download } from "lucide-react";
+import { resolveMediaUrl, resolveMediaFallbackUrl } from "@/lib/mediaUrl";
 
 interface LogoFile {
   name: string;
@@ -175,22 +176,18 @@ const Partners = () => {
           </div>
         )}
         <img
-          src={logo.path}
+          src={resolveMediaUrl(logo.path)}
           alt={logo.name}
           className="max-w-full max-h-full object-contain group-hover:scale-105 transition-transform duration-300"
           loading="lazy"
           decoding="async"
           onError={(e) => {
-            const target = e.target as HTMLImageElement;
-            target.style.display = "none";
-            const parent = target.parentElement;
-            if (parent) {
-              parent.innerHTML = `
-                <div class="flex flex-col items-center justify-center text-center p-4">
-                  <FileText class="w-8 h-8 text-muted-foreground mb-2" />
-                  <p class="text-xs text-muted-foreground">${logo.name}</p>
-                </div>
-              `;
+            const img = e.currentTarget;
+            if (img.dataset.mediaFallbackTried !== "1") {
+              img.dataset.mediaFallbackTried = "1";
+              img.src = resolveMediaFallbackUrl(logo.path);
+            } else {
+              img.src = "/placeholder.svg";
             }
           }}
         />

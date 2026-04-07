@@ -2,7 +2,7 @@ import { useMemo, useState } from "react";
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { featuredSpeakers, type Speaker } from "@/lib/speakersData";
-import Link from "next/link";
+import { Link } from "react-router-dom";
 
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -202,7 +202,7 @@ const FeaturedSpeakersCarousel = () => {
 
       <div className="mt-8 text-center">
         <Button asChild size="lg" className="rounded-full px-8">
-          <Link href="/speakers" aria-label="View all speakers">
+          <Link to="/speakers" aria-label="View all speakers">
             View All Speakers
           </Link>
         </Button>

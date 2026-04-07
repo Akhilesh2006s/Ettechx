@@ -1,15 +1,18 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import Link from "next/link";
-import { usePathname, useRouter } from "next/navigation";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
 
-const Navbar = () => {
+interface NavbarProps {
+  hideMenuItems?: boolean;
+}
+
+const Navbar = ({ hideMenuItems = false }: NavbarProps) => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const pathname = usePathname();
-  const router = useRouter();
+  const { pathname } = useLocation();
+  const navigate = useNavigate();
   const [activeSection, setActiveSection] = useState<string | null>(null);
 
   useEffect(() => {
@@ -61,7 +64,7 @@ const Navbar = () => {
     if (pathname === "/") {
       scrollWithOffset();
     } else {
-      router.push("/");
+      navigate("/");
       scrollWithOffset();
     }
 
@@ -82,7 +85,7 @@ const Navbar = () => {
       <div className="container mx-auto px-3 sm:px-4 lg:px-6 max-w-7xl">
         <div className="flex items-center justify-between gap-3">
         {/* Logo */}
-        <Link href="/" className="flex items-center gap-2 group shrink-0">
+        <Link to="/" className="flex items-center gap-2 group shrink-0">
           <img 
             src="/logo.png" 
             alt="Et Tech X Logo" 
@@ -94,13 +97,14 @@ const Navbar = () => {
           {/* Desktop Navigation
               Why this structure: using absolute-centering can cause links to sit *under* the CTA buttons
               (appearing "hidden") when more items are added. A 3-column flex layout avoids overlap. */}
+          {!hideMenuItems && (
           <div className="hidden lg:flex flex-1 items-center justify-center min-w-0">
             <div className="flex items-center justify-center gap-4 xl:gap-6 flex-wrap">
           {navLinks.map((link) =>
             link.isRoute ? (
               <Link
                 key={link.name}
-                href={link.href}
+                to={link.href}
                   className="text-muted-foreground hover:text-foreground transition-colors duration-300 font-medium text-sm xl:text-base relative group whitespace-nowrap px-1"
               >
                 {link.name}
@@ -128,22 +132,26 @@ const Navbar = () => {
           )}
             </div>
           </div>
+          )}
 
         {/* CTA Buttons - Desktop Only */}
+        {!hideMenuItems && (
         <div className="hidden lg:flex items-center gap-2 xl:gap-3 shrink-0">
           <a href="tel:+917995975959">
           <Button variant="heroOutline" size="sm" className="text-xs xl:text-sm px-3 xl:px-4">
             Call Us
           </Button>
           </a>
-          <Link href="/register">
+          <Link to="/register">
           <Button variant="hero" size="sm" className="text-xs xl:text-sm px-3 xl:px-4">
             Register Now
           </Button>
           </Link>
         </div>
+        )}
 
         {/* Mobile/Tablet Menu Button - Show on mobile and tablet, hide on desktop */}
+        {!hideMenuItems && (
         <button
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
           className="lg:hidden text-foreground p-2 z-10"
@@ -151,12 +159,13 @@ const Navbar = () => {
         >
           {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
         </button>
+        )}
         </div>
       </div>
 
       {/* Mobile Menu */}
       <AnimatePresence>
-        {isMobileMenuOpen && (
+        {!hideMenuItems && isMobileMenuOpen && (
           <motion.div
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: "auto" }}
@@ -168,7 +177,7 @@ const Navbar = () => {
               link.isRoute ? (
                   <Link
                     key={link.name}
-                    href={link.href}
+                    to={link.href}
                     onClick={() => setIsMobileMenuOpen(false)}
                     className="text-muted-foreground hover:text-foreground transition-colors duration-300 font-medium py-2"
                   >
@@ -194,7 +203,7 @@ const Navbar = () => {
                   Call Us
                 </Button>
                 </a>
-                <Link href="/register" className="w-full">
+                <Link to="/register" className="w-full">
                 <Button variant="hero" size="lg" className="w-full">
                   Register Now
                 </Button>

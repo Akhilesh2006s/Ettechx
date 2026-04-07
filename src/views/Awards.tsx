@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import { motion } from "framer-motion";
-import Link from "next/link";
+import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
@@ -35,7 +35,7 @@ const Awards = () => {
             className="max-w-5xl mx-auto"
           >
             {/* Back Button */}
-            <Link href="/">
+            <Link to="/">
               <Button
                 variant="ghost"
                 className="mb-6 text-muted-foreground hover:text-foreground"
@@ -83,7 +83,7 @@ const Awards = () => {
                     </div>
                   </div>
                   
-                  <Link href="/register">
+                  <Link to="/register">
                     <Button variant="hero" size="lg" className="group">
                       Register for Awards
                       <ArrowLeft className="w-5 h-5 rotate-180 group-hover:translate-x-1 transition-transform" />
