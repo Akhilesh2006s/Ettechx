@@ -278,7 +278,7 @@ const StatsSection = () => {
                       Show Directory
                     </p>
                     <p className="text-xs text-muted-foreground">
-                      2024 – 25 Edition
+                      2025 Edition
                     </p>
                   </div>
                 </div>
@@ -308,7 +308,7 @@ const StatsSection = () => {
                       Post Show Report
                     </p>
                     <p className="text-xs text-muted-foreground">
-                      2024 Highlights
+                      2025 Highlights
                     </p>
                   </div>
                 </div>
