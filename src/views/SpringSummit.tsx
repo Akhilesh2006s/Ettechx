@@ -5,10 +5,22 @@ import { Button } from "@/components/ui/button";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { ArrowLeft, Calendar, MapPin, Users, Award, Mic2, Wrench, Store, ArrowRight } from "lucide-react";
+import { applyPageSeo } from "@/lib/seo";
 
 const SpringSummit = () => {
   useEffect(() => {
-    document.title = "Et Tech X Summit - Spring Edition - Et Tech X";
+    applyPageSeo({
+      title: "Spring EdTech Summit | ET Tech X India",
+      description: "Join the ET Tech X Spring Summit with expert sessions, networking, and innovation in education technology.",
+      canonical: "https://www.ettechx.com/spring-summit",
+      schema: {
+        "@context": "https://schema.org",
+        "@type": "WebPage",
+        name: "Spring EdTech Summit | ET Tech X India",
+        description: "Join the ET Tech X Spring Summit with expert sessions, networking, and innovation in education technology.",
+        url: "https://www.ettechx.com/spring-summit",
+      },
+    });
     window.scrollTo({ top: 0, behavior: 'smooth' });
   }, []);
 

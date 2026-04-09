@@ -5,10 +5,24 @@ import { Button } from "@/components/ui/button";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { ArrowLeft, Mic2, Users, Calendar, MapPin, Clock } from "lucide-react";
+import { applyPageSeo } from "@/lib/seo";
 
 const Conference = () => {
   useEffect(() => {
-    document.title = "Conference - Et Tech X";
+    applyPageSeo({
+      title: "Education Conference India | EdTech Leaders & Insights",
+      description:
+        "Attend ET Tech X conference with industry leaders discussing trends, innovation, and the future of education.",
+      canonical: "https://www.ettechx.com/conference",
+      schema: {
+        "@context": "https://schema.org",
+        "@type": "WebPage",
+        name: "Education Conference India | EdTech Leaders & Insights",
+        description:
+          "Attend ET Tech X conference with industry leaders discussing trends, innovation, and the future of education.",
+        url: "https://www.ettechx.com/conference",
+      },
+    });
     window.scrollTo({ top: 0, behavior: 'smooth' });
   }, []);
 

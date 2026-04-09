@@ -5,10 +5,22 @@ import { Button } from "@/components/ui/button";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { ArrowLeft, Wrench, Users, Calendar, MapPin, BookOpen } from "lucide-react";
+import { applyPageSeo } from "@/lib/seo";
 
 const Workshops = () => {
   useEffect(() => {
-    document.title = "Workshops - Et Tech X";
+    applyPageSeo({
+      title: "EdTech Workshops | Hands-on Learning & Training",
+      description: "Join expert-led workshops on AI, digital learning, and emerging technologies at ET Tech X.",
+      canonical: "https://www.ettechx.com/workshops",
+      schema: {
+        "@context": "https://schema.org",
+        "@type": "WebPage",
+        name: "EdTech Workshops | Hands-on Learning & Training",
+        description: "Join expert-led workshops on AI, digital learning, and emerging technologies at ET Tech X.",
+        url: "https://www.ettechx.com/workshops",
+      },
+    });
     window.scrollTo({ top: 0, behavior: 'smooth' });
   }, []);
 

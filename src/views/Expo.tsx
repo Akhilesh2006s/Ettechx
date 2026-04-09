@@ -5,9 +5,24 @@ import { Button } from "@/components/ui/button";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { ArrowLeft, Store, Users, Calendar, MapPin, Package } from "lucide-react";
+import { applyPageSeo } from "@/lib/seo";
 
 const Expo = () => {
   useEffect(() => {
+    applyPageSeo({
+      title: "EdTech Expo India | Exhibit & Discover Innovation",
+      description:
+        "Explore the ET Tech X Expo featuring leading EdTech companies, startups, and innovations transforming education in India.",
+      canonical: "https://www.ettechx.com/expo",
+      schema: {
+        "@context": "https://schema.org",
+        "@type": "WebPage",
+        name: "EdTech Expo India | Exhibit & Discover Innovation",
+        description:
+          "Explore the ET Tech X Expo featuring leading EdTech companies, startups, and innovations transforming education in India.",
+        url: "https://www.ettechx.com/expo",
+      },
+    });
     window.scrollTo({ top: 0, behavior: 'smooth' });
   }, []);
 

@@ -94,32 +94,45 @@
     {
       "@context": "https://schema.org",
       "@type": "Event",
-      "name": "Et Tech X 2026 - India's Premier EdTech Expo & Conference",
-      "description": "Join Et Tech X 2026, India's premier educational technology expo featuring awards, conferences, workshops, and exhibitions. September 22-24, 2026 at Yashobhoomi, New Delhi. Connect with 150+ exhibitors and 6000+ attendees.",
+      "name": "ET TECH X 2026 - Educational Technology Expo",
+      "description": "ET TECH X is India's premier educational technology expo featuring conferences, workshops, awards, and exhibitions focused on innovation in education.",
       "startDate": "2026-09-22",
       "endDate": "2026-09-24",
-      "eventStatus": "https://schema.org/EventScheduled",
       "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+      "eventStatus": "https://schema.org/EventScheduled",
       "location": {
         "@type": "Place",
-        "name": "Yashobhoomi, New Delhi",
+        "name": "Yashobhoomi Convention Centre",
         "address": {
           "@type": "PostalAddress",
+          "streetAddress": "Yashobhoomi, Dwarka",
           "addressLocality": "New Delhi",
           "addressRegion": "Delhi",
+          "postalCode": "110061",
           "addressCountry": "IN"
         }
       },
-      "image": "https://www.ettechx.com/logo.png",
       "organizer": {
         "@type": "Organization",
-        "name": "Et Tech X",
+        "name": "Edu Expo Global Pvt Ltd",
         "url": "https://www.ettechx.com"
       },
       "offers": {
         "@type": "Offer",
         "url": "https://www.ettechx.com/register",
-        "availability": "https://schema.org/InStock"
+        "price": "0",
+        "priceCurrency": "INR",
+        "availability": "https://schema.org/InStock",
+        "validFrom": "2026-01-01"
+      },
+      "performer": {
+        "@type": "Organization",
+        "name": "ET TECH X Speakers & Exhibitors"
+      },
+      "eventSchedule": {
+        "@type": "Schedule",
+        "startDate": "2026-09-22",
+        "endDate": "2026-09-24"
       }
     }
     </script>
@@ -128,24 +141,21 @@
     {
       "@context": "https://schema.org",
       "@type": "Organization",
-      "name": "Et Tech X",
-        "url": "https://www.ettechx.com",
-        "logo": "https://www.ettechx.com/logo.png",
-      "description": "India's premier platform for educational technology innovation, bringing together visionaries, educators, startups, and institutions.",
+      "name": "ET Tech X",
+      "url": "https://www.ettechx.com",
+      "logo": "https://www.ettechx.com/logo.png",
+      "sameAs": [
+        "https://in.linkedin.com/company/et-tech-x",
+        "https://www.instagram.com/ettechxexpo",
+        "https://www.facebook.com/ettechxexpo"
+      ],
       "contactPoint": {
         "@type": "ContactPoint",
-        "telephone": "+91-98765-43210",
-        "contactType": "customer service",
-        "email": "info@ettechx.in",
+        "telephone": "+91-9871676622",
+        "contactType": "customer support",
         "areaServed": "IN",
-        "availableLanguage": ["English", "Hindi"]
-      },
-      "sameAs": [
-        "https://www.linkedin.com/company/et-tech-x/",
-        "https://www.instagram.com/ettechxexpo/",
-        "https://www.youtube.com/@eduexpoglobal",
-        "https://www.facebook.com/ettechX/"
-      ]
+        "availableLanguage": "English"
+      }
     }
     </script>
     
@@ -153,11 +163,11 @@
     {
       "@context": "https://schema.org",
       "@type": "WebSite",
-      "name": "Et Tech X",
-        "url": "https://www.ettechx.com",
-        "potentialAction": {
+      "name": "ET Tech X",
+      "url": "https://www.ettechx.com",
+      "potentialAction": {
         "@type": "SearchAction",
-        "target": "https://www.ettechx.com/search?q={search_term_string}",
+        "target": "https://www.ettechx.com/?s={search_term_string}",
         "query-input": "required name=search_term_string"
       }
     }

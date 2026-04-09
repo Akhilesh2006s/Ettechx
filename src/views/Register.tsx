@@ -10,6 +10,7 @@ import { ArrowLeft, CheckCircle, Loader2, User, Mail, Phone, Building, Users, Ca
 import { useToast } from "@/hooks/use-toast";
 import { z } from "zod";
 import { sendRegistrationEmail, type RegistrationData } from "@/lib/emailService";
+import { applyPageSeo } from "@/lib/seo";
 
 const registerSchema = z.object({
   fullName: z.string().min(2, "Name must be at least 2 characters"),
@@ -66,7 +67,20 @@ const Register = () => {
   const { toast } = useToast();
 
   useEffect(() => {
-    document.title = "Register Now - Et Tech X";
+    applyPageSeo({
+      title: "Register for ET Tech X | Book Your EdTech Expo Pass",
+      description:
+        "Register for ET Tech X, India’s leading EdTech expo. Join educators, startups & innovators for conferences, workshops and networking.",
+      canonical: "https://www.ettechx.com/register",
+      schema: {
+        "@context": "https://schema.org",
+        "@type": "WebPage",
+        name: "Register for ET Tech X | Book Your EdTech Expo Pass",
+        description:
+          "Register for ET Tech X, India’s leading EdTech expo. Join educators, startups & innovators for conferences, workshops and networking.",
+        url: "https://www.ettechx.com/register",
+      },
+    });
     // Scroll to top when component mounts
     window.scrollTo({ top: 0, behavior: 'smooth' });
   }, []);

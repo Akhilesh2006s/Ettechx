@@ -5,9 +5,24 @@ import { Button } from "@/components/ui/button";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { ArrowLeft, Award, Trophy, Star, Users, Calendar, MapPin } from "lucide-react";
+import { applyPageSeo } from "@/lib/seo";
 
 const Awards = () => {
   useEffect(() => {
+    applyPageSeo({
+      title: "Education Awards India | ET Tech X Excellence Awards",
+      description:
+        "Recognizing outstanding educators, institutions, and EdTech innovators shaping the future of education in India.",
+      canonical: "https://www.ettechx.com/awards",
+      schema: {
+        "@context": "https://schema.org",
+        "@type": "WebPage",
+        name: "Education Awards India | ET Tech X Excellence Awards",
+        description:
+          "Recognizing outstanding educators, institutions, and EdTech innovators shaping the future of education in India.",
+        url: "https://www.ettechx.com/awards",
+      },
+    });
     window.scrollTo({ top: 0, behavior: 'smooth' });
   }, []);
 
