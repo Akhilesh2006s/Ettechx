@@ -18,6 +18,7 @@ import Gallery from "./views/Gallery";
 import Partners from "./views/Partners";
 import PartnerContractFormRedirect from "./views/PartnerContractFormRedirect";
 import ShortlineRedirect from "./views/ShortlineRedirect";
+import Nominations2026Redirect from "./views/Nominations2026Redirect";
 import PrivacyPolicy from "./views/PrivacyPolicy";
 import TermsOfService from "./views/TermsOfService";
 import RefundPolicy from "./views/RefundPolicy";
@@ -58,6 +59,7 @@ const App = () => (
             <Route path="/partners" element={<Partners />} />
             <Route path="/partnercontractform" element={<PartnerContractFormRedirect />} />
             <Route path="/shortline/:team" element={<ShortlineRedirect />} />
+            <Route path="/nominations2026" element={<Nominations2026Redirect />} />
             <Route path="/privacy-policy" element={<PrivacyPolicy />} />
             <Route path="/terms-of-service" element={<TermsOfService />} />
             <Route path="/refund-policy" element={<RefundPolicy />} />
