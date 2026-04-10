@@ -6,7 +6,7 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import { ArrowLeft, CheckCircle, Loader2, User, Mail, Phone, Building, Users, Calendar } from "lucide-react";
+import { ArrowLeft, CheckCircle, Loader2, User, Mail, Phone, Building, Calendar } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 import { z } from "zod";
 import { sendRegistrationEmail, type RegistrationData } from "@/lib/emailService";
@@ -18,7 +18,6 @@ const registerSchema = z.object({
   phone: z.string().min(10, "Please enter a valid phone number"),
   organization: z.string().min(2, "Organization name is required"),
   designation: z.string().min(2, "Designation is required"),
-  attendees: z.string().min(1, "Please select number of attendees"),
   eventInterest: z.string().min(1, "Please select event interest"),
 });
 
@@ -33,7 +32,6 @@ const submitRegisterToFormSubmit = (data: RegisterFormData) => {
     formData.append("phone", data.phone);
     formData.append("organization", data.organization);
     formData.append("designation", data.designation);
-    formData.append("attendees", data.attendees);
     formData.append("registration_type", data.eventInterest);
     formData.append("_subject", "New Et Tech X Registration");
     formData.append("_captcha", "false");
@@ -58,7 +56,6 @@ const Register = () => {
     phone: "",
     organization: "",
     designation: "",
-    attendees: "",
     eventInterest: "",
   });
   const [errors, setErrors] = useState<Partial<Record<keyof RegisterFormData, string>>>({});
@@ -215,165 +212,11 @@ const Register = () => {
                   </motion.div>
 
                   <form onSubmit={handleSubmit} className="space-y-6">
-                    {/* Full Name */}
+                    {/* Registration Type — first question */}
                     <motion.div
                       initial={{ opacity: 0, y: 10 }}
                       animate={{ opacity: 1, y: 0 }}
                       transition={{ duration: 0.5, delay: 0.1 }}
-                    >
-                      <Label htmlFor="fullName" className="flex items-center gap-2 mb-2">
-                        <User className="w-4 h-4 text-primary" />
-                        Full Name *
-                      </Label>
-                      <Input
-                        id="fullName"
-                        type="text"
-                        placeholder="Enter your full name"
-                        value={formData.fullName}
-                        onChange={(e) => handleChange("fullName", e.target.value)}
-                        className={`h-12 bg-background/50 border-border focus:border-primary ${
-                          errors.fullName ? "border-destructive focus:border-destructive" : ""
-                        }`}
-                      />
-                      {errors.fullName && (
-                        <p className="text-destructive text-sm mt-1">{errors.fullName}</p>
-                      )}
-                    </motion.div>
-
-                    {/* Email */}
-                    <motion.div
-                      initial={{ opacity: 0, y: 10 }}
-                      animate={{ opacity: 1, y: 0 }}
-                      transition={{ duration: 0.5, delay: 0.15 }}
-                    >
-                      <Label htmlFor="email" className="flex items-center gap-2 mb-2">
-                        <Mail className="w-4 h-4 text-secondary" />
-                        Email Address *
-                      </Label>
-                      <Input
-                        id="email"
-                        type="email"
-                        placeholder="your.email@example.com"
-                        value={formData.email}
-                        onChange={(e) => handleChange("email", e.target.value)}
-                        className={`h-12 bg-background/50 border-border focus:border-primary ${
-                          errors.email ? "border-destructive focus:border-destructive" : ""
-                        }`}
-                      />
-                      {errors.email && (
-                        <p className="text-destructive text-sm mt-1">{errors.email}</p>
-                      )}
-                    </motion.div>
-
-                    {/* Phone */}
-                    <motion.div
-                      initial={{ opacity: 0, y: 10 }}
-                      animate={{ opacity: 1, y: 0 }}
-                      transition={{ duration: 0.5, delay: 0.2 }}
-                    >
-                      <Label htmlFor="phone" className="flex items-center gap-2 mb-2">
-                        <Phone className="w-4 h-4 text-accent" />
-                        Phone Number *
-                      </Label>
-                      <Input
-                        id="phone"
-                        type="tel"
-                        placeholder="+91 79959 75959"
-                        value={formData.phone}
-                        onChange={(e) => handleChange("phone", e.target.value)}
-                        className={`h-12 bg-background/50 border-border focus:border-primary ${
-                          errors.phone ? "border-destructive focus:border-destructive" : ""
-                        }`}
-                      />
-                      {errors.phone && (
-                        <p className="text-destructive text-sm mt-1">{errors.phone}</p>
-                      )}
-                    </motion.div>
-
-                    {/* Organization */}
-                    <motion.div
-                      initial={{ opacity: 0, y: 10 }}
-                      animate={{ opacity: 1, y: 0 }}
-                      transition={{ duration: 0.5, delay: 0.25 }}
-                    >
-                      <Label htmlFor="organization" className="flex items-center gap-2 mb-2">
-                        <Building className="w-4 h-4 text-primary" />
-                        Organization *
-                      </Label>
-                      <Input
-                        id="organization"
-                        type="text"
-                        placeholder="Your organization name"
-                        value={formData.organization}
-                        onChange={(e) => handleChange("organization", e.target.value)}
-                        className={`h-12 bg-background/50 border-border focus:border-primary ${
-                          errors.organization ? "border-destructive focus:border-destructive" : ""
-                        }`}
-                      />
-                      {errors.organization && (
-                        <p className="text-destructive text-sm mt-1">{errors.organization}</p>
-                      )}
-                    </motion.div>
-
-                    {/* Designation */}
-                    <motion.div
-                      initial={{ opacity: 0, y: 10 }}
-                      animate={{ opacity: 1, y: 0 }}
-                      transition={{ duration: 0.5, delay: 0.3 }}
-                    >
-                      <Label htmlFor="designation" className="flex items-center gap-2 mb-2">
-                        <User className="w-4 h-4 text-secondary" />
-                        Designation *
-                      </Label>
-                      <Input
-                        id="designation"
-                        type="text"
-                        placeholder="Your designation/role"
-                        value={formData.designation}
-                        onChange={(e) => handleChange("designation", e.target.value)}
-                        className={`h-12 bg-background/50 border-border focus:border-primary ${
-                          errors.designation ? "border-destructive focus:border-destructive" : ""
-                        }`}
-                      />
-                      {errors.designation && (
-                        <p className="text-destructive text-sm mt-1">{errors.designation}</p>
-                      )}
-                    </motion.div>
-
-                    {/* Number of Attendees */}
-                    <motion.div
-                      initial={{ opacity: 0, y: 10 }}
-                      animate={{ opacity: 1, y: 0 }}
-                      transition={{ duration: 0.5, delay: 0.35 }}
-                    >
-                      <Label htmlFor="attendees" className="flex items-center gap-2 mb-2">
-                        <Users className="w-4 h-4 text-accent" />
-                        Number of Attendees *
-                      </Label>
-                      <select
-                        id="attendees"
-                        value={formData.attendees}
-                        onChange={(e) => handleChange("attendees", e.target.value)}
-                        className={`flex h-12 w-full rounded-md border bg-background/50 px-3 py-2 text-base ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 md:text-sm ${
-                          errors.attendees ? "border-destructive focus-visible:ring-destructive" : "border-border focus:border-primary"
-                        }`}
-                      >
-                        <option value="">Select number of attendees</option>
-                        <option value="1">1</option>
-                        <option value="2-5">2-5</option>
-                        <option value="6-10">6-10</option>
-                        <option value="10+">10+</option>
-                      </select>
-                      {errors.attendees && (
-                        <p className="text-destructive text-sm mt-1">{errors.attendees}</p>
-                      )}
-                    </motion.div>
-
-                    {/* Event Interest */}
-                    <motion.div
-                      initial={{ opacity: 0, y: 10 }}
-                      animate={{ opacity: 1, y: 0 }}
-                      transition={{ duration: 0.5, delay: 0.4 }}
                     >
                       <Label htmlFor="eventInterest" className="flex items-center gap-2 mb-2">
                         <Calendar className="w-4 h-4 text-primary" />
@@ -398,11 +241,136 @@ const Register = () => {
                       )}
                     </motion.div>
 
+                    {/* Full Name */}
+                    <motion.div
+                      initial={{ opacity: 0, y: 10 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      transition={{ duration: 0.5, delay: 0.15 }}
+                    >
+                      <Label htmlFor="fullName" className="flex items-center gap-2 mb-2">
+                        <User className="w-4 h-4 text-primary" />
+                        Full Name *
+                      </Label>
+                      <Input
+                        id="fullName"
+                        type="text"
+                        placeholder="Enter your full name"
+                        value={formData.fullName}
+                        onChange={(e) => handleChange("fullName", e.target.value)}
+                        className={`h-12 bg-background/50 border-border focus:border-primary ${
+                          errors.fullName ? "border-destructive focus:border-destructive" : ""
+                        }`}
+                      />
+                      {errors.fullName && (
+                        <p className="text-destructive text-sm mt-1">{errors.fullName}</p>
+                      )}
+                    </motion.div>
+
+                    {/* Email */}
+                    <motion.div
+                      initial={{ opacity: 0, y: 10 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      transition={{ duration: 0.5, delay: 0.2 }}
+                    >
+                      <Label htmlFor="email" className="flex items-center gap-2 mb-2">
+                        <Mail className="w-4 h-4 text-secondary" />
+                        Email Address *
+                      </Label>
+                      <Input
+                        id="email"
+                        type="email"
+                        placeholder="your.email@example.com"
+                        value={formData.email}
+                        onChange={(e) => handleChange("email", e.target.value)}
+                        className={`h-12 bg-background/50 border-border focus:border-primary ${
+                          errors.email ? "border-destructive focus:border-destructive" : ""
+                        }`}
+                      />
+                      {errors.email && (
+                        <p className="text-destructive text-sm mt-1">{errors.email}</p>
+                      )}
+                    </motion.div>
+
+                    {/* Phone */}
+                    <motion.div
+                      initial={{ opacity: 0, y: 10 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      transition={{ duration: 0.5, delay: 0.25 }}
+                    >
+                      <Label htmlFor="phone" className="flex items-center gap-2 mb-2">
+                        <Phone className="w-4 h-4 text-accent" />
+                        Phone Number *
+                      </Label>
+                      <Input
+                        id="phone"
+                        type="tel"
+                        placeholder="+91 79959 75959"
+                        value={formData.phone}
+                        onChange={(e) => handleChange("phone", e.target.value)}
+                        className={`h-12 bg-background/50 border-border focus:border-primary ${
+                          errors.phone ? "border-destructive focus:border-destructive" : ""
+                        }`}
+                      />
+                      {errors.phone && (
+                        <p className="text-destructive text-sm mt-1">{errors.phone}</p>
+                      )}
+                    </motion.div>
+
+                    {/* Organization */}
+                    <motion.div
+                      initial={{ opacity: 0, y: 10 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      transition={{ duration: 0.5, delay: 0.3 }}
+                    >
+                      <Label htmlFor="organization" className="flex items-center gap-2 mb-2">
+                        <Building className="w-4 h-4 text-primary" />
+                        Organization *
+                      </Label>
+                      <Input
+                        id="organization"
+                        type="text"
+                        placeholder="Your organization name"
+                        value={formData.organization}
+                        onChange={(e) => handleChange("organization", e.target.value)}
+                        className={`h-12 bg-background/50 border-border focus:border-primary ${
+                          errors.organization ? "border-destructive focus:border-destructive" : ""
+                        }`}
+                      />
+                      {errors.organization && (
+                        <p className="text-destructive text-sm mt-1">{errors.organization}</p>
+                      )}
+                    </motion.div>
+
+                    {/* Designation */}
+                    <motion.div
+                      initial={{ opacity: 0, y: 10 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      transition={{ duration: 0.5, delay: 0.35 }}
+                    >
+                      <Label htmlFor="designation" className="flex items-center gap-2 mb-2">
+                        <User className="w-4 h-4 text-secondary" />
+                        Designation *
+                      </Label>
+                      <Input
+                        id="designation"
+                        type="text"
+                        placeholder="Your designation/role"
+                        value={formData.designation}
+                        onChange={(e) => handleChange("designation", e.target.value)}
+                        className={`h-12 bg-background/50 border-border focus:border-primary ${
+                          errors.designation ? "border-destructive focus:border-destructive" : ""
+                        }`}
+                      />
+                      {errors.designation && (
+                        <p className="text-destructive text-sm mt-1">{errors.designation}</p>
+                      )}
+                    </motion.div>
+
                     {/* Submit Button */}
                     <motion.div
                       initial={{ opacity: 0, y: 10 }}
                       animate={{ opacity: 1, y: 0 }}
-                      transition={{ duration: 0.5, delay: 0.45 }}
+                      transition={{ duration: 0.5, delay: 0.4 }}
                       className="pt-4"
                     >
                       <Button

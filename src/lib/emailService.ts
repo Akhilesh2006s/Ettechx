@@ -25,7 +25,6 @@ export interface RegistrationData {
   phone: string;
   organization: string;
   designation: string;
-  attendees: string;
   eventInterest: string;
 }
 
@@ -77,8 +76,7 @@ Organization Details:
 - Designation: ${(data as RegistrationData).designation}
 
 Event Details:
-- Number of Attendees: ${(data as RegistrationData).attendees}
-- Event Interest: ${(data as RegistrationData).eventInterest}
+- Registration Type: ${(data as RegistrationData).eventInterest}
 
 Registration Date: ${new Date().toLocaleString()}
       `.trim();
