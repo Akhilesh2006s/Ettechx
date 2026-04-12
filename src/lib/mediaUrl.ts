@@ -12,8 +12,30 @@ function isLocalDevHost(): boolean {
   return h === "localhost" || h === "127.0.0.1";
 }
 
+function pathnameIsBackendMedia(pathname: string): boolean {
+  return pathname.startsWith("/") && mediaPrefixes.some((prefix) => pathname.startsWith(prefix));
+}
+
 function isBackendMediaPath(src: string): boolean {
-  return src.startsWith("/") && mediaPrefixes.some((prefix) => src.startsWith(prefix));
+  return pathnameIsBackendMedia(src);
+}
+
+/**
+ * Gallery/admin data sometimes stores full marketing-site URLs (e.g. https://www.ettechx.com/gallery/...).
+ * Those must be served from the API host, not Vercel — rewrite when pathname is API media.
+ */
+function rewriteAbsoluteMediaUrlToApiIfNeeded(src: string): string {
+  if (!src.startsWith("http://") && !src.startsWith("https://")) return src;
+  try {
+    const u = new URL(src);
+    if (!pathnameIsBackendMedia(u.pathname)) return src;
+    const apiOrigin = getApiOrigin();
+    const apiOriginNormalized = apiOrigin.replace(/\/$/, "");
+    if (u.origin === new URL(apiOriginNormalized).origin) return src;
+    return `${apiOriginNormalized}${u.pathname}${u.search}${u.hash}`;
+  } catch {
+    return src;
+  }
 }
 
 /**
@@ -24,12 +46,13 @@ function isBackendMediaPath(src: string): boolean {
  */
 export function resolveMediaUrl(src: string): string {
   if (!src) return src;
-  if (src.startsWith("http://") || src.startsWith("https://") || src.startsWith("data:")) {
-    return src;
+  if (src.startsWith("data:")) return src;
+  if (src.startsWith("http://") || src.startsWith("https://")) {
+    return rewriteAbsoluteMediaUrlToApiIfNeeded(src);
   }
   if (src.startsWith("/")) {
     if (isBackendMediaPath(src) && !isLocalDevHost()) {
-      return `${getApiOrigin()}${src}`;
+      return `${getApiOrigin().replace(/\/$/, "")}${src}`;
     }
     return src;
   }
@@ -38,11 +61,12 @@ export function resolveMediaUrl(src: string): string {
 
 export function resolveMediaFallbackUrl(src: string): string {
   if (!src) return src;
-  if (src.startsWith("http://") || src.startsWith("https://") || src.startsWith("data:")) {
-    return src;
+  if (src.startsWith("data:")) return src;
+  if (src.startsWith("http://") || src.startsWith("https://")) {
+    return rewriteAbsoluteMediaUrlToApiIfNeeded(src);
   }
   if (isBackendMediaPath(src)) {
-    return `${getApiOrigin()}${src}`;
+    return `${getApiOrigin().replace(/\/$/, "")}${src}`;
   }
   return src;
 }
