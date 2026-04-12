@@ -4,6 +4,22 @@
   "outputDirectory": "dist",
   "rewrites": [
     {
+      "source": "/gallery/:path*",
+      "destination": "https://ettechx-backend-production.up.railway.app/gallery/:path*"
+    },
+    {
+      "source": "/speakers/:path*",
+      "destination": "https://ettechx-backend-production.up.railway.app/speakers/:path*"
+    },
+    {
+      "source": "/sponsors/:path*",
+      "destination": "https://ettechx-backend-production.up.railway.app/sponsors/:path*"
+    },
+    {
+      "source": "/newsletters/:path*",
+      "destination": "https://ettechx-backend-production.up.railway.app/newsletters/:path*"
+    },
+    {
       "source": "/((?!.*\\.).*)",
       "destination": "/index.html"
     }

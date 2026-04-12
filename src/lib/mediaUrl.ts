@@ -1,10 +1,6 @@
-import { getApiBaseUrl } from "./apiBaseUrl";
+import { getMediaOrigin } from "./apiBaseUrl";
 
 const mediaPrefixes = ["/gallery/", "/speakers/", "/sponsors/", "/newsletters/"];
-
-function getApiOrigin(): string {
-  return getApiBaseUrl().replace(/\/api\/?$/, "");
-}
 
 function isLocalDevHost(): boolean {
   if (typeof window === "undefined") return false;
@@ -29,10 +25,9 @@ function rewriteAbsoluteMediaUrlToApiIfNeeded(src: string): string {
   try {
     const u = new URL(src);
     if (!pathnameIsBackendMedia(u.pathname)) return src;
-    const apiOrigin = getApiOrigin();
-    const apiOriginNormalized = apiOrigin.replace(/\/$/, "");
-    if (u.origin === new URL(apiOriginNormalized).origin) return src;
-    return `${apiOriginNormalized}${u.pathname}${u.search}${u.hash}`;
+    const mediaOrigin = getMediaOrigin();
+    if (u.origin === new URL(mediaOrigin).origin) return src;
+    return `${mediaOrigin}${u.pathname}${u.search}${u.hash}`;
   } catch {
     return src;
   }
@@ -52,7 +47,7 @@ export function resolveMediaUrl(src: string): string {
   }
   if (src.startsWith("/")) {
     if (isBackendMediaPath(src) && !isLocalDevHost()) {
-      return `${getApiOrigin().replace(/\/$/, "")}${src}`;
+      return `${getMediaOrigin()}${src}`;
     }
     return src;
   }
@@ -66,7 +61,7 @@ export function resolveMediaFallbackUrl(src: string): string {
     return rewriteAbsoluteMediaUrlToApiIfNeeded(src);
   }
   if (isBackendMediaPath(src)) {
-    return `${getApiOrigin().replace(/\/$/, "")}${src}`;
+    return `${getMediaOrigin()}${src}`;
   }
   return src;
 }
