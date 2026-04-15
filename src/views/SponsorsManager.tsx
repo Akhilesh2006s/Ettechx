@@ -96,6 +96,16 @@ const defaultSponsors: Sponsor[] = [
   },
 ];
 
+const normalizeTier = (tier: string): Sponsor["tier"] => {
+  const value = tier.toLowerCase().replace(/[\s_-]+/g, "");
+  if (value === "gold") return "gold";
+  if (value === "silver") return "silver";
+  if (value === "k12") return "k12";
+  if (value === "university") return "university";
+  if (value === "media" || value === "mediapartner") return "media";
+  return "silver";
+};
+
 const SponsorsManager = () => {
   const { isAuthenticated, isReady, logout } = useAuth();
   const navigate = useNavigate();
@@ -116,7 +126,12 @@ const SponsorsManager = () => {
     try {
       const data = await fetchSponsorsData();
       if (data && data.length > 0) {
-        setSponsorsData(data);
+        setSponsorsData(
+          data.map((sponsor) => ({
+            ...sponsor,
+            tier: normalizeTier(sponsor.tier),
+          }))
+        );
       } else {
         setSponsorsData([]);
       }
@@ -287,7 +302,7 @@ const SponsorsManager = () => {
       setSponsorName(sponsor.name);
       setSponsorPath(sponsor.path);
       setSponsorType(sponsor.type);
-      setSponsorTier(sponsor.tier);
+      setSponsorTier(normalizeTier(sponsor.tier));
       setSelectedFile(null);
       setFilePreview("");
     }
@@ -394,11 +409,11 @@ const SponsorsManager = () => {
 
   // Group sponsors by tier
   const groupedSponsors = {
-    gold: sponsorsData.filter(s => s.tier === "gold"),
-    silver: sponsorsData.filter(s => s.tier === "silver"),
-    k12: sponsorsData.filter(s => s.tier === "k12"),
-    university: sponsorsData.filter(s => s.tier === "university"),
-    media: sponsorsData.filter(s => s.tier === "media"),
+    gold: sponsorsData.filter(s => normalizeTier(s.tier) === "gold"),
+    silver: sponsorsData.filter(s => normalizeTier(s.tier) === "silver"),
+    k12: sponsorsData.filter(s => normalizeTier(s.tier) === "k12"),
+    university: sponsorsData.filter(s => normalizeTier(s.tier) === "university"),
+    media: sponsorsData.filter(s => normalizeTier(s.tier) === "media"),
   };
 
   if (!isReady) {

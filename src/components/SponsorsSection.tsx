@@ -12,6 +12,16 @@ interface PartnerLogo {
   tier: "gold" | "silver" | "k12" | "university" | "media";
 }
 
+const normalizeTier = (tier: string): PartnerLogo["tier"] => {
+  const value = tier.toLowerCase().replace(/[\s_-]+/g, "");
+  if (value === "gold") return "gold";
+  if (value === "silver") return "silver";
+  if (value === "k12") return "k12";
+  if (value === "university") return "university";
+  if (value === "media" || value === "mediapartner") return "media";
+  return "silver";
+};
+
 // Default partners (fallback)
 const defaultPartners: PartnerLogo[] = [
   // Gold Partners
@@ -195,7 +205,7 @@ const SponsorsSection = () => {
           name: s.name,
           path: s.path,
           type: s.type,
-          tier: s.tier,
+          tier: normalizeTier(s.tier),
         }));
         // Merge with defaults (avoid duplicates by name)
         const apiNames = new Set(converted.map(p => p.name));
