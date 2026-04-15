@@ -108,7 +108,7 @@ const SponsorsManager = () => {
   const [sponsorName, setSponsorName] = useState("");
   const [sponsorPath, setSponsorPath] = useState("");
   const [sponsorType, setSponsorType] = useState<"image" | "pdf" | "svg">("image");
-  const [sponsorTier, setSponsorTier] = useState<"gold" | "silver" | "k12" | "university">("silver");
+  const [sponsorTier, setSponsorTier] = useState<"gold" | "silver" | "k12" | "university" | "media">("silver");
   const [selectedFile, setSelectedFile] = useState<File | null>(null);
   const [filePreview, setFilePreview] = useState<string>("");
 
@@ -398,6 +398,7 @@ const SponsorsManager = () => {
     silver: sponsorsData.filter(s => s.tier === "silver"),
     k12: sponsorsData.filter(s => s.tier === "k12"),
     university: sponsorsData.filter(s => s.tier === "university"),
+    media: sponsorsData.filter(s => s.tier === "media"),
   };
 
   if (!isReady) {
@@ -492,6 +493,7 @@ const SponsorsManager = () => {
                   <option value="silver">Silver</option>
                   <option value="k12">K12</option>
                   <option value="university">University</option>
+                  <option value="media">Media Partner</option>
                 </select>
               </div>
               
@@ -570,7 +572,7 @@ const SponsorsManager = () => {
                   className="bg-card rounded-lg border border-border p-6"
                 >
                   <h3 className="text-2xl font-bold text-foreground mb-4 capitalize">
-                    {tier} Partners ({sponsors.length})
+                    {tier === "media" ? "Media Partners" : `${tier} Partners`} ({sponsors.length})
                   </h3>
                   <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
                     {sponsors.map((sponsor) => (

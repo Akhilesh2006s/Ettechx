@@ -9,7 +9,7 @@ interface PartnerLogo {
   name: string;
   path: string;
   type: "image" | "pdf" | "svg";
-  tier: "gold" | "silver" | "k12" | "university";
+  tier: "gold" | "silver" | "k12" | "university" | "media";
 }
 
 // Default partners (fallback)
@@ -114,6 +114,13 @@ const getTierStyles = (tier: string) => {
         border: "border-blue-300/50 dark:border-blue-700/50",
         hover: "hover:border-blue-400 hover:shadow-blue-200/50 dark:hover:shadow-blue-900/20",
         badge: "bg-gradient-to-r from-blue-500 to-indigo-500",
+      };
+    case "media":
+      return {
+        bg: "bg-gradient-to-br from-purple-50 to-fuchsia-50 dark:from-purple-950/20 dark:to-fuchsia-950/20",
+        border: "border-purple-300/50 dark:border-purple-700/50",
+        hover: "hover:border-purple-400 hover:shadow-purple-200/50 dark:hover:shadow-purple-900/20",
+        badge: "bg-gradient-to-r from-purple-500 to-fuchsia-500",
       };
     default:
       return {
@@ -367,6 +374,43 @@ const SponsorsSection = () => {
                     .map((partner, index) => (
                       <motion.div
                         key={`university-${partner.name}-${index}`}
+                        initial={{ opacity: 0, scale: 0.9 }}
+                        whileInView={{ opacity: 1, scale: 1 }}
+                        transition={{ duration: 0.4, delay: index * 0.08 }}
+                        viewport={{ once: true }}
+                        whileHover={{ scale: 1.03, y: -6 }}
+                        className="h-44"
+                      >
+                        {renderLogo(partner)}
+                      </motion.div>
+                    ))}
+                </div>
+              </motion.div>
+            )}
+
+            {/* Media Partners Section */}
+            {partners.filter((p) => p.tier === "media").length > 0 && (
+              <motion.div
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.7 }}
+                viewport={{ once: true }}
+                className="space-y-8"
+              >
+                <div className="text-center mb-10">
+                  <div className="inline-flex items-center gap-3 mb-4">
+                    <div className="h-1 w-12 bg-gradient-to-r from-purple-500 to-fuchsia-500 rounded-full" />
+                    <h3 className="text-3xl md:text-4xl font-bold text-foreground">Media Partner</h3>
+                    <div className="h-1 w-12 bg-gradient-to-r from-purple-500 to-fuchsia-500 rounded-full" />
+                  </div>
+                  <p className="text-muted-foreground text-sm md:text-base">Our media and ecosystem partners</p>
+                </div>
+                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+                  {partners
+                    .filter((p) => p.tier === "media")
+                    .map((partner, index) => (
+                      <motion.div
+                        key={`media-${partner.name}-${index}`}
                         initial={{ opacity: 0, scale: 0.9 }}
                         whileInView={{ opacity: 1, scale: 1 }}
                         transition={{ duration: 0.4, delay: index * 0.08 }}

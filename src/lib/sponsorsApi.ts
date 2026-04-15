@@ -8,7 +8,7 @@ export interface Sponsor {
   name: string;
   path: string;
   type: "image" | "pdf" | "svg";
-  tier: "gold" | "silver" | "k12" | "university";
+  tier: "gold" | "silver" | "k12" | "university" | "media";
 }
 
 // Fetch all sponsors data
