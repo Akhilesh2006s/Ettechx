@@ -54,14 +54,14 @@ const HeroSection = () => {
             initial={{ opacity: 0, y: 30, scale: 0.98 }}
             animate={{ opacity: 1, y: 0, scale: 1 }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="relative w-full mb-6 sm:mb-10 h-[80vh] sm:h-[80vh] md:h-[85vh] lg:h-[90vh] px-0"
+            className="relative w-full max-w-5xl mx-auto mb-8 sm:mb-10 md:mb-12 px-0 flex flex-col items-center"
           >
             {/* Decorative elements behind image */}
             <div className="absolute -top-4 -left-4 md:-top-6 md:-left-6 lg:-top-8 lg:-left-8 w-full h-full rounded-2xl md:rounded-3xl bg-gradient-to-br from-primary/20 to-secondary/20 blur-sm overflow-hidden" />
             <div className="absolute -bottom-4 -right-4 md:-bottom-6 md:-right-6 lg:-bottom-8 lg:-right-8 w-full h-full rounded-2xl md:rounded-3xl bg-gradient-to-br from-accent/20 to-gold/20 blur-sm overflow-hidden" />
             
             {/* Main Image Container */}
-            <div className="relative h-full rounded-2xl md:rounded-3xl overflow-hidden shadow-2xl border-2 border-border/50 max-w-none">
+            <div className="relative z-10 w-full rounded-2xl md:rounded-3xl overflow-hidden shadow-2xl border-2 border-border/50 h-[38vh] sm:h-[42vh] md:h-[50vh] lg:h-[56vh] max-h-[56vh]">
               <img
                 src="/Hero%20.jpeg"
                 alt="EdTech innovation showcasing students and professionals using advanced learning technology with VR headsets and digital displays"
@@ -179,7 +179,7 @@ const HeroSection = () => {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.5 }}
-            className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4 mb-8 sm:mb-12 w-full px-4"
+            className="relative z-20 mt-4 sm:mt-6 flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4 mb-10 sm:mb-14 w-full px-4"
           >
             <Link to="/register">
             <Button variant="hero" size="xl" className="group">

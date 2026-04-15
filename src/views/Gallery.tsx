@@ -237,19 +237,20 @@ const Gallery = () => {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
-          className="fixed inset-0 z-50 flex items-center justify-center bg-black/90 p-4"
+          className="fixed inset-0 z-[70] flex items-center justify-center bg-black/90 p-4"
           onClick={() => setSelectedImage(null)}
         >
           <motion.div
-            initial={{ scale: 0.9, opacity: 0 }}
-            animate={{ scale: 1, opacity: 1 }}
-            exit={{ scale: 0.9, opacity: 0 }}
-            className="relative max-w-6xl w-full max-h-[90vh]"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="relative mx-auto max-w-4xl w-[92vw] max-h-[78vh]"
             onClick={(e) => e.stopPropagation()}
           >
             <button
               onClick={() => setSelectedImage(null)}
-              className="absolute -top-12 right-0 w-10 h-10 rounded-full bg-white text-foreground flex items-center justify-center hover:scale-110 transition-transform shadow-lg z-10"
+              className="fixed right-4 md:right-6 w-11 h-11 rounded-full bg-white/95 text-foreground flex items-center justify-center hover:scale-110 transition-transform shadow-lg z-[80]"
+              style={{ top: "100px" }}
               aria-label="Close image preview"
             >
               <X className="w-6 h-6" />
@@ -257,7 +258,7 @@ const Gallery = () => {
             <img
               src={resolveMediaUrl(selectedImage)}
               alt="Gallery Image"
-              className="w-full h-auto max-h-[90vh] object-contain rounded-lg"
+              className="w-auto max-w-full h-auto max-h-[70vh] object-contain rounded-lg mx-auto"
               loading="lazy"
               decoding="async"
               onError={(e) => {
