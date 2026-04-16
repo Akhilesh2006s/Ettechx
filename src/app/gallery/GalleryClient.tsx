@@ -178,15 +178,6 @@ export default function GalleryClient() {
                 </motion.div>
               ))}
             </div>
-
-            <div className="mt-12 text-center">
-              <Link
-                href="/admin/login"
-                className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition-colors"
-              >
-                Admin? Login to manage gallery
-              </Link>
-            </div>
           </motion.div>
         </div>
       </section>

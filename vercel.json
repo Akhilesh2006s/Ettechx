@@ -4,6 +4,22 @@
   "outputDirectory": "dist",
   "rewrites": [
     {
+      "source": "/gallery",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/gallery/",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/speakers",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/speakers/",
+      "destination": "/index.html"
+    },
+    {
       "source": "/gallery/:path*",
       "destination": "https://ettechx-backend-production.up.railway.app/gallery/:path*"
     },
