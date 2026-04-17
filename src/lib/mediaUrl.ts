@@ -25,9 +25,11 @@ function rewriteAbsoluteMediaUrlToApiIfNeeded(src: string): string {
   try {
     const u = new URL(src);
     if (!pathnameIsBackendMedia(u.pathname)) return src;
-    // Gallery defaults are currently served from the site host in production.
-    // Keep absolute gallery URLs as-is and rely on component onError fallback if needed.
-    if (u.pathname.startsWith("/gallery/")) return src;
+    // Gallery assets are served from the site host; normalize any absolute gallery URL
+    // (backend or marketing origin) to same-origin path for consistent production behavior.
+    if (u.pathname.startsWith("/gallery/")) {
+      return `${u.pathname}${u.search}${u.hash}`;
+    }
     const mediaOrigin = getMediaOrigin();
     if (u.origin === new URL(mediaOrigin).origin) return src;
     return `${mediaOrigin}${u.pathname}${u.search}${u.hash}`;
