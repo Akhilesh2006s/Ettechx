@@ -8,7 +8,7 @@ import Footer from "@/components/Footer";
 import { X, ChevronDown, ChevronUp, Lock } from "lucide-react";
 import { loadGalleryData, iconMap, type GalleryYear, defaultGalleryData } from "@/lib/galleryData";
 import { fetchGalleryData } from "@/lib/galleryApi";
-import { resolveMediaUrl } from "@/lib/mediaUrl";
+import { resolveMediaUrl, resolveMediaFallbackUrl } from "@/lib/mediaUrl";
 
 export default function GalleryClient() {
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
@@ -162,7 +162,13 @@ export default function GalleryClient() {
                                       loading="lazy"
                                       decoding="async"
                                       onError={(e) => {
-                                        (e.target as HTMLImageElement).src = "/placeholder.svg";
+                                        const img = e.currentTarget;
+                                        if (img.dataset.mediaFallbackTried !== "1") {
+                                          img.dataset.mediaFallbackTried = "1";
+                                          img.src = resolveMediaFallbackUrl(image.src);
+                                        } else {
+                                          img.src = "/placeholder.svg";
+                                        }
                                       }}
                                     />
                                     <div className="absolute inset-0 bg-gradient-to-t from-foreground/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
@@ -211,7 +217,13 @@ export default function GalleryClient() {
               loading="lazy"
               decoding="async"
               onError={(e) => {
-                (e.target as HTMLImageElement).src = "/placeholder.svg";
+                const img = e.currentTarget;
+                if (img.dataset.mediaFallbackTried !== "1") {
+                  img.dataset.mediaFallbackTried = "1";
+                  img.src = resolveMediaFallbackUrl(selectedImage);
+                } else {
+                  img.src = "/placeholder.svg";
+                }
               }}
             />
           </motion.div>

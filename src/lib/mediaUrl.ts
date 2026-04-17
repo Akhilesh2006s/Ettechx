@@ -25,6 +25,9 @@ function rewriteAbsoluteMediaUrlToApiIfNeeded(src: string): string {
   try {
     const u = new URL(src);
     if (!pathnameIsBackendMedia(u.pathname)) return src;
+    // Gallery defaults are currently served from the site host in production.
+    // Keep absolute gallery URLs as-is and rely on component onError fallback if needed.
+    if (u.pathname.startsWith("/gallery/")) return src;
     const mediaOrigin = getMediaOrigin();
     if (u.origin === new URL(mediaOrigin).origin) return src;
     return `${mediaOrigin}${u.pathname}${u.search}${u.hash}`;
@@ -46,6 +49,10 @@ export function resolveMediaUrl(src: string): string {
     return rewriteAbsoluteMediaUrlToApiIfNeeded(src);
   }
   if (src.startsWith("/")) {
+    // /gallery/* is hosted on the site domain in production; try same-origin first.
+    if (src.startsWith("/gallery/")) {
+      return src;
+    }
     if (isBackendMediaPath(src) && !isLocalDevHost()) {
       return `${getMediaOrigin()}${src}`;
     }
