@@ -42,6 +42,24 @@
   ],
   "headers": [
     {
+      "source": "/gallery",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=0, must-revalidate"
+        }
+      ]
+    },
+    {
+      "source": "/gallery/",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=0, must-revalidate"
+        }
+      ]
+    },
+    {
       "source": "/assets/:path*",
       "headers": [
         {
@@ -73,7 +91,7 @@
       ]
     },
     {
-      "source": "/gallery/:path*",
+      "source": "/gallery/:path*\\.(jpg|jpeg|png|gif|webp|svg|avif|bmp|JPG|JPEG|PNG|GIF|WEBP|SVG|AVIF|BMP)",
       "headers": [
         {
           "key": "Cache-Control",
