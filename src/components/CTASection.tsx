@@ -107,7 +107,7 @@ const CTASection = () => {
             >
               <Link to="/register" className="w-full sm:w-auto">
               <Button variant="hero" size="xl" className="group w-full sm:w-auto">
-                Register Now
+                Enquire Now
                 <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
               </Button>
               </Link>

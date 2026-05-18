@@ -183,7 +183,7 @@ const HeroSection = () => {
           >
             <Link to="/register">
             <Button variant="hero" size="xl" className="group">
-              Register Now
+              Enquire Now
               <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
             </Button>
             </Link>

@@ -33,7 +33,7 @@ const submitRegisterToFormSubmit = (data: RegisterFormData) => {
     formData.append("organization", data.organization);
     formData.append("designation", data.designation);
     formData.append("registration_type", data.eventInterest);
-    formData.append("_subject", "New Et Tech X Registration");
+    formData.append("_subject", "New Et Tech X Enquiry");
     formData.append("_captcha", "false");
 
     // We don't care about the response; no-cors avoids CORS errors in browser
@@ -65,16 +65,16 @@ const Register = () => {
 
   useEffect(() => {
     applyPageSeo({
-      title: "Register for ET Tech X | Book Your EdTech Expo Pass",
+      title: "Enquire for ET Tech X | Book Your EdTech Expo Pass",
       description:
-        "Register for ET Tech X, India’s leading EdTech expo. Join educators, startups & innovators for conferences, workshops and networking.",
+        "Enquire for ET Tech X, India’s leading EdTech expo. Join educators, startups & innovators for conferences, workshops and networking.",
       canonical: "https://www.ettechx.com/register",
       schema: {
         "@context": "https://schema.org",
         "@type": "WebPage",
-        name: "Register for ET Tech X | Book Your EdTech Expo Pass",
+        name: "Enquire for ET Tech X | Book Your EdTech Expo Pass",
         description:
-          "Register for ET Tech X, India’s leading EdTech expo. Join educators, startups & innovators for conferences, workshops and networking.",
+          "Enquire for ET Tech X, India’s leading EdTech expo. Join educators, startups & innovators for conferences, workshops and networking.",
         url: "https://www.ettechx.com/register",
       },
     });
@@ -117,8 +117,8 @@ const Register = () => {
       setIsSuccess(true);
       
       toast({
-        title: "Registration Successful!",
-        description: "We've received your registration. You'll receive a confirmation email shortly.",
+        title: "Enquiry Successful!",
+        description: "We've received your enquiry. You'll receive a confirmation email shortly.",
       });
     } catch (error) {
       console.error("Registration error:", error);
@@ -127,8 +127,8 @@ const Register = () => {
       // Best-effort attempt to send via FormSubmit even if our email service failed
       submitRegisterToFormSubmit(validatedData);
       toast({
-        title: "Registration Successful!",
-        description: "We've received your registration. You'll receive a confirmation email shortly.",
+        title: "Enquiry Successful!",
+        description: "We've received your enquiry. You'll receive a confirmation email shortly.",
       });
     } finally {
       setIsSubmitting(false);
@@ -184,10 +184,10 @@ const Register = () => {
                     <CheckCircle className="w-12 h-12 text-accent" />
                   </motion.div>
                   <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground mb-4">
-                    Registration Successful!
+                    Enquiry Successful!
                   </h2>
                   <p className="text-muted-foreground mb-8">
-                    Thank you for registering for Et Tech X. Your details have been submitted successfully.
+                    Thank you for your enquiry about Et Tech X. Your details have been submitted successfully.
                   </p>
                   <Link to="/">
                     <Button variant="hero" size="lg">
@@ -204,7 +204,7 @@ const Register = () => {
                     className="text-center mb-8"
                   >
                     <h1 className="font-display text-4xl md:text-5xl font-bold text-foreground mb-4">
-                      Register for <span className="text-gradient-primary">Et Tech X</span>
+                      Enquire for <span className="text-gradient-primary">Et Tech X</span>
                     </h1>
                     <p className="text-muted-foreground text-lg">
                       Join India's premier EdTech expo. Secure your spot today!
@@ -212,7 +212,7 @@ const Register = () => {
                   </motion.div>
 
                   <form onSubmit={handleSubmit} className="space-y-6">
-                    {/* Registration Type — first question */}
+                    {/* Enquiry Type — first question */}
                     <motion.div
                       initial={{ opacity: 0, y: 10 }}
                       animate={{ opacity: 1, y: 0 }}
@@ -220,7 +220,7 @@ const Register = () => {
                     >
                       <Label htmlFor="eventInterest" className="flex items-center gap-2 mb-2">
                         <Calendar className="w-4 h-4 text-primary" />
-                        Registration Type *
+                        Enquiry Type *
                       </Label>
                       <select
                         id="eventInterest"
@@ -230,11 +230,11 @@ const Register = () => {
                           errors.eventInterest ? "border-destructive focus-visible:ring-destructive" : "border-border focus:border-primary"
                         }`}
                       >
-                        <option value="">Select registration type</option>
-                        <option value="exhibitor">Exhibitor Registration</option>
-                        <option value="conference">Conference Registration</option>
-                        <option value="workshops">Workshops Registration</option>
-                        <option value="visitor">Visitor Registration</option>
+                        <option value="">Select enquiry type</option>
+                        <option value="exhibitor">Exhibitor Enquiry</option>
+                        <option value="conference">Conference Enquiry</option>
+                        <option value="workshops">Workshops Enquiry</option>
+                        <option value="visitor">Visitor Enquiry</option>
                       </select>
                       {errors.eventInterest && (
                         <p className="text-destructive text-sm mt-1">{errors.eventInterest}</p>
@@ -387,7 +387,7 @@ const Register = () => {
                           </>
                         ) : (
                           <>
-                            Complete Registration
+                            Complete Enquiry
                             <ArrowLeft className="w-5 h-5 rotate-180 group-hover:translate-x-1 transition-transform" />
                           </>
                         )}

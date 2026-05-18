@@ -64,7 +64,7 @@ Subscription Date: ${new Date().toLocaleString()}
 
     case 'registration':
       return `
-New Event Registration
+New Event Enquiry
 
 Personal Information:
 - Full Name: ${(data as RegistrationData).fullName}
@@ -76,9 +76,9 @@ Organization Details:
 - Designation: ${(data as RegistrationData).designation}
 
 Event Details:
-- Registration Type: ${(data as RegistrationData).eventInterest}
+- Enquiry Type: ${(data as RegistrationData).eventInterest}
 
-Registration Date: ${new Date().toLocaleString()}
+Enquiry Date: ${new Date().toLocaleString()}
       `.trim();
 
     case 'exhibitor':
@@ -152,7 +152,7 @@ export const sendRegistrationEmail = async (data: RegistrationData): Promise<boo
     const templateParams = {
       to_email: RECIPIENT_EMAIL,
       from_email: data.email,
-      subject: `New Event Registration - ${data.fullName}`,
+      subject: `New Event Enquiry - ${data.fullName}`,
       message: message,
       reply_to: data.email,
       full_name: data.fullName,

@@ -144,7 +144,7 @@ const Navbar = ({ hideMenuItems = false }: NavbarProps) => {
           </a>
           <Link to="/register">
           <Button variant="hero" size="sm" className="text-xs xl:text-sm px-3 xl:px-4">
-            Register Now
+            Enquire Now
           </Button>
           </Link>
         </div>
@@ -205,7 +205,7 @@ const Navbar = ({ hideMenuItems = false }: NavbarProps) => {
                 </a>
                 <Link to="/register" className="w-full">
                 <Button variant="hero" size="lg" className="w-full">
-                  Register Now
+                  Enquire Now
                 </Button>
                 </Link>
               </div>
