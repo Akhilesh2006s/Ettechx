@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { Link } from "react-router-dom";
+import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { ArrowRight, Phone, Mail, Send, CheckCircle, Loader2 } from "lucide-react";
@@ -105,7 +105,7 @@ const CTASection = () => {
               transition={{ duration: 0.5, delay: 0.3 }}
               className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-10"
             >
-              <Link to="/register" className="w-full sm:w-auto">
+              <Link href="/register" className="w-full sm:w-auto">
               <Button variant="hero" size="xl" className="group w-full sm:w-auto">
                 Enquire Now
                 <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />

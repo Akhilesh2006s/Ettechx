@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Link } from "react-router-dom";
+import Link from "next/link";
 import { Award, Mic2, Wrench, Store } from "lucide-react";
 
 const EventsSection = () => {
@@ -108,7 +108,7 @@ const EventsSection = () => {
               whileHover={{ y: -8, scale: 1.01 }}
               className="group relative"
             >
-              <Link to={event.link} className="block h-full">
+              <Link href={event.link} className="block h-full">
                 <div className={`h-full rounded-2xl bg-card border border-border ${event.hoverBorder} transition-all duration-500 shadow-card overflow-hidden cursor-pointer`}>
                 {/* Colored background accent */}
                 <div className={`absolute top-0 right-0 w-40 h-40 ${event.bgColor} rounded-bl-[120px] rounded-tr-2xl opacity-60`} />
