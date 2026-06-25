@@ -11,14 +11,14 @@ const Workshops = () => {
   useEffect(() => {
     applyPageSeo({
       title: "EdTech Workshops | Hands-on Learning & Training",
-      description: "Join expert-led workshops on AI, digital learning, and emerging technologies at ET Tech X.",
-      canonical: "https://www.ettechx.com/workshops",
+      description: "Join expert-led workshops on AI, digital learning, and emerging technologies at EduExpoGlobal.",
+      canonical: "https://www.eduexpoglobal.com/workshops",
       schema: {
         "@context": "https://schema.org",
         "@type": "WebPage",
         name: "EdTech Workshops | Hands-on Learning & Training",
-        description: "Join expert-led workshops on AI, digital learning, and emerging technologies at ET Tech X.",
-        url: "https://www.ettechx.com/workshops",
+        description: "Join expert-led workshops on AI, digital learning, and emerging technologies at EduExpoGlobal.",
+        url: "https://www.eduexpoglobal.com/workshops",
       },
     });
     window.scrollTo({ top: 0, behavior: 'smooth' });

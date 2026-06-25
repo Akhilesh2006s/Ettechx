@@ -7,7 +7,7 @@ import Footer from "@/components/Footer";
 
 const TermsOfService = () => {
   useEffect(() => {
-    document.title = "Terms of Service - Et Tech X";
+    document.title = "Terms of Service - EduExpoGlobal";
     window.scrollTo({ top: 0, behavior: 'smooth' });
   }, []);
 
@@ -16,7 +16,7 @@ const TermsOfService = () => {
       icon: FileText,
       title: "1. Acceptance of Terms",
       content: [
-        "By accessing and using the Et Tech X website and services, you accept and agree to be bound by these Terms of Service. If you do not agree to these terms, please do not use our services.",
+        "By accessing and using the EduExpoGlobal website and services, you accept and agree to be bound by these Terms of Service. If you do not agree to these terms, please do not use our services.",
         "We reserve the right to modify these terms at any time. Your continued use of our services after changes are posted constitutes acceptance of the modified terms."
       ]
     },
@@ -64,7 +64,7 @@ const TermsOfService = () => {
       icon: Scale,
       title: "5. Intellectual Property Rights",
       content: [
-        "All content on our website and services, including text, graphics, logos, images, and software, is the property of Et Tech X or its licensors and is protected by copyright, trademark, and other intellectual property laws.",
+        "All content on our website and services, including text, graphics, logos, images, and software, is the property of EduExpoGlobal or its licensors and is protected by copyright, trademark, and other intellectual property laws.",
         "You may not:",
         "• Reproduce, distribute, or create derivative works without permission",
         "• Use our trademarks or logos without written consent",
@@ -126,7 +126,7 @@ const TermsOfService = () => {
       icon: CheckCircle,
       title: "10. Indemnification",
       content: [
-        "You agree to indemnify and hold harmless Et Tech X, its officers, directors, employees, and agents from any claims, damages, losses, liabilities, and expenses (including legal fees) arising from:",
+        "You agree to indemnify and hold harmless EduExpoGlobal, its officers, directors, employees, and agents from any claims, damages, losses, liabilities, and expenses (including legal fees) arising from:",
         "• Your use of our services",
         "• Your violation of these Terms",
         "• Your violation of any rights of another party",
@@ -173,8 +173,8 @@ const TermsOfService = () => {
       title: "14. Contact Information",
       content: [
         "If you have any questions about these Terms of Service, please contact us:",
-        "• Email: info@ettechx.com",
-        "• Address: Et Tech X, India",
+        "• Email: info@eduexpoglobal.com",
+        "• Address: EduExpoGlobal, India",
         "• Phone: [Contact Number]",
         "We will respond to your inquiries within a reasonable timeframe."
       ]
@@ -218,7 +218,7 @@ const TermsOfService = () => {
                 Last Updated: {new Date().toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}
               </p>
               <p className="text-muted-foreground text-base max-w-2xl mx-auto">
-                Please read these terms carefully before using our services. These terms govern your use of Et Tech X.
+                Please read these terms carefully before using our services. These terms govern your use of EduExpoGlobal.
               </p>
             </div>
 
@@ -230,7 +230,7 @@ const TermsOfService = () => {
               className="bg-card border border-border rounded-2xl p-8 mb-8 shadow-lg"
             >
               <p className="text-muted-foreground leading-relaxed">
-                Welcome to Et Tech X. These Terms of Service ("Terms") constitute a legally binding agreement between you and Et Tech X ("we," "our," or "us") regarding your use of our website, services, and participation in our events. By accessing or using our services, you agree to be bound by these Terms.
+                Welcome to EduExpoGlobal. These Terms of Service ("Terms") constitute a legally binding agreement between you and EduExpoGlobal ("we," "our," or "us") regarding your use of our website, services, and participation in our events. By accessing or using our services, you agree to be bound by these Terms.
               </p>
             </motion.div>
 

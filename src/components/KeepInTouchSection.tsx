@@ -8,7 +8,7 @@ const contacts = [
     role: "Project Director",
     phoneLabel: "+91-80088 45432",
     phoneHref: "tel:+918008845432",
-    email: "sachin@ettechx.com",
+    email: "sachin@eduexpoglobal.com",
     avatarColor: "from-orange-400 to-amber-500",
   },
   {
@@ -17,7 +17,7 @@ const contacts = [
     role: "Sr. Director",
     phoneLabel: "+91-8130990660",
     phoneHref: "tel:+918130990660",
-    email: "pallav@ettechx.com",
+    email: "pallav@eduexpoglobal.com",
     avatarColor: "from-fuchsia-500 to-violet-500",
   },
   {
@@ -26,7 +26,7 @@ const contacts = [
     role: "Asst. Manager",
     phoneLabel: "+91-98716 76622",
     phoneHref: "tel:+919871676622",
-    email: "tanmay@ettechx.com",
+    email: "tanmay@eduexpoglobal.com",
     avatarColor: "from-amber-400 to-orange-500",
   },
 ];

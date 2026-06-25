@@ -1,7 +1,7 @@
 import { useState, useEffect, ReactNode } from "react";
 import { AuthContext } from "@/context/auth-context";
 
-const ADMIN_EMAIL = "info@ettechx.com";
+const ADMIN_EMAIL = "info@eduexpoglobal.com";
 const ADMIN_PASSWORD = "Eduexpo@2406";
 
 export const AuthProvider = ({ children }: { children: ReactNode }) => {

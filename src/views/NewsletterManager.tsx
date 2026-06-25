@@ -85,7 +85,7 @@ const NewsletterManager = () => {
   }, [toast]);
 
   useEffect(() => {
-    document.title = "Newsletter Manager - Admin - Et Tech X";
+    document.title = "Newsletter Manager - Admin - EduExpoGlobal";
     if (isReady && !isAuthenticated) {
       navigate("/admin/login");
       return;
@@ -682,7 +682,7 @@ const NewsletterManager = () => {
                     <Input
                       value={formData.mainBannerHeading}
                       onChange={(e) => setFormData({ ...formData, mainBannerHeading: e.target.value })}
-                      placeholder="Join Us at ET TECH X 2026"
+                      placeholder="Join Us at EduExpoGlobal 2026"
                     />
                   </div>
                   <div>

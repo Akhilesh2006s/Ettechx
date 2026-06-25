@@ -10,15 +10,15 @@ import { applyPageSeo } from "@/lib/seo";
 const SpringSummit = () => {
   useEffect(() => {
     applyPageSeo({
-      title: "Spring EdTech Summit | ET Tech X India",
-      description: "Join the ET Tech X Spring Summit with expert sessions, networking, and innovation in education technology.",
-      canonical: "https://www.ettechx.com/spring-summit",
+      title: "Spring EdTech Summit | EduExpoGlobal India",
+      description: "Join the EduExpoGlobal Spring Summit with expert sessions, networking, and innovation in education technology.",
+      canonical: "https://www.eduexpoglobal.com/spring-summit",
       schema: {
         "@context": "https://schema.org",
         "@type": "WebPage",
-        name: "Spring EdTech Summit | ET Tech X India",
-        description: "Join the ET Tech X Spring Summit with expert sessions, networking, and innovation in education technology.",
-        url: "https://www.ettechx.com/spring-summit",
+        name: "Spring EdTech Summit | EduExpoGlobal India",
+        description: "Join the EduExpoGlobal Spring Summit with expert sessions, networking, and innovation in education technology.",
+        url: "https://www.eduexpoglobal.com/spring-summit",
       },
     });
     window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -71,10 +71,10 @@ const SpringSummit = () => {
                 </div>
                 
                 <h1 className="font-display text-4xl md:text-5xl font-bold text-foreground mb-4">
-                  7th Edition ET TECH X
+                  7th Edition EduExpoGlobal
                 </h1>
                 <p className="text-muted-foreground text-lg mb-6">
-                  Kickstart the year with the 7th Edition ET TECH X in Nepal, bringing together visionaries, educators, and EdTech leaders.
+                  Kickstart the year with the 7th Edition EduExpoGlobal in Nepal, bringing together visionaries, educators, and EdTech leaders.
                 </p>
                 
                 <div className="flex flex-wrap gap-4 mb-6">

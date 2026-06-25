@@ -5,7 +5,7 @@ import { Quote } from "lucide-react";
 const testimonials = [
   {
     id: 1,
-    quote: "We have been a part of ET TECH X since 2023 and have been participating since then. The 2025 edition of ET TECH X which was held at Hyderabad, was a fabulous show. The event was exceptionally well-organized and truly impactful. From the seamless coordination to the engaging sessions, every detail reflected professionalism and thoughtful planning. The speakers were insightful, the content was relevant, and the overall experience exceeded expectations. It was a great opportunity to learn, connect, and gain valuable perspectives. I would highly recommend this event to anyone looking for meaningful engagement and high-quality execution.",
+    quote: "We have been a part of EduExpoGlobal since 2023 and have been participating since then. The 2025 edition of EduExpoGlobal which was held at Hyderabad, was a fabulous show. The event was exceptionally well-organized and truly impactful. From the seamless coordination to the engaging sessions, every detail reflected professionalism and thoughtful planning. The speakers were insightful, the content was relevant, and the overall experience exceeded expectations. It was a great opportunity to learn, connect, and gain valuable perspectives. I would highly recommend this event to anyone looking for meaningful engagement and high-quality execution.",
     name: "Siddharth Bros",
     title: "Exhibitor",
     type: "Exhibitor",
@@ -15,7 +15,7 @@ const testimonials = [
   },
   {
     id: 2,
-    quote: "I would like to pen down our heartfelt thanks to you and the entire ET Tech X team. This was our maiden event where we set up a stall—especially outside our home city, Bangalore. We had received mixed reviews about events in general, but we decided to experience it ourselves. I must acknowledge that we received excellent support at every stage—from choosing the right stall to networking opportunities, prime talk time, branding support, and, of course, quality leads. Most importantly, the event opened doors to an entirely new market for our recent launches, which was truly encouraging. Please do let me know once the layout for the next season is out. We would be keen to block our stall in advance. I have no hesitation in recommending ET Tech X for the next season and look forward to being part of it again.",
+    quote: "I would like to pen down our heartfelt thanks to you and the entire EduExpoGlobal team. This was our maiden event where we set up a stall—especially outside our home city, Bangalore. We had received mixed reviews about events in general, but we decided to experience it ourselves. I must acknowledge that we received excellent support at every stage—from choosing the right stall to networking opportunities, prime talk time, branding support, and, of course, quality leads. Most importantly, the event opened doors to an entirely new market for our recent launches, which was truly encouraging. Please do let me know once the layout for the next season is out. We would be keen to block our stall in advance. I have no hesitation in recommending EduExpoGlobal for the next season and look forward to being part of it again.",
     name: "Ridhhii Gupta",
     title: "Founder, Utsaah",
     type: "Exhibitor",
@@ -25,7 +25,7 @@ const testimonials = [
   },
   {
     id: 3,
-    quote: "STEMx has consistently participated in the Ettechx Summit by setting up an engaging stall every year, creating a strong platform to connect with new school owners and principals from across the education ecosystem. Each edition allows us to showcase innovative Robotics, AI, and STEM solutions while understanding the evolving needs of schools. Ettechx has become a valuable meeting ground for educators, innovators, and decision-makers, enabling meaningful conversations around future-ready education.",
+    quote: "STEMx has consistently participated in the EduExpoGlobal Summit by setting up an engaging stall every year, creating a strong platform to connect with new school owners and principals from across the education ecosystem. Each edition allows us to showcase innovative Robotics, AI, and STEM solutions while understanding the evolving needs of schools. EduExpoGlobal has become a valuable meeting ground for educators, innovators, and decision-makers, enabling meaningful conversations around future-ready education.",
     name: "Narasimha Naidu",
     title: "Founder, StemX",
     type: "Exhibitor",
@@ -35,7 +35,7 @@ const testimonials = [
   },
   {
     id: 4,
-    quote: "The ET Tech X event was a well-organised and enriching program that brought together many professionals from the field. The day was packed with meaningful knowledge sharing, learning opportunities, insightful sessions, networking, inspiring awards, and well-curated educative stalls. The round table conference, in particular, was a valuable experience with highly enthusiastic ECCE aspirants. I thoroughly enjoyed being part of the event. Thank you for the opportunity, and I look forward to participating in more such impactful programs in the future.",
+    quote: "The EduExpoGlobal event was a well-organised and enriching program that brought together many professionals from the field. The day was packed with meaningful knowledge sharing, learning opportunities, insightful sessions, networking, inspiring awards, and well-curated educative stalls. The round table conference, in particular, was a valuable experience with highly enthusiastic ECCE aspirants. I thoroughly enjoyed being part of the event. Thank you for the opportunity, and I look forward to participating in more such impactful programs in the future.",
     name: "Dr. Sowmya ASL",
     title: "Educational Consultant and Teacher Trainer",
     type: "Speaker",
@@ -45,7 +45,7 @@ const testimonials = [
   },
   {
     id: 5,
-    quote: "I participated in the ET TECH summit at Hyderabad, 2025, as a member of the round table discussion on Foundational stage education. We had a very invigorating discussion with many persons with very different backgrounds contributing to the discussion. A very satisfying report could be submitted. The eminent personalities who participated had very important submissions to make about foundational stage education. Wide range of sessions on storytelling techniques, importance of mental health, physical activities were presented. The exhibition with excellent, innovative teaching-learning material were very educative too. Overall, it was a very good experience. Wish them future success in their endeavours. Thank you for the invitation.",
+    quote: "I participated in the EduExpoGlobal summit at Hyderabad, 2025, as a member of the round table discussion on Foundational stage education. We had a very invigorating discussion with many persons with very different backgrounds contributing to the discussion. A very satisfying report could be submitted. The eminent personalities who participated had very important submissions to make about foundational stage education. Wide range of sessions on storytelling techniques, importance of mental health, physical activities were presented. The exhibition with excellent, innovative teaching-learning material were very educative too. Overall, it was a very good experience. Wish them future success in their endeavours. Thank you for the invitation.",
     name: "Dr. K. Mayuri",
     title: "Former Professor and Emeritus Scientist, PJTSAU",
     type: "Speaker",
@@ -65,7 +65,7 @@ const testimonials = [
   },
   {
     id: 7,
-    quote: "Thank you Brainfeed for the fantastic ETTECHX2025. I thoroughly enjoyed being a part of all the brainstorming and stimulating conversations around education and beyond. The choice of speakers and the topics were integrating. I must commend Sri Brahmam for his tenacity and consistency. This event is slowly but surely growing into one of the most sought after events in the country covering the entire education sector. Congratulations to the team once again.",
+    quote: "Thank you Brainfeed for the fantastic EduExpoGlobal2025. I thoroughly enjoyed being a part of all the brainstorming and stimulating conversations around education and beyond. The choice of speakers and the topics were integrating. I must commend Sri Brahmam for his tenacity and consistency. This event is slowly but surely growing into one of the most sought after events in the country covering the entire education sector. Congratulations to the team once again.",
     name: "Chandrashekhar D P",
     title: "CEO, JGI Schools",
     type: "Attendee",
@@ -75,7 +75,7 @@ const testimonials = [
   },
   {
     id: 8,
-    quote: "Attending the 6th edition of ET TECH X 2025 at HITEX, Hyderabad was a truly enriching and inspiring experience. The conference offered a vibrant confluence of ideas, innovations, and conversations around the future of education and learning ecosystems. From insightful interactions every aspect of the event reflected a shared commitment to building learner-centric, future-ready systems. The keynote sessions, invited speeches, and panel discussions went beyond technology, focusing on learner engagement, teacher empowerment, inclusion, and the growing importance of emotional and psychological well-being in learning ecosystems. Listening to diverse voices from grassroots practitioners, educators to ed-tech leaders, made the conversations deeply grounded and meaningful. Appreciation to the ET TECH X team for curating a platform that enabled meaningful dialogue and forward-looking conversations in education.",
+    quote: "Attending the 6th edition of EduExpoGlobal 2025 at HITEX, Hyderabad was a truly enriching and inspiring experience. The conference offered a vibrant confluence of ideas, innovations, and conversations around the future of education and learning ecosystems. From insightful interactions every aspect of the event reflected a shared commitment to building learner-centric, future-ready systems. The keynote sessions, invited speeches, and panel discussions went beyond technology, focusing on learner engagement, teacher empowerment, inclusion, and the growing importance of emotional and psychological well-being in learning ecosystems. Listening to diverse voices from grassroots practitioners, educators to ed-tech leaders, made the conversations deeply grounded and meaningful. Appreciation to the EduExpoGlobal team for curating a platform that enabled meaningful dialogue and forward-looking conversations in education.",
     name: "Dr. Chinu Aggrawal",
     title: "Director: Feeling Minds, President: ISMHAA",
     type: "Speaker",
@@ -190,7 +190,7 @@ const TestimonialsSection = () => {
             <span className="text-coral">Community</span>
           </h2>
           <p className="text-sm sm:text-base md:text-lg text-muted-foreground max-w-2xl mx-auto px-2">
-            Hear from educators, innovators, and leaders who have experienced the transformative power of Et Tech X
+            Hear from educators, innovators, and leaders who have experienced the transformative power of EduExpoGlobal
           </p>
         </motion.div>
 

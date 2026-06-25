@@ -18,7 +18,7 @@ const AdminLogin = () => {
   const { toast } = useToast();
 
   useEffect(() => {
-    document.title = "Admin Login - Et Tech X";
+    document.title = "Admin Login - EduExpoGlobal";
     if (isAuthenticated) {
       navigate("/admin", { replace: true });
     }

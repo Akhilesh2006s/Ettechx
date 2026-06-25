@@ -18,7 +18,7 @@ const Partners = () => {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    document.title = "Our Partners - Et Tech X";
+    document.title = "Our Partners - EduExpoGlobal";
     window.scrollTo({ top: 0, behavior: 'smooth' });
     loadLogos();
   }, []);

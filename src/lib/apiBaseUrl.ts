@@ -27,7 +27,7 @@ export function getApiBaseUrl(): string {
 
 /**
  * Origin for static uploads (gallery, speakers, …). If VITE_API_URL mistakenly points at
- * www.ettechx.com, file URLs would 404 on Vercel — fall back to the real backend host.
+ * www.eduexpoglobal.com (or legacy ettechx.com), file URLs would 404 on Vercel — fall back to the real backend host.
  * Override with VITE_MEDIA_ORIGIN if needed.
  */
 export function getMediaOrigin(): string {
@@ -38,7 +38,7 @@ export function getMediaOrigin(): string {
   const apiOrigin = getApiBaseUrl().replace(/\/api\/?$/, "").replace(/\/$/, "");
   try {
     const host = new URL(apiOrigin).hostname;
-    if (host === "www.ettechx.com" || host === "ettechx.com") {
+    if (host === "www.eduexpoglobal.com" || host === "eduexpoglobal.com" || host === "www.ettechx.com" || host === "ettechx.com") {
       return DEFAULT_BACKEND_ORIGIN;
     }
   } catch {

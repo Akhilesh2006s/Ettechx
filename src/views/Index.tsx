@@ -18,17 +18,17 @@ import { applyPageSeo } from "@/lib/seo";
 const Index = () => {
   useEffect(() => {
     applyPageSeo({
-      title: "ET Tech X | India's Leading EdTech Expo & Conference",
+      title: "EduExpoGlobal | India's Leading EdTech Expo & Conference",
       description:
-        "ET Tech X is India's premier EdTech expo connecting educators, startups, and innovators through conferences, workshops, and exhibitions.",
-      canonical: "https://www.ettechx.com",
+        "EduExpoGlobal is India's premier EdTech expo connecting educators, startups, and innovators through conferences, workshops, and exhibitions.",
+      canonical: "https://www.eduexpoglobal.com",
       schema: {
         "@context": "https://schema.org",
         "@type": "WebPage",
-        name: "ET Tech X | India's Leading EdTech Expo & Conference",
+        name: "EduExpoGlobal | India's Leading EdTech Expo & Conference",
         description:
-          "ET Tech X is India's premier EdTech expo connecting educators, startups, and innovators through conferences, workshops, and exhibitions.",
-        url: "https://www.ettechx.com",
+          "EduExpoGlobal is India's premier EdTech expo connecting educators, startups, and innovators through conferences, workshops, and exhibitions.",
+        url: "https://www.eduexpoglobal.com",
       },
     });
   }, []);

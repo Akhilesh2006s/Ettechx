@@ -45,10 +45,10 @@ const submitExhibitorToFormSubmit = (data: ExhibitorFormData) => {
     formData.append("booth_size", data.boothSize);
     formData.append("products_services", data.products);
     formData.append("previous_exhibitor", data.previousExhibitor);
-    formData.append("_subject", "New Et Tech X Exhibitor Application");
+    formData.append("_subject", "New EduExpoGlobal Exhibitor Application");
     formData.append("_captcha", "false");
 
-    fetch("https://formsubmit.co/info@ettechx.com", {
+    fetch("https://formsubmit.co/info@eduexpoglobal.com", {
       method: "POST",
       body: formData,
       mode: "no-cors",
@@ -81,7 +81,7 @@ const Exhibitor = () => {
   const { toast } = useToast();
 
   useEffect(() => {
-    document.title = "Become an Exhibitor - Et Tech X";
+    document.title = "Become an Exhibitor - EduExpoGlobal";
     // Scroll to top when component mounts
     window.scrollTo({ top: 0, behavior: 'smooth' });
   }, []);
@@ -194,7 +194,7 @@ const Exhibitor = () => {
                     Application Submitted!
                   </h2>
                   <p className="text-muted-foreground mb-8">
-                    Thank you for your interest in exhibiting at Et Tech X. Your application has been submitted successfully.
+                    Thank you for your interest in exhibiting at EduExpoGlobal. Your application has been submitted successfully.
                   </p>
                   <Link to="/">
                     <Button variant="accent" size="lg">

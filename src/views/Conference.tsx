@@ -12,15 +12,15 @@ const Conference = () => {
     applyPageSeo({
       title: "Education Conference India | EdTech Leaders & Insights",
       description:
-        "Attend ET Tech X conference with industry leaders discussing trends, innovation, and the future of education.",
-      canonical: "https://www.ettechx.com/conference",
+        "Attend EduExpoGlobal conference with industry leaders discussing trends, innovation, and the future of education.",
+      canonical: "https://www.eduexpoglobal.com/conference",
       schema: {
         "@context": "https://schema.org",
         "@type": "WebPage",
         name: "Education Conference India | EdTech Leaders & Insights",
         description:
-          "Attend ET Tech X conference with industry leaders discussing trends, innovation, and the future of education.",
-        url: "https://www.ettechx.com/conference",
+          "Attend EduExpoGlobal conference with industry leaders discussing trends, innovation, and the future of education.",
+        url: "https://www.eduexpoglobal.com/conference",
       },
     });
     window.scrollTo({ top: 0, behavior: 'smooth' });

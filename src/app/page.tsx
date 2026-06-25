@@ -5,25 +5,25 @@ export const metadata: Metadata = {
   // Why metadata matters:
   // - Title/description directly influence SERP snippet quality and CTR.
   // - Canonical prevents duplicate-content issues (same page reachable via multiple URLs).
-  title: "ET Tech X | India’s Leading EdTech Expo & Conference",
+  title: "EduExpoGlobal | India’s Leading EdTech Expo & Conference",
   description:
-    "ET Tech X is India’s premier EdTech expo connecting educators, startups, and innovators through conferences, workshops, and exhibitions.",
+    "EduExpoGlobal is India’s premier EdTech expo connecting educators, startups, and innovators through conferences, workshops, and exhibitions.",
   alternates: {
-    canonical: "https://www.ettechx.com",
+    canonical: "https://www.eduexpoglobal.com",
   },
   openGraph: {
-    title: "ET Tech X | India’s Leading EdTech Expo & Conference",
+    title: "EduExpoGlobal | India’s Leading EdTech Expo & Conference",
     description:
-      "ET Tech X is India’s premier EdTech expo connecting educators, startups, and innovators through conferences, workshops, and exhibitions.",
-    url: "https://www.ettechx.com",
-    images: [{ url: "https://www.ettechx.com/expo.jpeg" }],
+      "EduExpoGlobal is India’s premier EdTech expo connecting educators, startups, and innovators through conferences, workshops, and exhibitions.",
+    url: "https://www.eduexpoglobal.com",
+    images: [{ url: "https://www.eduexpoglobal.com/expo.jpeg" }],
   },
   twitter: {
     card: "summary_large_image",
-    title: "ET Tech X | India’s Leading EdTech Expo & Conference",
+    title: "EduExpoGlobal | India’s Leading EdTech Expo & Conference",
     description:
-      "ET Tech X is India’s premier EdTech expo connecting educators, startups, and innovators through conferences, workshops, and exhibitions.",
-    images: ["https://www.ettechx.com/expo.jpeg"],
+      "EduExpoGlobal is India’s premier EdTech expo connecting educators, startups, and innovators through conferences, workshops, and exhibitions.",
+    images: ["https://www.eduexpoglobal.com/expo.jpeg"],
   },
 };
 

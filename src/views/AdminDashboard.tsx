@@ -12,7 +12,7 @@ const AdminDashboard = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    document.title = "Admin Dashboard - Et Tech X";
+    document.title = "Admin Dashboard - EduExpoGlobal";
     if (isReady && !isAuthenticated) {
       navigate("/admin/login", { replace: true });
     }

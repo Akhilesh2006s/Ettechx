@@ -47,7 +47,7 @@ const GalleryManager = () => {
   const [filePreview, setFilePreview] = useState<string>("");
 
   useEffect(() => {
-    document.title = "Gallery Manager - Admin - Et Tech X";
+    document.title = "Gallery Manager - Admin - EduExpoGlobal";
     if (!isAuthenticated) {
       navigate("/admin/login");
     }

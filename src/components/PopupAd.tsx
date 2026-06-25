@@ -9,14 +9,14 @@ const PopupAd = () => {
     // Show popup only once per user (using localStorage)
     const hasSeenPopup =
       typeof window !== "undefined" &&
-      window.localStorage.getItem("ettechx_popup_shown") === "true";
+      window.localStorage.getItem("eduexpoglobal_popup_shown") === "true";
 
     if (hasSeenPopup) return;
 
     const timer = setTimeout(() => {
       setIsOpen(true);
       try {
-        window.localStorage.setItem("ettechx_popup_shown", "true");
+        window.localStorage.setItem("eduexpoglobal_popup_shown", "true");
       } catch {
         // ignore storage errors
       }
@@ -29,7 +29,7 @@ const PopupAd = () => {
     setIsOpen(false);
     try {
       if (typeof window !== "undefined") {
-        window.localStorage.setItem("ettechx_popup_shown", "true");
+        window.localStorage.setItem("eduexpoglobal_popup_shown", "true");
       }
     } catch {
       // ignore storage errors
@@ -70,7 +70,7 @@ const PopupAd = () => {
               <div className="relative w-full">
                 <img
                   src="/ETTECHX .jpeg"
-                  alt="ET TECH X Event Poster"
+                  alt="EduExpoGlobal Event Poster"
                   className="block w-full h-auto object-contain max-h-[90vh]"
                   loading="lazy"
                   decoding="async"

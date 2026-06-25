@@ -18,9 +18,9 @@ const AIChatbot = () => {
     {
       id: 1,
       text:
-        "👋 Hi there! Welcome to Et Tech X! I'm your AI assistant.\n\n" +
+        "👋 Hi there! Welcome to EduExpoGlobal! I'm your AI assistant.\n\n" +
         "You can ask me about:\n" +
-        "• Exhibiting at ET Tech X\n" +
+        "• Exhibiting at EduExpoGlobal\n" +
         "• Visiting the expo as a visitor\n" +
         "• Attending as a delegate",
       isBot: true,
@@ -60,7 +60,7 @@ const AIChatbot = () => {
     }
   }, [isOpen, hasInteracted]);
 
-  // Simple rule-based responder for common ET Tech X questions
+  // Simple rule-based responder for common EduExpoGlobal questions
   const getBotReply = (userInput: string): string => {
     const text = userInput.toLowerCase();
 
@@ -85,19 +85,19 @@ const AIChatbot = () => {
 
     if (isExhibitor) {
       return (
-        "Thank you for your interest in exhibiting at ET Tech X! 🎉\n\n" +
+        "Thank you for your interest in exhibiting at EduExpoGlobal! 🎉\n\n" +
         "We offer a variety of exhibition packages, including booth space and branding opportunities across the expo.\n\n" +
         "For detailed information on stall sizes, pricing, and sponsorship options, please contact:\n" +
         "• Sachin Gupta – Exhibition Coordinator\n" +
         "• Phone / WhatsApp: +91 8008845432\n\n" +
-        "We’d love to have you showcase your solutions at ET Tech X!"
+        "We’d love to have you showcase your solutions at EduExpoGlobal!"
       );
     }
 
     if (isVisitor) {
       return (
-        "We’re thrilled that you’d like to visit ET Tech X! 🙌\n\n" +
-        "At ET Tech X, you can explore the latest in educational technology, meet leading solution providers, and network with school leaders and industry professionals.\n\n" +
+        "We’re thrilled that you’d like to visit EduExpoGlobal! 🙌\n\n" +
+        "At EduExpoGlobal, you can explore the latest in educational technology, meet leading solution providers, and network with school leaders and industry professionals.\n\n" +
         "For visitor details, including registration, timings, and entry guidelines, please contact our Visitor Support Team at:\n" +
         "• Phone / WhatsApp: +91 9871676622\n\n" +
         "We look forward to welcoming you to the expo!"
@@ -106,7 +106,7 @@ const AIChatbot = () => {
 
     if (isDelegate) {
       return (
-        "Great to hear you’re interested in attending ET Tech X as a delegate! 🎓\n\n" +
+        "Great to hear you’re interested in attending EduExpoGlobal as a delegate! 🎓\n\n" +
         "Delegates get access to expert sessions, panel discussions, and special networking opportunities with education leaders.\n\n" +
         "For delegate registration and package details, please contact:\n" +
         "• Mr. Sachin Gupta – Delegate Coordinator\n" +
@@ -247,7 +247,7 @@ const AIChatbot = () => {
                 </div>
                 <div>
                   <h3 className="font-display font-semibold text-primary-foreground">
-                    Et Tech X Assistant
+                    EduExpoGlobal Assistant
                   </h3>
                   <p className="text-xs text-primary-foreground/80">
                     Powered by AI

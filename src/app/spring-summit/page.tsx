@@ -2,22 +2,22 @@ import type { Metadata } from "next";
 import SpringSummitClient from "./SpringSummitClient";
 
 export const metadata: Metadata = {
-  title: "Spring EdTech Summit | ET Tech X India",
-  description: "Join the ET Tech X Spring Summit with expert sessions, networking, and innovation in education technology.",
-  alternates: { canonical: "https://www.ettechx.com/spring-summit" },
+  title: "Spring EdTech Summit | EduExpoGlobal India",
+  description: "Join the EduExpoGlobal Spring Summit with expert sessions, networking, and innovation in education technology.",
+  alternates: { canonical: "https://www.eduexpoglobal.com/spring-summit" },
   openGraph: {
-    title: "Spring EdTech Summit | ET Tech X India",
+    title: "Spring EdTech Summit | EduExpoGlobal India",
     description:
-      "Join the ET Tech X Spring Summit with expert sessions, networking, and innovation in education technology.",
-    url: "https://www.ettechx.com/spring-summit",
-    images: [{ url: "https://www.ettechx.com/expo.jpeg" }],
+      "Join the EduExpoGlobal Spring Summit with expert sessions, networking, and innovation in education technology.",
+    url: "https://www.eduexpoglobal.com/spring-summit",
+    images: [{ url: "https://www.eduexpoglobal.com/expo.jpeg" }],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Spring EdTech Summit | ET Tech X India",
+    title: "Spring EdTech Summit | EduExpoGlobal India",
     description:
-      "Join the ET Tech X Spring Summit with expert sessions, networking, and innovation in education technology.",
-    images: ["https://www.ettechx.com/expo.jpeg"],
+      "Join the EduExpoGlobal Spring Summit with expert sessions, networking, and innovation in education technology.",
+    images: ["https://www.eduexpoglobal.com/expo.jpeg"],
   },
 };
 

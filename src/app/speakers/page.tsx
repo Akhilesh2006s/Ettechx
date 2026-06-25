@@ -2,15 +2,15 @@ import type { Metadata } from "next";
 import SpeakersClient from "./SpeakersClient";
 
 export const metadata: Metadata = {
-  title: "All Speakers | ET Tech X",
+  title: "All Speakers | EduExpoGlobal",
   description:
-    "Discover keynote speakers and thought leaders at ET Tech X shaping the future of education and technology.",
-  alternates: { canonical: "https://www.ettechx.com/speakers" },
+    "Discover keynote speakers and thought leaders at EduExpoGlobal shaping the future of education and technology.",
+  alternates: { canonical: "https://www.eduexpoglobal.com/speakers" },
   openGraph: {
-    title: "All Speakers | ET Tech X",
+    title: "All Speakers | EduExpoGlobal",
     description:
-      "Discover keynote speakers and thought leaders at ET Tech X shaping the future of education and technology.",
-    url: "https://www.ettechx.com/speakers",
+      "Discover keynote speakers and thought leaders at EduExpoGlobal shaping the future of education and technology.",
+    url: "https://www.eduexpoglobal.com/speakers",
   },
 };
 

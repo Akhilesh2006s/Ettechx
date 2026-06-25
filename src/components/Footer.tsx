@@ -34,13 +34,13 @@ const Footer = () => {
       setEmail("");
       toast({
         title: "Successfully subscribed!",
-        description: "You'll receive updates about Et Tech X events.",
+        description: "You'll receive updates about EduExpoGlobal events.",
       });
     } catch (error) {
       console.error("Subscription error:", error);
       toast({
         title: "Subscription successful!",
-        description: "You'll receive updates about Et Tech X events.",
+        description: "You'll receive updates about EduExpoGlobal events.",
         variant: "default",
       });
       setIsSubscribed(true);
@@ -73,10 +73,10 @@ const Footer = () => {
   };
 
   const socials = [
-    { icon: Linkedin, href: "https://www.linkedin.com/company/et-tech-x/", label: "LinkedIn" },
-    { icon: Instagram, href: "https://www.instagram.com/ettechxexpo/", label: "Instagram" },
+    { icon: Linkedin, href: "https://www.linkedin.com/company/eduexpoglobal/", label: "LinkedIn" },
+    { icon: Instagram, href: "https://www.instagram.com/eduexpoglobal/", label: "Instagram" },
     { icon: Youtube, href: "https://www.youtube.com/@eduexpoglobal", label: "YouTube" },
-    { icon: Facebook, href: "https://www.facebook.com/ettechxexpo/", label: "Facebook" },
+    { icon: Facebook, href: "https://www.facebook.com/eduexpoglobal/", label: "Facebook" },
   ];
 
   return (
@@ -101,7 +101,7 @@ const Footer = () => {
             <a href="#" className="flex items-center gap-2 mb-6">
               <img 
                 src="/logo.png" 
-                alt="Et Tech X Logo" 
+                alt="EduExpoGlobal Logo" 
                 className="h-12 w-auto"
                 loading="lazy"
                 decoding="async"
@@ -181,7 +181,7 @@ const Footer = () => {
         >
           <h4 className="font-display font-semibold text-foreground mb-3">Subscribe to Newsletter</h4>
           <p className="text-sm text-muted-foreground mb-4">
-            Get the latest updates about Et Tech X events and news.
+            Get the latest updates about EduExpoGlobal events and news.
           </p>
           {isSubscribed ? (
             <motion.div
@@ -242,7 +242,7 @@ const Footer = () => {
           className="pt-8 border-t border-border flex flex-col md:flex-row items-center justify-between gap-4"
         >
           <p className="text-muted-foreground text-sm">
-            © {new Date().getFullYear()} Et Tech X. All rights reserved.
+            © {new Date().getFullYear()} EduExpoGlobal. All rights reserved.
           </p>
           <p className="text-muted-foreground text-sm">
             Made with ❤️ in India

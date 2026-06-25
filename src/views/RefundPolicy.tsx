@@ -7,7 +7,7 @@ import Footer from "@/components/Footer";
 
 const RefundPolicy = () => {
   useEffect(() => {
-    document.title = "Refund Policy - Et Tech X";
+    document.title = "Refund Policy - EduExpoGlobal";
     window.scrollTo({ top: 0, behavior: 'smooth' });
   }, []);
 
@@ -16,7 +16,7 @@ const RefundPolicy = () => {
       icon: RefreshCw,
       title: "1. General Refund Policy",
       content: [
-        "Et Tech X is committed to providing quality events and services. This Refund Policy outlines the terms and conditions under which refunds may be issued for event registrations, tickets, and other services.",
+        "EduExpoGlobal is committed to providing quality events and services. This Refund Policy outlines the terms and conditions under which refunds may be issued for event registrations, tickets, and other services.",
         "All refund requests are subject to review and approval based on the circumstances and timing of the request."
       ]
     },
@@ -30,7 +30,7 @@ const RefundPolicy = () => {
         "• Cancellation 7-14 days before event: 50% refund",
         "• Cancellation less than 7 days before event: No refund (except in exceptional circumstances)",
         "• No-show without prior cancellation: No refund",
-        "Refund requests must be submitted in writing via email to info@ettechx.com"
+        "Refund requests must be submitted in writing via email to info@eduexpoglobal.com"
       ]
     },
     {
@@ -60,7 +60,7 @@ const RefundPolicy = () => {
     },
     {
       icon: AlertCircle,
-      title: "5. Event Cancellation by Et Tech X",
+      title: "5. Event Cancellation by EduExpoGlobal",
       content: [
         "If we cancel an event:",
         "• Full refunds will be automatically issued to all registered participants",
@@ -121,7 +121,7 @@ const RefundPolicy = () => {
       title: "10. Disputed Charges",
       content: [
         "If you believe you have been charged incorrectly:",
-        "• Contact us immediately at info@ettechx.com",
+        "• Contact us immediately at info@eduexpoglobal.com",
         "• Provide details of the charge and your registration",
         "• We will investigate and respond within 5 business days",
         "• If the charge is found to be incorrect, a full refund will be issued",
@@ -133,7 +133,7 @@ const RefundPolicy = () => {
       title: "11. Refund Request Procedure",
       content: [
         "To request a refund:",
-        "1. Send an email to info@ettechx.com",
+        "1. Send an email to info@eduexpoglobal.com",
         "2. Include your registration confirmation number",
         "3. Provide your full name and contact information",
         "4. State the reason for your refund request",
@@ -146,7 +146,7 @@ const RefundPolicy = () => {
       title: "12. Contact Information",
       content: [
         "For refund inquiries and requests:",
-        "• Email: info@ettechx.com",
+        "• Email: info@eduexpoglobal.com",
         "• Subject Line: 'Refund Request - [Your Registration Number]'",
         "• Response Time: Within 2-5 business days",
         "• Phone: [Contact Number] (for urgent matters only)",
@@ -204,7 +204,7 @@ const RefundPolicy = () => {
               className="bg-card border border-border rounded-2xl p-8 mb-8 shadow-lg"
             >
               <p className="text-muted-foreground leading-relaxed">
-                At Et Tech X, we understand that circumstances may change, and you may need to cancel your event registration. This Refund Policy explains our procedures for processing refunds, cancellations, and transfers. We aim to be fair and transparent while ensuring the sustainability of our events.
+                At EduExpoGlobal, we understand that circumstances may change, and you may need to cancel your event registration. This Refund Policy explains our procedures for processing refunds, cancellations, and transfers. We aim to be fair and transparent while ensuring the sustainability of our events.
               </p>
             </motion.div>
 

@@ -14,7 +14,7 @@ const Gallery = () => {
   const [galleryData, setGalleryData] = useState<GalleryYear[]>([]);
 
   useEffect(() => {
-    document.title = "Gallery - Et Tech X";
+    document.title = "Gallery - EduExpoGlobal";
     window.scrollTo({ top: 0, behavior: 'smooth' });
     loadData();
   }, []);
@@ -97,7 +97,7 @@ const Gallery = () => {
                 Our <span className="text-gradient-primary">Gallery</span>
               </h1>
               <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-                Explore moments from Et Tech X events through the years
+                Explore moments from EduExpoGlobal events through the years
               </p>
             </div>
 

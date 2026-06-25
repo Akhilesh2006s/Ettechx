@@ -1,31 +1,59 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://www.ettechx.com/</loc>
+    <loc>https://www.eduexpoglobal.com/</loc>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://www.ettechx.com/expo</loc>
+    <loc>https://www.eduexpoglobal.com/expo</loc>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://www.ettechx.com/awards</loc>
+    <loc>https://www.eduexpoglobal.com/awards</loc>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://www.ettechx.com/workshops</loc>
+    <loc>https://www.eduexpoglobal.com/workshops</loc>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://www.ettechx.com/autumn-conference</loc>
+    <loc>https://www.eduexpoglobal.com/autumn-conference</loc>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.ettechx.com/spring-summit</loc>
+    <loc>https://www.eduexpoglobal.com/spring-summit</loc>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.ettechx.com/register</loc>
+    <loc>https://www.eduexpoglobal.com/register</loc>
     <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.eduexpoglobal.com/conference</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.eduexpoglobal.com/speakers</loc>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.eduexpoglobal.com/gallery</loc>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.eduexpoglobal.com/partners</loc>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.eduexpoglobal.com/privacy-policy</loc>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://www.eduexpoglobal.com/terms-of-service</loc>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://www.eduexpoglobal.com/refund-policy</loc>
+    <priority>0.5</priority>
   </url>
 </urlset>

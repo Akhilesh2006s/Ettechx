@@ -3,4 +3,4 @@ Allow: /
 Disallow: /admin/
 Disallow: /private/
 
-Sitemap: https://www.ettechx.com/sitemap.xml
+Sitemap: https://www.eduexpoglobal.com/sitemap.xml

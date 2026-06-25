@@ -7,11 +7,11 @@ const AnnualEventsSection = () => {
     {
       id: 1,
       season: "Autumn Edition",
-      title: "7th Edition ET TECH X",
+      title: "7th Edition EduExpoGlobal",
       date: "22, 23, 24 September 2026",
       location: "Yashobhoomi, Dwaraka, New Delhi",
       description:
-        "Join the 7th Edition ET TECH X at Yashobhoomi, Dwaraka, New Delhi for three power-packed days of awards, exhibitions, and future-forward discussions on education technology.",
+        "Join the 7th Edition EduExpoGlobal at Yashobhoomi, Dwaraka, New Delhi for three power-packed days of awards, exhibitions, and future-forward discussions on education technology.",
       gradient: "from-secondary via-coral to-gold",
       accentColor: "secondary",
       // SEO: this route is consolidated into /conference for canonical consistency.
@@ -20,11 +20,11 @@ const AnnualEventsSection = () => {
     {
       id: 2,
       season: "Spring Edition",
-      title: "7th Edition ET TECH X",
+      title: "7th Edition EduExpoGlobal",
       date: "February 2027",
       location: "Nepal",
       description:
-        "Kickstart the year with the 7th Edition ET TECH X in Nepal, bringing together EdTech leaders and innovators from across the region.",
+        "Kickstart the year with the 7th Edition EduExpoGlobal in Nepal, bringing together EdTech leaders and innovators from across the region.",
       gradient: "from-primary via-electric to-accent",
       accentColor: "primary",
       link: "/spring-summit",

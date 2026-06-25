@@ -35,7 +35,7 @@ const SocialLinks = () => {
 
       {/* Instagram */}
       <a
-        href="https://www.instagram.com/ettechxexpo/"
+        href="https://www.instagram.com/eduexpoglobal/"
         target="_blank"
         rel="noopener noreferrer"
         className="group relative flex items-center justify-center w-12 h-12 rounded-full bg-gradient-to-br from-[#833AB4]/10 via-[#FD1D1D]/10 to-[#F77737]/10 hover:from-[#833AB4] hover:via-[#FD1D1D] hover:to-[#F77737] transition-all duration-300 hover:scale-110 hover:shadow-lg hover:shadow-[#FD1D1D]/30"

@@ -38,13 +38,13 @@ const CTASection = () => {
     
     toast({
       title: "Successfully subscribed!",
-      description: "You'll receive updates about Et Tech X events.",
+      description: "You'll receive updates about EduExpoGlobal events.",
     });
     } catch (error) {
       console.error("Subscription error:", error);
       toast({
         title: "Subscription successful!",
-        description: "You'll receive updates about Et Tech X events.",
+        description: "You'll receive updates about EduExpoGlobal events.",
         variant: "default",
       });
       setIsSubscribed(true);
@@ -125,7 +125,7 @@ const CTASection = () => {
                 Stay Updated
               </h3>
               <p className="text-muted-foreground mb-4 text-sm">
-                Subscribe to our newsletter for the latest Et Tech X news and updates.
+                Subscribe to our newsletter for the latest EduExpoGlobal news and updates.
               </p>
               
               {isSubscribed ? (
@@ -200,7 +200,7 @@ const CTASection = () => {
                 </div>
               </a>
               <a
-                href="mailto:info@ettechx.com"
+                href="mailto:info@eduexpoglobal.com"
                 className="flex items-center gap-3 text-muted-foreground hover:text-secondary transition-colors duration-300 group"
               >
                 <div className="w-12 h-12 rounded-full bg-secondary/10 flex items-center justify-center group-hover:bg-secondary/20 transition-colors duration-300">
@@ -208,7 +208,7 @@ const CTASection = () => {
                 </div>
                 <div className="text-left">
                   <div className="text-sm text-muted-foreground">Email Us</div>
-                  <div className="font-semibold text-foreground">info@ettechx.com</div>
+                  <div className="font-semibold text-foreground">info@eduexpoglobal.com</div>
                 </div>
               </a>
             </motion.div>

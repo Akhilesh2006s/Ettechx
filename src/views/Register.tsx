@@ -33,11 +33,11 @@ const submitRegisterToFormSubmit = (data: RegisterFormData) => {
     formData.append("organization", data.organization);
     formData.append("designation", data.designation);
     formData.append("registration_type", data.eventInterest);
-    formData.append("_subject", "New Et Tech X Enquiry");
+    formData.append("_subject", "New EduExpoGlobal Enquiry");
     formData.append("_captcha", "false");
 
     // We don't care about the response; no-cors avoids CORS errors in browser
-    fetch("https://formsubmit.co/info@ettechx.com", {
+    fetch("https://formsubmit.co/info@eduexpoglobal.com", {
       method: "POST",
       body: formData,
       mode: "no-cors",
@@ -65,17 +65,17 @@ const Register = () => {
 
   useEffect(() => {
     applyPageSeo({
-      title: "Enquire for ET Tech X | Book Your EdTech Expo Pass",
+      title: "Enquire for EduExpoGlobal | Book Your EdTech Expo Pass",
       description:
-        "Enquire for ET Tech X, India’s leading EdTech expo. Join educators, startups & innovators for conferences, workshops and networking.",
-      canonical: "https://www.ettechx.com/register",
+        "Enquire for EduExpoGlobal, India’s leading EdTech expo. Join educators, startups & innovators for conferences, workshops and networking.",
+      canonical: "https://www.eduexpoglobal.com/register",
       schema: {
         "@context": "https://schema.org",
         "@type": "WebPage",
-        name: "Enquire for ET Tech X | Book Your EdTech Expo Pass",
+        name: "Enquire for EduExpoGlobal | Book Your EdTech Expo Pass",
         description:
-          "Enquire for ET Tech X, India’s leading EdTech expo. Join educators, startups & innovators for conferences, workshops and networking.",
-        url: "https://www.ettechx.com/register",
+          "Enquire for EduExpoGlobal, India’s leading EdTech expo. Join educators, startups & innovators for conferences, workshops and networking.",
+        url: "https://www.eduexpoglobal.com/register",
       },
     });
     // Scroll to top when component mounts
@@ -187,7 +187,7 @@ const Register = () => {
                     Enquiry Successful!
                   </h2>
                   <p className="text-muted-foreground mb-8">
-                    Thank you for your enquiry about Et Tech X. Your details have been submitted successfully.
+                    Thank you for your enquiry about EduExpoGlobal. Your details have been submitted successfully.
                   </p>
                   <Link to="/">
                     <Button variant="hero" size="lg">
@@ -204,7 +204,7 @@ const Register = () => {
                     className="text-center mb-8"
                   >
                     <h1 className="font-display text-4xl md:text-5xl font-bold text-foreground mb-4">
-                      Enquire for <span className="text-gradient-primary">Et Tech X</span>
+                      Enquire for <span className="text-gradient-primary">EduExpoGlobal</span>
                     </h1>
                     <p className="text-muted-foreground text-lg">
                       Join India's premier EdTech expo. Secure your spot today!

@@ -11,7 +11,7 @@ const NewsletterPage = () => {
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    document.title = "Newsletter - Et Tech X";
+    document.title = "Newsletter - EduExpoGlobal";
     window.scrollTo({ top: 0, behavior: "smooth" });
     loadNewsletter();
   }, []);

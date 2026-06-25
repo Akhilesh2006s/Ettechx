@@ -84,7 +84,7 @@ export default function GalleryClient() {
                 Our <span className="text-gradient-primary">Gallery</span>
               </h1>
               <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-                Explore moments from ET Tech X events through the years
+                Explore moments from EduExpoGlobal events through the years
               </p>
             </div>
 

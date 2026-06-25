@@ -4,29 +4,29 @@ import "../index.css";
 // Global SEO defaults live here so every page inherits sensible sharing + crawling hints.
 // Individual routes override with route-specific titles/descriptions/canonicals via `export const metadata`.
 
-const SITE_URL = "https://www.ettechx.com";
+const SITE_URL = "https://www.eduexpoglobal.com";
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
-  applicationName: "ET Tech X",
+  applicationName: "EduExpoGlobal",
   // Default title template (pages provide specific title string)
   title: {
-    default: "ET Tech X",
-    template: "%s | ET Tech X",
+    default: "EduExpoGlobal",
+    template: "%s | EduExpoGlobal",
   },
   description:
-    "ET Tech X is India’s premier EdTech expo connecting educators, startups, and innovators through conferences, workshops, and exhibitions.",
+    "EduExpoGlobal is India’s premier EdTech expo connecting educators, startups, and innovators through conferences, workshops, and exhibitions.",
   alternates: {
     canonical: SITE_URL,
   },
   // OpenGraph improves click-through when pages are shared on WhatsApp/LinkedIn/Facebook.
   openGraph: {
     type: "website",
-    siteName: "ET Tech X",
+    siteName: "EduExpoGlobal",
     url: SITE_URL,
-    title: "ET Tech X | India’s Leading EdTech Expo & Conference",
+    title: "EduExpoGlobal | India’s Leading EdTech Expo & Conference",
     description:
-      "ET Tech X is India’s premier EdTech expo connecting educators, startups, and innovators through conferences, workshops, and exhibitions.",
+      "EduExpoGlobal is India’s premier EdTech expo connecting educators, startups, and innovators through conferences, workshops, and exhibitions.",
     images: [
       {
         // Using an existing production asset (no placeholder) for stable social previews.
@@ -37,9 +37,9 @@ export const metadata: Metadata = {
   // Twitter cards increase engagement and ensure large rich previews.
   twitter: {
     card: "summary_large_image",
-    title: "ET Tech X | India’s Leading EdTech Expo & Conference",
+    title: "EduExpoGlobal | India’s Leading EdTech Expo & Conference",
     description:
-      "ET Tech X is India’s premier EdTech expo connecting educators, startups, and innovators through conferences, workshops, and exhibitions.",
+      "EduExpoGlobal is India’s premier EdTech expo connecting educators, startups, and innovators through conferences, workshops, and exhibitions.",
     images: ["/expo.jpeg"],
   },
   icons: {
@@ -71,21 +71,21 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   const organizationSchema = {
     "@context": "https://schema.org",
     "@type": "Organization",
-    name: "ET Tech X",
+    name: "EduExpoGlobal",
     url: SITE_URL,
     logo: `${SITE_URL}/logo.png`,
     sameAs: [
-      "https://www.linkedin.com/company/et-tech-x/",
-      "https://www.instagram.com/ettechxexpo/",
+      "https://www.linkedin.com/company/eduexpoglobal/",
+      "https://www.instagram.com/eduexpoglobal/",
       "https://www.youtube.com/@eduexpoglobal",
-      "https://www.facebook.com/ettechxexpo/",
+      "https://www.facebook.com/eduexpoglobal/",
     ],
   };
 
   const websiteSchema = {
     "@context": "https://schema.org",
     "@type": "WebSite",
-    name: "ET Tech X",
+    name: "EduExpoGlobal",
     url: SITE_URL,
     // WebSite schema can enable a sitelinks search box when Google chooses to show it.
     potentialAction: {
@@ -100,7 +100,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   const eventSchema = {
     "@context": "https://schema.org",
     "@type": "Event",
-    name: "ET Tech X - India’s Leading EdTech Expo & Conference",
+    name: "EduExpoGlobal - India’s Leading EdTech Expo & Conference",
     startDate: "2026-09-22",
     endDate: "2026-09-24",
     eventAttendanceMode: "https://schema.org/OfflineEventAttendanceMode",
@@ -108,7 +108,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     url: SITE_URL,
     image: [`${SITE_URL}/expo.jpeg`],
     description:
-      "ET Tech X is India’s premier EdTech expo connecting educators, startups, and innovators through conferences, workshops, and exhibitions.",
+      "EduExpoGlobal is India’s premier EdTech expo connecting educators, startups, and innovators through conferences, workshops, and exhibitions.",
     location: {
       "@type": "Place",
       name: "Yashobhoomi Convention Centre",
@@ -131,7 +131,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     },
     organizer: {
       "@type": "Organization",
-      name: "ET Tech X",
+      name: "EduExpoGlobal",
       url: SITE_URL,
     },
   };

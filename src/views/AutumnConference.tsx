@@ -8,7 +8,7 @@ import { ArrowLeft, Calendar, MapPin, Users, Award, Mic2, Wrench, Store, ArrowRi
 
 const AutumnConference = () => {
   useEffect(() => {
-    document.title = "Et Tech X Conference - Autumn Edition - Et Tech X";
+    document.title = "EduExpoGlobal Conference - Autumn Edition - EduExpoGlobal";
     window.scrollTo({ top: 0, behavior: 'smooth' });
   }, []);
 
@@ -59,10 +59,10 @@ const AutumnConference = () => {
                 </div>
                 
                 <h1 className="font-display text-4xl md:text-5xl font-bold text-foreground mb-4">
-                  7th Edition ET TECH X
+                  7th Edition EduExpoGlobal
                 </h1>
                 <p className="text-muted-foreground text-lg mb-6">
-                  Join the 7th Edition ET TECH X at Yashobhoomi, Dwaraka, New Delhi for three power-packed days of awards, exhibitions, and future-forward discussions on education technology.
+                  Join the 7th Edition EduExpoGlobal at Yashobhoomi, Dwaraka, New Delhi for three power-packed days of awards, exhibitions, and future-forward discussions on education technology.
                 </p>
                 
                 <div className="flex flex-wrap gap-4 mb-6">
