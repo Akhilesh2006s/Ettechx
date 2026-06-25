@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import Link from "next/link";
+import { Link } from "react-router-dom";
 import { Calendar, MapPin, ArrowRight } from "lucide-react";
 
 const AnnualEventsSection = () => {
@@ -73,7 +73,7 @@ const AnnualEventsSection = () => {
               whileHover={{ scale: 1.02 }}
               className="group relative"
             >
-              <Link href={event.link} className="block h-full">
+              <Link to={event.link} className="block h-full">
               {/* Card */}
                 <div className="relative h-full p-8 md:p-10 rounded-3xl bg-gradient-card border border-border overflow-hidden shadow-card cursor-pointer">
                 {/* Gradient accent bar */}

@@ -1,9 +1,6 @@
-"use client";
-
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import Link from "next/link";
-import { usePathname, useRouter } from "next/navigation";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
 
@@ -14,8 +11,8 @@ interface NavbarProps {
 const Navbar = ({ hideMenuItems = false }: NavbarProps) => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const pathname = usePathname();
-  const router = useRouter();
+  const { pathname } = useLocation();
+  const navigate = useNavigate();
   const [activeSection, setActiveSection] = useState<string | null>(null);
 
   useEffect(() => {
@@ -67,7 +64,7 @@ const Navbar = ({ hideMenuItems = false }: NavbarProps) => {
     if (pathname === "/") {
       scrollWithOffset();
     } else {
-      router.push("/");
+      navigate("/");
       scrollWithOffset();
     }
 
@@ -88,7 +85,7 @@ const Navbar = ({ hideMenuItems = false }: NavbarProps) => {
       <div className="container mx-auto px-3 sm:px-4 lg:px-6 max-w-7xl">
         <div className="flex items-center justify-between gap-3">
         {/* Logo */}
-        <Link href="/" className="flex items-center gap-2 group shrink-0">
+        <Link to="/" className="flex items-center gap-2 group shrink-0">
           <img 
             src="/logo.png" 
             alt="EduExpoGlobal Logo" 
@@ -107,7 +104,7 @@ const Navbar = ({ hideMenuItems = false }: NavbarProps) => {
             link.isRoute ? (
               <Link
                 key={link.name}
-                href={link.href}
+                to={link.href}
                   className="text-muted-foreground hover:text-foreground transition-colors duration-300 font-medium text-sm xl:text-base relative group whitespace-nowrap px-1"
               >
                 {link.name}
@@ -118,7 +115,7 @@ const Navbar = ({ hideMenuItems = false }: NavbarProps) => {
             ) : (
               <a
                 key={link.name}
-                href={link.href}
+                to={link.href}
                 onClick={(e) => {
                   const id = link.href.replace("#", "");
                   handleSectionClick(id, { event: e });
@@ -145,7 +142,7 @@ const Navbar = ({ hideMenuItems = false }: NavbarProps) => {
             Call Us
           </Button>
           </a>
-          <Link href="/register">
+          <Link to="/register">
           <Button variant="hero" size="sm" className="text-xs xl:text-sm px-3 xl:px-4">
             Enquire Now
           </Button>
@@ -180,7 +177,7 @@ const Navbar = ({ hideMenuItems = false }: NavbarProps) => {
               link.isRoute ? (
                   <Link
                     key={link.name}
-                    href={link.href}
+                    to={link.href}
                     onClick={() => setIsMobileMenuOpen(false)}
                     className="text-muted-foreground hover:text-foreground transition-colors duration-300 font-medium py-2"
                   >
@@ -189,7 +186,7 @@ const Navbar = ({ hideMenuItems = false }: NavbarProps) => {
                 ) : (
                   <a
                     key={link.name}
-                    href={link.href}
+                    to={link.href}
                     onClick={(e) => {
                       const id = link.href.replace("#", "");
                       handleSectionClick(id, { closeMobileMenu: true, event: e });
@@ -206,7 +203,7 @@ const Navbar = ({ hideMenuItems = false }: NavbarProps) => {
                   Call Us
                 </Button>
                 </a>
-                <Link href="/register" className="w-full">
+                <Link to="/register" className="w-full">
                 <Button variant="hero" size="lg" className="w-full">
                   Enquire Now
                 </Button>
