@@ -16,7 +16,7 @@ const Speakers = () => {
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    document.title = "All Speakers - EduExpoGlobal";
+    document.title = "All Speakers - EDU EXPO GLOBAL 2026";
     window.scrollTo({ top: 0, behavior: "smooth" });
     loadSpeakers();
   }, []);

@@ -38,13 +38,13 @@ const CTASection = () => {
     
     toast({
       title: "Successfully subscribed!",
-      description: "You'll receive updates about EduExpoGlobal events.",
+      description: "You'll receive updates about EDU EXPO GLOBAL 2026 events.",
     });
     } catch (error) {
       console.error("Subscription error:", error);
       toast({
         title: "Subscription successful!",
-        description: "You'll receive updates about EduExpoGlobal events.",
+        description: "You'll receive updates about EDU EXPO GLOBAL 2026 events.",
         variant: "default",
       });
       setIsSubscribed(true);
@@ -125,7 +125,7 @@ const CTASection = () => {
                 Stay Updated
               </h3>
               <p className="text-muted-foreground mb-4 text-sm">
-                Subscribe to our newsletter for the latest EduExpoGlobal news and updates.
+                Subscribe to our newsletter for the latest EDU EXPO GLOBAL 2026 news and updates.
               </p>
               
               {isSubscribed ? (

@@ -2,7 +2,7 @@ import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import { AuthProvider } from "@/context/AuthContext";
 import Index from "./views/Index";
 import Register from "./views/Register";
@@ -12,7 +12,6 @@ import Conference from "./views/Conference";
 import Workshops from "./views/Workshops";
 import Expo from "./views/Expo";
 import Speakers from "./views/Speakers";
-import SpringSummit from "./views/SpringSummit";
 import AutumnConference from "./views/AutumnConference";
 import Gallery from "./views/Gallery";
 import Partners from "./views/Partners";
@@ -52,7 +51,7 @@ const App = () => (
             <Route path="/workshops" element={<Workshops />} />
             <Route path="/expo" element={<Expo />} />
             <Route path="/speakers" element={<Speakers />} />
-            <Route path="/spring-summit" element={<SpringSummit />} />
+            <Route path="/spring-summit" element={<Navigate to="/" replace />} />
             <Route path="/autumn-conference" element={<AutumnConference />} />
             <Route path="/gallery" element={<Gallery />} />
             <Route path="/newsletter" element={<Newsletter />} />

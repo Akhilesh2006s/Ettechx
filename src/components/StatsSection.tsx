@@ -140,7 +140,7 @@ const StatsSection = () => {
             <span className="text-gradient-primary">Keeps Growing</span>
           </h2>
           <p className="text-muted-foreground text-lg">
-            EduExpoGlobal brings together a powerful community of educators, city
+            EDU EXPO GLOBAL 2026 brings together a powerful community of educators, city
             leaders, academicians, exhibitors, and brands driving the future of
             learning.
           </p>
@@ -175,7 +175,7 @@ const StatsSection = () => {
                   Audience Mix
                 </h3>
                 <p className="text-sm text-muted-foreground">
-                  A visual snapshot of who you meet at EduExpoGlobal.
+                  A visual snapshot of who you meet at EDU EXPO GLOBAL 2026.
                 </p>
               </div>
             </div>

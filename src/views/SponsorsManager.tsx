@@ -147,7 +147,7 @@ const SponsorsManager = () => {
   }, [toast]);
 
   useEffect(() => {
-    document.title = "Sponsors Manager - Admin - EduExpoGlobal";
+    document.title = "Sponsors Manager - Admin - EDU EXPO GLOBAL 2026";
     if (isReady && !isAuthenticated) {
       navigate("/admin/login");
       return;

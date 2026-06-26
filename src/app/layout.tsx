@@ -8,25 +8,25 @@ const SITE_URL = "https://www.eduexpoglobal.com";
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
-  applicationName: "EduExpoGlobal",
+  applicationName: "EDU EXPO GLOBAL 2026",
   // Default title template (pages provide specific title string)
   title: {
-    default: "EduExpoGlobal",
-    template: "%s | EduExpoGlobal",
+    default: "EDU EXPO GLOBAL 2026",
+    template: "%s | EDU EXPO GLOBAL 2026",
   },
   description:
-    "EduExpoGlobal is India’s premier EdTech expo connecting educators, startups, and innovators through conferences, workshops, and exhibitions.",
+    "EDU EXPO GLOBAL 2026 is India’s premier EdTech expo connecting educators, startups, and innovators through conferences, workshops, and exhibitions.",
   alternates: {
     canonical: SITE_URL,
   },
   // OpenGraph improves click-through when pages are shared on WhatsApp/LinkedIn/Facebook.
   openGraph: {
     type: "website",
-    siteName: "EduExpoGlobal",
+    siteName: "EDU EXPO GLOBAL 2026",
     url: SITE_URL,
-    title: "EduExpoGlobal | India’s Leading EdTech Expo & Conference",
+    title: "EDU EXPO GLOBAL 2026 | India’s Leading EdTech Expo & Conference",
     description:
-      "EduExpoGlobal is India’s premier EdTech expo connecting educators, startups, and innovators through conferences, workshops, and exhibitions.",
+      "EDU EXPO GLOBAL 2026 is India’s premier EdTech expo connecting educators, startups, and innovators through conferences, workshops, and exhibitions.",
     images: [
       {
         // Using an existing production asset (no placeholder) for stable social previews.
@@ -37,9 +37,9 @@ export const metadata: Metadata = {
   // Twitter cards increase engagement and ensure large rich previews.
   twitter: {
     card: "summary_large_image",
-    title: "EduExpoGlobal | India’s Leading EdTech Expo & Conference",
+    title: "EDU EXPO GLOBAL 2026 | India’s Leading EdTech Expo & Conference",
     description:
-      "EduExpoGlobal is India’s premier EdTech expo connecting educators, startups, and innovators through conferences, workshops, and exhibitions.",
+      "EDU EXPO GLOBAL 2026 is India’s premier EdTech expo connecting educators, startups, and innovators through conferences, workshops, and exhibitions.",
     images: ["/expo.jpeg"],
   },
   icons: {
@@ -71,7 +71,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   const organizationSchema = {
     "@context": "https://schema.org",
     "@type": "Organization",
-    name: "EduExpoGlobal",
+    name: "EDU EXPO GLOBAL 2026",
     url: SITE_URL,
     logo: `${SITE_URL}/logo.png`,
     sameAs: [
@@ -85,7 +85,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   const websiteSchema = {
     "@context": "https://schema.org",
     "@type": "WebSite",
-    name: "EduExpoGlobal",
+    name: "EDU EXPO GLOBAL 2026",
     url: SITE_URL,
     // WebSite schema can enable a sitelinks search box when Google chooses to show it.
     potentialAction: {
@@ -100,15 +100,15 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   const eventSchema = {
     "@context": "https://schema.org",
     "@type": "Event",
-    name: "EduExpoGlobal - India’s Leading EdTech Expo & Conference",
+    name: "EDU EXPO GLOBAL 2026 - India’s Leading EdTech Expo & Conference",
     startDate: "2026-09-22",
-    endDate: "2026-09-24",
+    endDate: "2026-09-23",
     eventAttendanceMode: "https://schema.org/OfflineEventAttendanceMode",
     eventStatus: "https://schema.org/EventScheduled",
     url: SITE_URL,
     image: [`${SITE_URL}/expo.jpeg`],
     description:
-      "EduExpoGlobal is India’s premier EdTech expo connecting educators, startups, and innovators through conferences, workshops, and exhibitions.",
+      "EDU EXPO GLOBAL 2026 is India’s premier EdTech expo connecting educators, startups, and innovators through conferences, workshops, and exhibitions.",
     location: {
       "@type": "Place",
       name: "Yashobhoomi Convention Centre",
@@ -131,7 +131,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     },
     organizer: {
       "@type": "Organization",
-      name: "EduExpoGlobal",
+      name: "EDU EXPO GLOBAL 2026",
       url: SITE_URL,
     },
   };

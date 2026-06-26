@@ -7,7 +7,7 @@ import Footer from "@/components/Footer";
 
 const RefundPolicy = () => {
   useEffect(() => {
-    document.title = "Refund Policy - EduExpoGlobal";
+    document.title = "Refund Policy - EDU EXPO GLOBAL 2026";
     window.scrollTo({ top: 0, behavior: 'smooth' });
   }, []);
 
@@ -16,7 +16,7 @@ const RefundPolicy = () => {
       icon: RefreshCw,
       title: "1. General Refund Policy",
       content: [
-        "EduExpoGlobal is committed to providing quality events and services. This Refund Policy outlines the terms and conditions under which refunds may be issued for event registrations, tickets, and other services.",
+        "EDU EXPO GLOBAL 2026 is committed to providing quality events and services. This Refund Policy outlines the terms and conditions under which refunds may be issued for event registrations, tickets, and other services.",
         "All refund requests are subject to review and approval based on the circumstances and timing of the request."
       ]
     },
@@ -60,7 +60,7 @@ const RefundPolicy = () => {
     },
     {
       icon: AlertCircle,
-      title: "5. Event Cancellation by EduExpoGlobal",
+      title: "5. Event Cancellation by EDU EXPO GLOBAL 2026",
       content: [
         "If we cancel an event:",
         "• Full refunds will be automatically issued to all registered participants",
@@ -204,7 +204,7 @@ const RefundPolicy = () => {
               className="bg-card border border-border rounded-2xl p-8 mb-8 shadow-lg"
             >
               <p className="text-muted-foreground leading-relaxed">
-                At EduExpoGlobal, we understand that circumstances may change, and you may need to cancel your event registration. This Refund Policy explains our procedures for processing refunds, cancellations, and transfers. We aim to be fair and transparent while ensuring the sustainability of our events.
+                At EDU EXPO GLOBAL 2026, we understand that circumstances may change, and you may need to cancel your event registration. This Refund Policy explains our procedures for processing refunds, cancellations, and transfers. We aim to be fair and transparent while ensuring the sustainability of our events.
               </p>
             </motion.div>
 

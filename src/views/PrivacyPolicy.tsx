@@ -7,7 +7,7 @@ import Footer from "@/components/Footer";
 
 const PrivacyPolicy = () => {
   useEffect(() => {
-    document.title = "Privacy Policy - EduExpoGlobal";
+    document.title = "Privacy Policy - EDU EXPO GLOBAL 2026";
     window.scrollTo({ top: 0, behavior: 'smooth' });
   }, []);
 
@@ -121,7 +121,7 @@ const PrivacyPolicy = () => {
       content: [
         "If you have any questions, concerns, or requests regarding this Privacy Policy or our data practices, please contact us:",
         "• Email: info@eduexpoglobal.com",
-        "• Address: EduExpoGlobal, India",
+        "• Address: EDU EXPO GLOBAL 2026, India",
         "• Phone: [Contact Number]",
         "We will respond to your inquiry within 30 days."
       ]
@@ -177,7 +177,7 @@ const PrivacyPolicy = () => {
               className="bg-card border border-border rounded-2xl p-8 mb-8 shadow-lg"
             >
               <p className="text-muted-foreground leading-relaxed">
-                EduExpoGlobal ("we," "our," or "us") is committed to protecting your privacy. This Privacy Policy describes how we collect, use, disclose, and safeguard your information when you visit our website, register for events, or use our services. By using our services, you agree to the collection and use of information in accordance with this policy.
+                EDU EXPO GLOBAL 2026 ("we," "our," or "us") is committed to protecting your privacy. This Privacy Policy describes how we collect, use, disclose, and safeguard your information when you visit our website, register for events, or use our services. By using our services, you agree to the collection and use of information in accordance with this policy.
               </p>
             </motion.div>
 

@@ -126,7 +126,7 @@ export const sendNewsletterEmail = async (data: NewsletterSubscriptionData): Pro
     const templateParams = {
       to_email: RECIPIENT_EMAIL,
       from_email: data.email,
-      subject: 'New Newsletter Subscription - EduExpoGlobal',
+      subject: 'New Newsletter Subscription - EDU EXPO GLOBAL 2026',
       message: message,
       reply_to: data.email,
     };

@@ -35,7 +35,7 @@ const NewsletterViewer = ({ newsletter }: NewsletterViewerProps) => {
                       <td style={{ padding: 0 }}>
                         <img 
                           src={resolveMediaUrl(newsletter.bannerImageUrl)} 
-                          alt="EduExpoGlobal Newsletter Banner" 
+                          alt="EDU EXPO GLOBAL 2026 Newsletter Banner" 
                           width="600" 
                           style={{ display: "block", width: "100%", maxWidth: "600px", height: "auto", border: 0, outline: "none", textDecoration: "none" }} 
                         />
@@ -47,7 +47,7 @@ const NewsletterViewer = ({ newsletter }: NewsletterViewerProps) => {
                     <tr>
                       <td align="center" style={{ padding: "30px 20px" }}>
                         <h1 style={{ margin: 0, fontSize: "28px", fontWeight: "bold", color: "#ffffff", fontFamily: "Arial, Helvetica, sans-serif" }}>
-                          EduExpoGlobal Newsletter
+                          EDU EXPO GLOBAL 2026 Newsletter
                         </h1>
                         <p style={{ margin: "10px 0 0 0", fontSize: "14px", color: "#cccccc", fontFamily: "Arial, Helvetica, sans-serif" }}>
                           Issue {newsletter.issueNumber} | {newsletter.month} {newsletter.year}
@@ -461,7 +461,7 @@ const NewsletterViewer = ({ newsletter }: NewsletterViewerProps) => {
                     <tr>
                       <td align="center" style={{ paddingBottom: "20px" }}>
                         <p style={{ margin: 0, fontSize: "16px", fontWeight: "bold", color: "#ffffff", fontFamily: "Arial, Helvetica, sans-serif" }}>
-                          EduExpoGlobal
+                          EDU EXPO GLOBAL 2026
                         </p>
                       </td>
                     </tr>
@@ -492,7 +492,7 @@ const NewsletterViewer = ({ newsletter }: NewsletterViewerProps) => {
                     <tr>
                       <td align="center">
                         <p style={{ margin: 0, fontSize: "12px", color: "#cccccc", fontFamily: "Arial, Helvetica, sans-serif" }}>
-                          © {newsletter.year} EduExpoGlobal. All rights reserved.
+                          © {newsletter.year} EDU EXPO GLOBAL 2026. All rights reserved.
                         </p>
                       </td>
                     </tr>

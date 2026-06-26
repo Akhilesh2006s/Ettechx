@@ -10,14 +10,14 @@ import { applyPageSeo } from "@/lib/seo";
 const Awards = () => {
   useEffect(() => {
     applyPageSeo({
-      title: "Education Awards India | EduExpoGlobal Excellence Awards",
+      title: "Education Awards India | EDU EXPO GLOBAL 2026 Excellence Awards",
       description:
         "Recognizing outstanding educators, institutions, and EdTech innovators shaping the future of education in India.",
       canonical: "https://www.eduexpoglobal.com/awards",
       schema: {
         "@context": "https://schema.org",
         "@type": "WebPage",
-        name: "Education Awards India | EduExpoGlobal Excellence Awards",
+        name: "Education Awards India | EDU EXPO GLOBAL 2026 Excellence Awards",
         description:
           "Recognizing outstanding educators, institutions, and EdTech innovators shaping the future of education in India.",
         url: "https://www.eduexpoglobal.com/awards",

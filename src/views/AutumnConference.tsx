@@ -8,7 +8,7 @@ import { ArrowLeft, Calendar, MapPin, Users, Award, Mic2, Wrench, Store, ArrowRi
 
 const AutumnConference = () => {
   useEffect(() => {
-    document.title = "EduExpoGlobal Conference - Autumn Edition - EduExpoGlobal";
+    document.title = "EDU EXPO GLOBAL 2026 Conference - Autumn Edition - EDU EXPO GLOBAL 2026";
     window.scrollTo({ top: 0, behavior: 'smooth' });
   }, []);
 
@@ -59,16 +59,16 @@ const AutumnConference = () => {
                 </div>
                 
                 <h1 className="font-display text-4xl md:text-5xl font-bold text-foreground mb-4">
-                  7th Edition EduExpoGlobal
+                  7th Edition EDU EXPO GLOBAL 2026
                 </h1>
                 <p className="text-muted-foreground text-lg mb-6">
-                  Join the 7th Edition EduExpoGlobal at Yashobhoomi, Dwaraka, New Delhi for three power-packed days of awards, exhibitions, and future-forward discussions on education technology.
+                  Join the 7th Edition EDU EXPO GLOBAL 2026 at Yashobhoomi, Dwaraka, New Delhi for two power-packed days of awards, exhibitions, and future-forward discussions on education technology.
                 </p>
                 
                 <div className="flex flex-wrap gap-4 mb-6">
                   <div className="flex items-center gap-2 text-muted-foreground">
                     <Calendar className="w-5 h-5 text-secondary" />
-                    <span className="font-medium">22, 23, 24 September 2026</span>
+                    <span className="font-medium">22, 23 September 2026</span>
                   </div>
                   <div className="flex items-center gap-2 text-muted-foreground">
                     <MapPin className="w-5 h-5 text-secondary" />

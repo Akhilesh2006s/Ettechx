@@ -70,7 +70,7 @@ const PopupAd = () => {
               <div className="relative w-full">
                 <img
                   src="/ETTECHX .jpeg"
-                  alt="EduExpoGlobal Event Poster"
+                  alt="EDU EXPO GLOBAL 2026 Event Poster"
                   className="block w-full h-auto object-contain max-h-[90vh]"
                   loading="lazy"
                   decoding="async"

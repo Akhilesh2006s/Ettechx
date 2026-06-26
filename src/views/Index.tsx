@@ -18,16 +18,16 @@ import { applyPageSeo } from "@/lib/seo";
 const Index = () => {
   useEffect(() => {
     applyPageSeo({
-      title: "EduExpoGlobal | India's Leading EdTech Expo & Conference",
+      title: "EDU EXPO GLOBAL 2026 | India's Leading EdTech Expo & Conference",
       description:
-        "EduExpoGlobal is India's premier EdTech expo connecting educators, startups, and innovators through conferences, workshops, and exhibitions.",
+        "EDU EXPO GLOBAL 2026 is India's premier EdTech expo connecting educators, startups, and innovators through conferences, workshops, and exhibitions.",
       canonical: "https://www.eduexpoglobal.com",
       schema: {
         "@context": "https://schema.org",
         "@type": "WebPage",
-        name: "EduExpoGlobal | India's Leading EdTech Expo & Conference",
+        name: "EDU EXPO GLOBAL 2026 | India's Leading EdTech Expo & Conference",
         description:
-          "EduExpoGlobal is India's premier EdTech expo connecting educators, startups, and innovators through conferences, workshops, and exhibitions.",
+          "EDU EXPO GLOBAL 2026 is India's premier EdTech expo connecting educators, startups, and innovators through conferences, workshops, and exhibitions.",
         url: "https://www.eduexpoglobal.com",
       },
     });

@@ -11,7 +11,7 @@ const NewsletterPage = () => {
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    document.title = "Newsletter - EduExpoGlobal";
+    document.title = "Newsletter - EDU EXPO GLOBAL 2026";
     window.scrollTo({ top: 0, behavior: "smooth" });
     loadNewsletter();
   }, []);

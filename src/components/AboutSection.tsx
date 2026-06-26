@@ -70,7 +70,7 @@ const AboutSection = () => {
             transition={{ duration: 0.7 }}
           >
             <span className="inline-block px-4 py-1.5 rounded-full bg-accent/10 text-accent text-sm font-medium mb-4">
-              About EduExpoGlobal
+              About EDU EXPO GLOBAL 2026
             </span>
             <h2 className="font-display text-4xl md:text-5xl font-bold text-foreground mb-6">
               Shaping the{" "}
@@ -78,12 +78,12 @@ const AboutSection = () => {
               <span className="text-primary">Learning</span>
             </h2>
             <p className="text-lg text-muted-foreground mb-8 leading-relaxed">
-              EduExpoGlobal is India's premier platform for educational technology innovation.
+              EDU EXPO GLOBAL 2026 is India's premier platform for educational technology innovation.
               We bring together visionaries, educators, startups, and institutions to 
               explore, exhibit, and elevate the future of learning through technology.
             </p>
             <p className="text-lg text-muted-foreground leading-relaxed">
-              With two flagship events annually, we've become the go-to destination 
+              Our flagship annual event has become the go-to destination 
               for anyone passionate about transforming education through innovation.
             </p>
           </motion.div>
@@ -136,7 +136,7 @@ const AboutSection = () => {
               Powered by Leaders in Education & Events
             </h3>
             <p className="text-muted-foreground text-base md:text-lg">
-              EduExpoGlobal is backed by experienced organisations who have been shaping education
+              EDU EXPO GLOBAL 2026 is backed by experienced organisations who have been shaping education
               media, conferences, and large-scale expos across India.
             </p>
           </div>

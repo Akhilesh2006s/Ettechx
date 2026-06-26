@@ -12,14 +12,14 @@ const Expo = () => {
     applyPageSeo({
       title: "EdTech Expo India | Exhibit & Discover Innovation",
       description:
-        "Explore the EduExpoGlobal Expo featuring leading EdTech companies, startups, and innovations transforming education in India.",
+        "Explore the EDU EXPO GLOBAL 2026 Expo featuring leading EdTech companies, startups, and innovations transforming education in India.",
       canonical: "https://www.eduexpoglobal.com/expo",
       schema: {
         "@context": "https://schema.org",
         "@type": "WebPage",
         name: "EdTech Expo India | Exhibit & Discover Innovation",
         description:
-          "Explore the EduExpoGlobal Expo featuring leading EdTech companies, startups, and innovations transforming education in India.",
+          "Explore the EDU EXPO GLOBAL 2026 Expo featuring leading EdTech companies, startups, and innovations transforming education in India.",
         url: "https://www.eduexpoglobal.com/expo",
       },
     });

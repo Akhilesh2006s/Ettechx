@@ -25,7 +25,7 @@ const Navbar = ({ hideMenuItems = false }: NavbarProps) => {
 
   const navLinks = [
     { name: "About", href: "#about", isRoute: false },
-    // 'Events' should point to the annual calendar section (Two Events, Endless Possibilities)
+    // 'Events' should point to the annual calendar section
     { name: "Events", href: "#schedule", isRoute: false },
     // 'Key Offering' should point to the Four Pillars of Excellence section
     { name: "Key Offering", href: "#events", isRoute: false },
@@ -88,7 +88,7 @@ const Navbar = ({ hideMenuItems = false }: NavbarProps) => {
         <Link to="/" className="flex items-center gap-2 group shrink-0">
           <img 
             src="/logo.png" 
-            alt="EduExpoGlobal Logo" 
+            alt="EDU EXPO GLOBAL 2026 Logo" 
             className="h-8 sm:h-10 md:h-12 w-auto group-hover:scale-110 transition-transform duration-300"
             decoding="async"
           />

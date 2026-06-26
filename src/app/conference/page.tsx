@@ -3,12 +3,12 @@ import ConferenceClient from "./ConferenceClient";
 
 export const metadata: Metadata = {
   title: "Education Conference India | EdTech Leaders & Insights",
-  description: "Attend EduExpoGlobal conference with industry leaders discussing trends, innovation, and the future of education.",
+  description: "Attend EDU EXPO GLOBAL 2026 conference with industry leaders discussing trends, innovation, and the future of education.",
   alternates: { canonical: "https://www.eduexpoglobal.com/conference" },
   openGraph: {
     title: "Education Conference India | EdTech Leaders & Insights",
     description:
-      "Attend EduExpoGlobal conference with industry leaders discussing trends, innovation, and the future of education.",
+      "Attend EDU EXPO GLOBAL 2026 conference with industry leaders discussing trends, innovation, and the future of education.",
     url: "https://www.eduexpoglobal.com/conference",
     images: [{ url: "https://www.eduexpoglobal.com/Conference.jpeg" }],
   },
@@ -16,7 +16,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Education Conference India | EdTech Leaders & Insights",
     description:
-      "Attend EduExpoGlobal conference with industry leaders discussing trends, innovation, and the future of education.",
+      "Attend EDU EXPO GLOBAL 2026 conference with industry leaders discussing trends, innovation, and the future of education.",
     images: ["https://www.eduexpoglobal.com/Conference.jpeg"],
   },
 };

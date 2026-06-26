@@ -27,9 +27,9 @@ const HeroSection = () => {
             transition={{ duration: 0.6 }}
             className="mb-4 sm:mb-6"
           >
-            <h1 className="font-display text-5xl sm:text-7xl md:text-8xl lg:text-9xl font-extrabold leading-tight mb-3 sm:mb-4 px-2">
-              <span className="text-foreground">EduExpo</span>
-              <span className="text-gradient-primary">Global</span>
+            <h1 className="font-display text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold leading-tight mb-3 sm:mb-4 px-2">
+              <span className="text-foreground">EDU EXPO </span>
+              <span className="text-gradient-primary">GLOBAL 2026</span>
             </h1>
             <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-muted-foreground font-medium px-2">
               India's Premier Education & Technology Expo
@@ -89,10 +89,10 @@ const HeroSection = () => {
                       Next Event
                     </p>
                     <p className="text-sm sm:text-base md:text-xl lg:text-2xl font-bold text-foreground mb-0.5 sm:mb-1 leading-tight">
-                      7th Edition EduExpoGlobal
+                      7th Edition EDU EXPO GLOBAL 2026
                     </p>
                     <p className="text-xs sm:text-sm md:text-lg lg:text-xl font-bold text-foreground leading-tight">
-                      22, 23, 24 September 2026
+                      22, 23 September 2026
                     </p>
                     <p className="text-[10px] sm:text-xs md:text-sm font-semibold text-muted-foreground mt-0.5 sm:mt-1 leading-tight">
                       Yashobhoomi, Dwaraka, New Delhi

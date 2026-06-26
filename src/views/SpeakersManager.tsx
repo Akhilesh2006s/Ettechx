@@ -98,7 +98,7 @@ const SpeakersManager = () => {
   }, [toast]);
 
   useEffect(() => {
-    document.title = "Speakers Manager - Admin - EduExpoGlobal";
+    document.title = "Speakers Manager - Admin - EDU EXPO GLOBAL 2026";
     if (isReady && !isAuthenticated) {
       navigate("/admin/login");
       return;

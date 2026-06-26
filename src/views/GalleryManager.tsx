@@ -47,7 +47,7 @@ const GalleryManager = () => {
   const [filePreview, setFilePreview] = useState<string>("");
 
   useEffect(() => {
-    document.title = "Gallery Manager - Admin - EduExpoGlobal";
+    document.title = "Gallery Manager - Admin - EDU EXPO GLOBAL 2026";
     if (!isAuthenticated) {
       navigate("/admin/login");
     }

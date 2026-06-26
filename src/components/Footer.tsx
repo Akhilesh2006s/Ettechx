@@ -34,13 +34,13 @@ const Footer = () => {
       setEmail("");
       toast({
         title: "Successfully subscribed!",
-        description: "You'll receive updates about EduExpoGlobal events.",
+        description: "You'll receive updates about EDU EXPO GLOBAL 2026 events.",
       });
     } catch (error) {
       console.error("Subscription error:", error);
       toast({
         title: "Subscription successful!",
-        description: "You'll receive updates about EduExpoGlobal events.",
+        description: "You'll receive updates about EDU EXPO GLOBAL 2026 events.",
         variant: "default",
       });
       setIsSubscribed(true);
@@ -101,7 +101,7 @@ const Footer = () => {
             <a href="#" className="flex items-center gap-2 mb-6">
               <img 
                 src="/logo.png" 
-                alt="EduExpoGlobal Logo" 
+                alt="EDU EXPO GLOBAL 2026 Logo" 
                 className="h-12 w-auto"
                 loading="lazy"
                 decoding="async"
@@ -181,7 +181,7 @@ const Footer = () => {
         >
           <h4 className="font-display font-semibold text-foreground mb-3">Subscribe to Newsletter</h4>
           <p className="text-sm text-muted-foreground mb-4">
-            Get the latest updates about EduExpoGlobal events and news.
+            Get the latest updates about EDU EXPO GLOBAL 2026 events and news.
           </p>
           {isSubscribed ? (
             <motion.div
@@ -242,7 +242,7 @@ const Footer = () => {
           className="pt-8 border-t border-border flex flex-col md:flex-row items-center justify-between gap-4"
         >
           <p className="text-muted-foreground text-sm">
-            © {new Date().getFullYear()} EduExpoGlobal. All rights reserved.
+            © {new Date().getFullYear()} EDU EXPO GLOBAL 2026. All rights reserved.
           </p>
           <p className="text-muted-foreground text-sm">
             Made with ❤️ in India

@@ -12,14 +12,14 @@ const Conference = () => {
     applyPageSeo({
       title: "Education Conference India | EdTech Leaders & Insights",
       description:
-        "Attend EduExpoGlobal conference with industry leaders discussing trends, innovation, and the future of education.",
+        "Attend EDU EXPO GLOBAL 2026 conference with industry leaders discussing trends, innovation, and the future of education.",
       canonical: "https://www.eduexpoglobal.com/conference",
       schema: {
         "@context": "https://schema.org",
         "@type": "WebPage",
         name: "Education Conference India | EdTech Leaders & Insights",
         description:
-          "Attend EduExpoGlobal conference with industry leaders discussing trends, innovation, and the future of education.",
+          "Attend EDU EXPO GLOBAL 2026 conference with industry leaders discussing trends, innovation, and the future of education.",
         url: "https://www.eduexpoglobal.com/conference",
       },
     });

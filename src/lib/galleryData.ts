@@ -358,7 +358,7 @@ export const defaultGalleryData: GalleryYear[] = [
   },
   {
     year: "2019",
-    displayName: "EduExpoGlobal Edition",
+    displayName: "EDU EXPO GLOBAL 2026 Edition",
     categories: [
       {
         name: "Awards",
