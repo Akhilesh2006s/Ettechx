@@ -25,7 +25,7 @@ const HeroSection = () => {
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
-            className="mb-4 sm:mb-6"
+            className="mb-6 sm:mb-8"
           >
             <h1 className="font-display text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold leading-tight mb-3 sm:mb-4 px-2">
               <span className="text-foreground">EDU EXPO </span>
@@ -34,19 +34,6 @@ const HeroSection = () => {
             <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-muted-foreground font-medium px-2">
               India's Premier Education & Technology Expo
             </p>
-          </motion.div>
-
-          {/* Badge */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.1 }}
-            className="inline-flex items-center gap-2 px-3 py-1.5 sm:px-4 sm:py-2 rounded-full glass mb-6 sm:mb-8"
-          >
-            <span className="w-1.5 h-1.5 sm:w-2 sm:h-2 rounded-full bg-accent animate-pulse" />
-            <span className="text-xs sm:text-sm font-medium text-muted-foreground">
-              India's Leading Educational Expo
-            </span>
           </motion.div>
 
           {/* Hero Image - Full Page Style */}
